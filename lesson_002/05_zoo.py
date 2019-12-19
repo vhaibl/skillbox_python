@@ -16,6 +16,8 @@ birds = ['rooster', 'ostrich', 'lark', ]
 #  и выведите список на консоль
 
 zoo = zoo + birds
+# TODO Это действие лучше выполнять при помощи метода .extend()
+# TODO Тк он изменяет список, а операция сложения - создаёт новый
 print(zoo)
 
 # уберите слона
@@ -27,6 +29,5 @@ print(zoo)
 # выведите на консоль в какой клетке сидит лев (lion) и жаворонок (lark).
 # Номера при выводе должны быть понятны простому человеку, не программисту.
 
-print('Lion in cage', zoo.index("lion")+1)
-print('Lark in cage', zoo.index("lark")+1)
-
+print('Lion in cage', zoo.index("lion") + 1)
+print('Lark in cage', zoo.index("lark") + 1)

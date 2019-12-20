@@ -47,3 +47,5 @@ sweets = {
     ]
 }
 print(sweets)
+
+#зачет!

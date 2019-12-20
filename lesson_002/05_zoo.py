@@ -29,3 +29,5 @@ print(zoo)
 
 print('Lion in cage', zoo.index("lion") + 1)
 print('Lark in cage', zoo.index("lark") + 1)
+
+#зачет!

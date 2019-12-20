@@ -24,10 +24,7 @@ violator_songs_list = [
 # Лучше заранее вычислить необходимое, а затем в print(xxx, yyy, zzz)
 
 three_songs= violator_songs_list[3][1] + violator_songs_list[5][1] + violator_songs_list[8][1]
-# TODO округлить тут лучше до 2 знаков после запятой (до долей минут)
-print('Три песни звучат', int(round(three_songs, 0)), 'минут')
-# TODO Кроме того, int - сам по себе приводит число к целому виду, сейчас он вообще не нужен
-# TODO Но при необходимости используйте что-то одно
+print('Три песни звучат', round(three_songs, 2), 'минут')
 # Есть словарь песен группы Depeche Mode
 violator_songs_dict = {
     'World in My Eyes': 4.76,
@@ -46,6 +43,4 @@ violator_songs_dict = {
 other_three_songs = (violator_songs_dict['Sweetest Perfection']
                      + violator_songs_dict['Policy of Truth']
                      + violator_songs_dict['Blue Dress'])
-
-# TODO И тут такое же замечание
-print('А другие три песни звучат', int(round(other_three_songs, 0)), 'минут')
+print('А другие три песни звучат', round(other_three_songs, 2), 'минут')

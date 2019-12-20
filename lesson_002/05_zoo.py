@@ -15,9 +15,7 @@ print(zoo)
 birds = ['rooster', 'ostrich', 'lark', ]
 #  и выведите список на консоль
 
-zoo = zoo + birds
-# TODO Это действие лучше выполнять при помощи метода .extend()
-# TODO Тк он изменяет список, а операция сложения - создаёт новый
+zoo.extend(birds)
 print(zoo)
 
 # уберите слона

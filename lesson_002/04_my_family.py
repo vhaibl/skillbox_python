@@ -14,10 +14,8 @@ my_family_height = [
 
 ]
 print('Рост отца -', my_family_height[0][1], 'см')
-# TODO В принт, по-хорошему, не стоит заносить вычисления
-# TODO Строка с кодом становится длинной, да и сами вычисления нигде не сохраняются
-# TODO Вынесите суммирование в отдельную переменную, а её распечатайте
-print('Общий рост моей семьи -', my_family_height[0][1] + my_family_height[1][1] + my_family_height[2][1], 'см')
+summary_height = my_family_height[0][1] + my_family_height[1][1] + my_family_height[2][1]
+print('Общий рост моей семьи -', summary_height, 'см')
 
 # Выведите на консоль рост отца в формате
 #   Рост отца - ХХ см

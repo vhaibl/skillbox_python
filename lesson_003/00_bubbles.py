@@ -27,7 +27,7 @@ for x in range(100, 1001, 100):
     bubble(point=point, step=5)
 
 # Нарисовать три ряда по 10 пузырьков
-# TODO здесь ваш код
+
 for y in range(100, 301,100):
     for x in range(100, 1001, 100):
         point = sd.get_point(x, y)

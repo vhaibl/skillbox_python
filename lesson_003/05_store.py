@@ -29,6 +29,14 @@ store = {
         {'quantity': 43, 'price': 97},
     ],
 }
+for item in store:
+    print(item)
+
+for x in goods.values():
+    count = store[x][0]['quantity']
+    print(count)
+
+
 
 # Каждая запись отображает сколько и по какой цене закупалось товаров.
 #

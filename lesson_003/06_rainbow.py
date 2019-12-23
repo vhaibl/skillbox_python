@@ -14,9 +14,9 @@ c=350
 d=450
 for rainbow in rainbow_colors:
     c += 5
-    d += 5
+#    d += 5
     a += 5
-    b += 5
+#    b += 5
     point1 = sd.get_point(a, b)
     point2 = sd.get_point(c, d)
     line=sd.line(start_point=point1, end_point=point2, color=rainbow, width=4, )

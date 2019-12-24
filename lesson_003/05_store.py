@@ -29,12 +29,18 @@ store = {
         {'quantity': 43, 'price': 97},
     ],
 }
-for item in store:
-    print(item)
+quantity1 = 0
+for i in goods:
 
-for x in goods.values():
-    count = store[x][0]['quantity']
-    print(count)
+    for k in (store[goods[i]]):
+        item, price, quantity = i, int(k['price']), int(k['quantity'])
+        price_position = price * quantity
+        print(i, '-', quantity, 'шт, стоимость ', price_position, 'руб')
+    quantity1 += quantity
+    price_position += price_position
+    print(quantity1, price_position)
+
+
 
 
 

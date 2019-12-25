@@ -55,7 +55,7 @@ store = {
 #     вывод на консоль количества и стоимости товара на складе
 
 for i in goods:
-    price_quantity, quantity_total, price_total,  price_position, quantity_total = 0, 0, 0, 0, 0
+    price_quantity, quantity_total, price_total, price_position, quantity_total = 0, 0, 0, 0, 0
     for k in (store[goods[i]]):
         item, price, quantity = i, k['price'], k['quantity']
         price_position = price * quantity

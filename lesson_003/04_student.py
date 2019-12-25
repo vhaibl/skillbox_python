@@ -10,8 +10,8 @@
 #   Студенту надо попросить ХХХ.ХХ рублей
 
 educational_grant, expenses = 10000, 12000
-month=1
-sum_expenses=0
+month = 1
+sum_expenses = 0
 while month < 11:
     sum_expenses += expenses
     expenses = expenses * 1.03

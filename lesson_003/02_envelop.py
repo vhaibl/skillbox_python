@@ -16,6 +16,8 @@ def test():
             print("ДА")
     else:
         print("ДА")
+
+
 envelop_x, envelop_y = 10, 7
 paper_x, paper_y = 8, 9
 test()
@@ -41,10 +43,11 @@ test()
 # Определить, пройдет ли кирпич через отверстие (грани кирпича параллельны сторонам отверстия)
 print("----------------")
 
+
 def test2():
-    if (hole_x >= brick_x and hole_y >= brick_y) or (hole_x >= brick_y and hole_y >= brick_x) or (hole_x >= brick_x and
-    hole_y >= brick_z) or (hole_x >= brick_z and hole_y >= brick_x) or (hole_x >= brick_z and hole_y >= brick_y) or \
-    (hole_x >= brick_y and hole_y >= brick_z):
+    if (hole_x >= brick_x and hole_y >= brick_y) or (hole_x >= brick_y and hole_y >= brick_x) or (
+            hole_x >= brick_x and hole_y >= brick_z) or (hole_x >= brick_z and hole_y >= brick_x) or (
+            hole_x >= brick_z and hole_y >= brick_y) or (hole_x >= brick_y and hole_y >= brick_z):
 
         print('ДА')
 

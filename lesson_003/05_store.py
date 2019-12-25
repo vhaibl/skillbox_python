@@ -29,20 +29,6 @@ store = {
         {'quantity': 43, 'price': 97},
     ],
 }
-quantity1 = 0
-for i in goods:
-
-    for k in (store[goods[i]]):
-        item, price, quantity = i, int(k['price']), int(k['quantity'])
-        price_position = price * quantity
-        print(i, '-', quantity, 'шт, стоимость ', price_position, 'руб')
-    quantity1 += quantity
-    price_position += price_position
-    print(quantity1, price_position)
-
-
-
-
 
 # Каждая запись отображает сколько и по какой цене закупалось товаров.
 #
@@ -68,10 +54,11 @@ for i in goods:
 #         подсчет стоимости товара
 #     вывод на консоль количества и стоимости товара на складе
 
-# TODO здесь ваш код
-
-
-
-
-
-
+for i in goods:
+    price_quantity, quantity_total, price_total,  price_position, quantity_total = 0, 0, 0, 0, 0
+    for k in (store[goods[i]]):
+        item, price, quantity = i, k['price'], k['quantity']
+        price_position = price * quantity
+        price_total += price_position
+        quantity_total += quantity
+    print(i, '-', quantity_total, 'шт, стоимость ', price_total, 'руб')

@@ -13,10 +13,11 @@ a = 50
 b = 50
 c = 350
 d = 450
-for rainbow in rainbow_colors:
+for rainbow in rainbow_colors:  # TODO цикл по цветам это отлично
     c += 5
     #    d += 5
-    a += 5
+    a += 5  # TODO А вот тут можно было бы сократить. Вместо a и c увеличивать только a
+    # TODO А вместо c использовать (a + 300)
     #    b += 5
     point1 = sd.get_point(a, b)
     point2 = sd.get_point(c, d)
@@ -31,3 +32,4 @@ for rainbow2 in rainbow_colors:
     radius1 += 20
     circle = sd.circle(center_position=point, width=20, color=rainbow2, radius=radius1)
 sd.pause()
+# В остальном отлично :)

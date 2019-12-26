@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+ m
 # -*- coding: utf-8 -*-
 
 # Есть словарь кодов товаров

@@ -12,10 +12,9 @@
 educational_grant, expenses = 10000, 12000
 month = 1
 sum_expenses = 0
-while month < 11:
+while month < 10:
     sum_expenses += expenses
     expenses = expenses * 1.03
     month += 1
-from_parents = sum_expenses - (educational_grant * month)  # TODO Тут умножение происходит на 11, вместо 10
-# TODO Тк выше, цикл while в последней своей итерации отработал и в конце увеличил month с 10 до 11
+from_parents = sum_expenses - (educational_grant * month)
 print('Студенту надо попросить', round(from_parents, 0), 'рублей')

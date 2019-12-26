@@ -13,14 +13,10 @@ a = 50
 b = 50
 c = 350
 d = 450
-for rainbow in rainbow_colors:  # TODO цикл по цветам это отлично
-    c += 5
-    #    d += 5
-    a += 5  # TODO А вот тут можно было бы сократить. Вместо a и c увеличивать только a
-    # TODO А вместо c использовать (a + 300)
-    #    b += 5
+for rainbow in rainbow_colors:
+    a += 5
     point1 = sd.get_point(a, b)
-    point2 = sd.get_point(c, d)
+    point2 = sd.get_point(a+300, d)
     line = sd.line(start_point=point1, end_point=point2, color=rainbow, width=4, )
 
 # Усложненное задание, делать по желанию.

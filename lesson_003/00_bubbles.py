@@ -50,3 +50,4 @@ for _ in range(101):
     step = random.randint(2, 10)
     bubble(point=point, step=step, color=color)
 sd.pause()
+#зачет!

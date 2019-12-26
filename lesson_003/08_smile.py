@@ -40,3 +40,4 @@ for i in range(10):
     smile(sd.random_color(), sd.random_number(50, 550), sd.random_number(50, 550))
 
 sd.pause()
+#зачет!

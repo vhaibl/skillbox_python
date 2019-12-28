@@ -57,9 +57,11 @@ store = {
 
 for product_name, product_code in goods.items():
     price_quantity, quantity_total, price_total, price_position, quantity_total = 0, 0, 0, 0, 0
-    for product in (store[product_code]):
+    for product in store[product_code]:
         price, quantity = product['price'], product['quantity']
         price_position = price * quantity
         price_total += price_position
         quantity_total += quantity
     print(product_name, '-', quantity_total, 'шт, стоимость ', price_total, 'руб')
+
+#зачет!

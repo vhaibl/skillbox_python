@@ -10,15 +10,16 @@
 user_input = input("Введите, пожалуйста, номер месяца: ")
 month = int(user_input)
 print('Вы ввели', month)
-long = [1,3,5,7,8,10,12]
-short = (4,6,9,11)
+long = [1, 3, 5, 7, 8, 10, 12]
+short = (4, 6, 9, 11)
 feb = 2
 if month in long:
-   print("В этом месяце 31 день")
+    print("В этом месяце 31 день")
 elif month in short:
     print("В этом месяце 30 дней")
-elif month == feb: #знаю что можно было написать month == 2, но решил что лучше если для всех месяцев будут определения
+elif month == feb:
     print("В этом месяце 28 дней")
 else:
     print('Неправильный номер месяца')
 
+#зачет!

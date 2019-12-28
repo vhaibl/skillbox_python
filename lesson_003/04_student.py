@@ -10,11 +10,13 @@
 #   Студенту надо попросить ХХХ.ХХ рублей
 
 educational_grant, expenses = 10000, 12000
-month = 1
+month = 0  # Вы забыли тут поправить единицу на 0 :)
 sum_expenses = 0
-while month < 10:
+while month < 10:  # Поэтому здесь было 9 итераций вместо 10
     sum_expenses += expenses
     expenses = expenses * 1.03
     month += 1
 from_parents = sum_expenses - (educational_grant * month)
 print('Студенту надо попросить', round(from_parents, 0), 'рублей')
+
+#зачет!

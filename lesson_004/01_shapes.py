@@ -26,8 +26,69 @@ import simple_draw as sd
 # sd.get_vector()
 # sd.line()
 # Результат решения см lesson_004/results/exercise_01_shapes.jpg
+def triangle(point, angle, length):
+    v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
+    v1.draw()
+    v2 = sd.get_vector(start_point=v1.end_point, angle=angle + 120, length=length, width=3)
+    v2.draw()
+    v3 = sd.get_vector(start_point=v2.end_point, angle=angle + 240, length=length, width=3)
+    v3.draw()
 
-# TODO здесь ваш код
+def square(point, angle, length):
+    v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
+    v1.draw()
+    v2 = sd.get_vector(start_point=v1.end_point, angle=angle + 90, length=length, width=3)
+    v2.draw()
+    v3 = sd.get_vector(start_point=v2.end_point, angle=angle -180, length=length, width=3)
+    v3.draw()
+    v4 = sd.get_vector(start_point=v3.end_point, angle=angle -90, length=length, width=3)
+    v4.draw()
+
+def penta(point, angle, length):
+    v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
+    v1.draw()
+    v2 = sd.get_vector(start_point=v1.end_point, angle=angle + 72, length=length, width=3)
+    v2.draw()
+    v3 = sd.get_vector(start_point=v2.end_point, angle=angle + 144, length=length, width=3)
+    v3.draw()
+    v4 = sd.get_vector(start_point=v3.end_point, angle=angle + 216, length=length, width=3)
+    v4.draw()
+    v5 = sd.get_vector(start_point=v4.end_point, angle=angle -72, length=length, width=3)
+    v5.draw()
+
+def hexa(point, angle, length):
+    v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
+    v1.draw()
+    v2 = sd.get_vector(start_point=v1.end_point, angle=angle + 60, length=length, width=3)
+    v2.draw()
+    v3 = sd.get_vector(start_point=v2.end_point, angle=angle + 120, length=length, width=3)
+    v3.draw()
+    v4 = sd.get_vector(start_point=v3.end_point, angle=angle + 180, length=length, width=3)
+    v4.draw()
+    v5 = sd.get_vector(start_point=v4.end_point, angle=angle - 120, length=length, width=3)
+    v5.draw()
+    v6 = sd.get_vector(start_point=v5.end_point, angle=angle - 60, length=length, width=3)
+    v6.draw()
+point_triangle = sd.get_point(100, 400)
+angle_triangle = 50
+length_triangle = 100
+triangle(point=point_triangle, angle=angle_triangle, length=length_triangle)
+
+point_square = sd.get_point(100, 100)
+length_square = 100
+angle_square = 0
+square(point=point_square, angle=angle_square,  length=length_square)
+
+point_penta = sd.get_point(400, 100)
+length_penta = 100
+angle_penta = 0
+penta(point=point_penta, angle=angle_penta,  length=length_penta)
+
+point_hexa = sd.get_point(400, 400)
+length_hexa = 100
+angle_hexa = 0
+hexa(point=point_hexa, angle=angle_hexa,  length=length_hexa)
+
 
 # Часть 1-бис.
 # Попробуйте прикинуть обьем работы, если нужно будет внести изменения в этот код.

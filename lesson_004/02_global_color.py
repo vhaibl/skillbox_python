@@ -13,22 +13,23 @@ import simple_draw as sd
 # sd.get_vector()
 # и константы COLOR_RED, COLOR_ORANGE, COLOR_YELLOW, COLOR_GREEN, COLOR_CYAN, COLOR_BLUE, COLOR_PURPLE
 # Результат решения см lesson_004/results/exercise_02_global_color.jpg
-colors = {}
 colors = {'red': sd.COLOR_RED, 'orange': sd.COLOR_ORANGE, 'yellow': sd.COLOR_YELLOW, 'green': sd.COLOR_GREEN,
           'cyan': sd.COLOR_CYAN, 'blue': sd.COLOR_BLUE, 'purple': sd.COLOR_PURPLE}
 print('Возможные цвета:')
-for list in enumerate(colors):
+for list in enumerate(colors):  # выводим словарь цветов
     print(list)
-ar123 = int(0)
-ar123 = (int(input()))
-if 0 < ar123 > 6:
-    print("Неправильное значение")
-    choose_color()
-else:
-    for i in enumerate(colors):
-        if ar123 == i[0]:
-            keyvalue = (i[1])
-            break
+
+usercolor = input("Введите желаемый цвет > ")
+while usercolor.isalpha() or int(usercolor) < 0 or int(usercolor) > 6:  # проверяем корректность ввода
+    print('Вы ввели некорректный номер!')
+    usercolor = input("Введите желаемый цвет > ")
+usercolor = int(usercolor) #переводим в integer
+
+for i in enumerate(colors):  # сравниваем  ввод пользователя со словарем
+    if usercolor == i[0]:  # нашли
+        keyvalue = (i[1])
+        break
+print("Выбран цвет:", keyvalue)
 
 color1 = colors[keyvalue]
 
@@ -100,6 +101,5 @@ point_hexa = sd.get_point(400, 400)
 length_hexa = 100
 angle_hexa = 0
 hexa(point=point_hexa, angle=angle_hexa, length=length_hexa, color=color1)
-# TODO здесь ваш код
 
 sd.pause()

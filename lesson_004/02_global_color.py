@@ -32,6 +32,7 @@ for i in enumerate(colors):  # сравниваем  ввод пользоват
 print("Выбран цвет:", keyvalue)
 
 color1 = colors[keyvalue]
+print(color1)
 
 
 def triangle(point, angle, length, color):

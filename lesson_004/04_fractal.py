@@ -2,6 +2,7 @@
 
 import simple_draw as sd
 
+
 # 1) Написать функцию draw_branches, которая должна рисовать две ветви дерева из начальной точки
 # Функция должна принимать параметры:
 # - точка начала рисования,
@@ -16,8 +17,29 @@ import simple_draw as sd
 #   и параметром "длинна ветвей" в 0.75 меньшей чем длина только что нарисованной ветви
 
 # 3) первоначальный вызов:
-# root_point = get_point(300, 30)
-# draw_bunches(start_point=root_point, angle=90, length=100)
+
+
+def draw_bunches(start_point, angle, length):
+    if length < 10:
+        return
+    angle1 = angle - 30
+    angle2 = angle + 30
+    v1 = sd.get_vector(start_point=start_point, angle=angle1, length=length, width=1)
+    v1.draw(sd.COLOR_GREEN)
+    v2 = sd.get_vector(start_point=start_point, angle=angle2, length=length, width=1)
+    v2.draw(sd.COLOR_GREEN)
+    next_point1 = v1.end_point
+    next_point2 = v2.end_point
+    next_angle1 = angle1 * (1 + (sd.random_number(-40, 40) / 100))          # дублирование
+    next_angle2 = angle2 * (1 + (sd.random_number(-40, 40) / 100))          # для
+    next_length1 = length * 0.75 * (1 + (sd.random_number(-20, 20) / 100))  # большей
+    next_length2 = length * 0.75 * (1 + (sd.random_number(-20, 20) / 100))  # рандомности
+    draw_bunches(start_point=next_point1, angle=next_angle1, length=next_length1)
+    draw_bunches(start_point=next_point2, angle=next_angle2, length=next_length2)
+
+
+root_point = sd.get_point(300, 30)
+draw_bunches(start_point=root_point, angle=90, length=100)
 
 # Пригодятся функции
 # sd.get_point()
@@ -37,5 +59,3 @@ import simple_draw as sd
 # sd.random_number()
 
 sd.pause()
-
-

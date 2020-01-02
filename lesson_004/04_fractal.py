@@ -27,6 +27,9 @@ def draw_bunches(start_point, angle, length):
     v1 = sd.get_vector(start_point=start_point, angle=angle1, length=length, width=1)
     v1.draw(sd.COLOR_GREEN)
     v2 = sd.get_vector(start_point=start_point, angle=angle2, length=length, width=1)
+    # TODO Тут не нужно два вектора рисовать, достаточно одного
+    # TODO А тк в функции вызывается два раза эта же функция, то и будут нарисованы две ветки
+    # TODO рисуем вектор с текущими параметрами, затем рассчитать новые параметры и передать их в вызовы
     v2.draw(sd.COLOR_GREEN)
     next_point1 = v1.end_point
     next_point2 = v2.end_point
@@ -34,6 +37,7 @@ def draw_bunches(start_point, angle, length):
     next_angle2 = angle2 * (1 + (sd.random_number(-40, 40) / 100))          # для
     next_length1 = length * 0.75 * (1 + (sd.random_number(-20, 20) / 100))  # большей
     next_length2 = length * 0.75 * (1 + (sd.random_number(-20, 20) / 100))  # рандомности
+    # TODO Что-то большая рандомность почти всю структуру дерева нарушила)
     draw_bunches(start_point=next_point1, angle=next_angle1, length=next_length1)
     draw_bunches(start_point=next_point2, angle=next_angle2, length=next_length2)
 

@@ -18,6 +18,7 @@ N = 20
 x_list = []
 y_list = []
 size_list= [] # инициализация списков
+# TODO Надо подправить стиль Code/Reformat Code
 for list_create in range(N + 1):
     x_list.append(sd.random_number(10,600))
     y_list.append(sd.random_number(600,1200)) # создание рандомных координат и размеров
@@ -27,6 +28,14 @@ for list_create in range(N + 1):
 while True:
     sd.start_drawing()
     for draw in range(N):
+        # TODO Лучшей практикой будет for i, y in enumerate(список):
+        # TODO Так у вас будет доступ и к индексам (i) и к объектам списка
+        # TODO Сам же алгоритм лучше не разбивать на разные циклы:
+        # TODO циклом проходим по списку со снежинками
+        # TODO     получаем точку из текущих координат
+        # TODO     рисуем снежинку фоном
+        # TODO     меняем координату и получаем новую точку
+        # TODO     рисуем снежинку белым цветом
         if y_list[draw] >= 30:
             y_list[draw] -= sd.random_number(-5, 20)  #снег кружится
             x_list[draw] += sd.random_number(-15, 15) #снег летает
@@ -34,6 +43,10 @@ while True:
             sd.snowflake(center=point, length=size_list[draw], color=sd.COLOR_WHITE)
         else:
             y_list[draw] += sd.random_number(600, 1200) #постоянно не хватает
+        # TODO Попробуйте реализовать следующую идею:
+        # TODO Снежинки, которые дошли до границы - записывайте по индексам в отдельный список
+        # TODO Дальше, после этого цикла, пройдитесь циклом по списку с индексами и удаляйте упавшие снежинки
+        # TODO Только удаляйте не с начала, а с конца (иначе индексы перепутаются)
 
     sd.finish_drawing()
     sd.sleep(0.01)

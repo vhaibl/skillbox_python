@@ -18,7 +18,14 @@ colors = {'red': sd.COLOR_RED, 'orange': sd.COLOR_ORANGE, 'yellow': sd.COLOR_YEL
 print('Возможные цвета:')
 for list in enumerate(colors):  # выводим словарь цветов
     print(list)
-
+# TODO Какие-то сложные махинации для выбора одного цвета
+# TODO В этом случае удобнее создать словарь следующей структуры
+# TODO словарь = {'0': {'color_name': 'red', 'sd_name': sd.COLOR_RED},...}
+# TODO Таким образом для каждого цвета у нас будет свой словарь. И у каждого словаря будут одинаковые ключи
+# TODO 'color_name' и 'sd_name'
+# TODO Тогда можно будет легко проверить ввод (user_input in словарь)
+# TODO А если среди ключей есть выбор пользователя - по этому ключу мы получим нужный вложенный словарь
+# TODO А там все ключи одинаковые, можем получить как название цвета, так и sd_цвет
 usercolor = input("Введите желаемый цвет > ")
 while usercolor.isalpha() or int(usercolor) < 0 or int(usercolor) > 6:  # проверяем корректность ввода
     print('Вы ввели некорректный номер!')
@@ -34,7 +41,8 @@ print("Выбран цвет:", keyvalue)
 color1 = colors[keyvalue]
 print(color1)
 
-
+# TODO Этот "подготовительный" код с определением функций надо поднять вверх, а исполняемый код опустить вниз
+# TODO И такой структуре надо следовать впредь Импорты/Заготовки(функции или классы)/Исполняемый код
 def triangle(point, angle, length, color):
     v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
     v1.draw(color=color)

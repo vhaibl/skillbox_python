@@ -69,6 +69,7 @@ def hexa(point, angle, length):
     v5.draw()
     v6 = sd.get_vector(start_point=v5.end_point, angle=angle - 60, length=length, width=3)
     v6.draw()
+# TODO Не забывайте про стиль - Code/Reformat Code попробуйте применить
 point_triangle = sd.get_point(100, 400)
 angle_triangle = 50
 length_triangle = 100
@@ -89,7 +90,8 @@ length_hexa = 100
 angle_hexa = 0
 hexa(point=point_hexa, angle=angle_hexa,  length=length_hexa)
 
-
+# TODO Можете приступать ко второй части. Только обратите внимание на разрыв между последней и первой стороной фигуры
+# TODO Его надо будет устранить
 # Часть 1-бис.
 # Попробуйте прикинуть обьем работы, если нужно будет внести изменения в этот код.
 # Скажем, связывать точки не линиями, а дугами. Или двойными линиями. Или рисовать круги в угловых точках. Или...

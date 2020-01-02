@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
 
-import simple_draw as sd
-
-
 # На основе кода из практической части реализовать снегопад:
 # - создать списки данных для отрисовки N снежинок
 # - нарисовать падение этих N снежинок
 # - создать список рандомных длинн лучей снежинок (от 10 до 100) и пусть все снежинки будут разные
+import simple_draw as sd
 
 N = 20
 
@@ -17,15 +15,39 @@ N = 20
 # sd.random_number()
 # sd.user_want_exit()
 
-# TODO здесь ваш код
+x_list = []
+y_list = []
+size_list= [] # инициализация списков
+for list_create in range(N + 1):
+    x_list.append(sd.random_number(10,600))
+    y_list.append(sd.random_number(600,1200)) # создание рандомных координат и размеров
+    size_list.append(sd.random_number(10,50)) # для N снежинок
+
+
 while True:
-    sd.clear_screen()
-    pass
-    pass
-    pass
-    sd.sleep(0.1)
+    sd.start_drawing()
+    for draw in range(N):
+        if y_list[draw] >= 30:
+            y_list[draw] -= sd.random_number(-5, 20)  #снег кружится
+            x_list[draw] += sd.random_number(-15, 15) #снег летает
+            point = sd.get_point(x_list[draw], y_list[draw])
+            sd.snowflake(center=point, length=size_list[draw], color=sd.COLOR_WHITE)
+        else:
+            y_list[draw] += sd.random_number(600, 1200) #постоянно не хватает
+
+    sd.finish_drawing()
+    sd.sleep(0.01)
+    sd.start_drawing()
+
+    for clear in range(N):
+        if y_list[clear] >= 31: #Тает, тает, тает снег
+            point2 = sd.get_point(x_list[clear], y_list[clear])
+            sd.snowflake(center=point2, length=size_list[clear], color=sd.background_color)
+# https://mirmagi.ru/news/mr_credo_sneg_letaet_sneg_kruzhitsja/2010-11-13-9637
+# ps: не пропаганда, строки припева к комментариям хорошо подошли)
+    sd.finish_drawing()
     if sd.user_want_exit():
-        break
+         break
 
 sd.pause()
 

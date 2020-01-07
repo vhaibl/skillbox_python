@@ -14,7 +14,7 @@ import simple_draw as sd
 # sd.get_vector()
 # и константы COLOR_RED, COLOR_ORANGE, COLOR_YELLOW, COLOR_GREEN, COLOR_CYAN, COLOR_BLUE, COLOR_PURPLE
 # Результат решения см lesson_004/results/exercise_02_global_color.jpg
-
+# TODO Тут нужно будет скопировать код из 1ого задания, остальное всё хорошо!
 def figure(point, tilt, length, sides):
     angle = 360 // sides
     angle2 = tilt + angle

@@ -12,6 +12,7 @@ import simple_draw as sd
 # figures = {'Треугольник': 'triangle', 'Квадрат': 'square', 'Пятиугольник': 'penta', 'Шестиугольник': 'hexa'}
 
 
+# TODO Тут нужно будет скопировать код из 1ого задания, остальное всё хорошо!
 def figure(point, tilt, length, sides):
     angle = 360 // sides
     angle2 = tilt + angle
@@ -54,13 +55,13 @@ print('Возможные фигуры:')
 for list, name in figures.items():  # выводим словарь фигур
     print(list, name.get('figure'))
 
-userfigure = input("Выберите фигуру > ")
+user_figure = input("Выберите фигуру > ")
 
-while userfigure not in figures:  # проверяем корректность ввода
+while user_figure not in figures:  # проверяем корректность ввода
     print('Вы ввели некорректный номер!')
-    userfigure = input("Выберите фигуру > ")
+    user_figure = input("Выберите фигуру > ")
 
-drawing = figures[userfigure]['sd_name']
+drawing = figures[user_figure]['sd_name']
 tilt = 0
 length = 100
 point = sd.get_point(300, 300)

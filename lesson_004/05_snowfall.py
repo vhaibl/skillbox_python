@@ -20,7 +20,6 @@ for list_create in range(N + 1):
 while True:
     sd.start_drawing()
     for i, y in enumerate(y_list):
-        # print(i, y, x_list[i])
 
         if y_list[i] >= 30:
             point = sd.get_point(x_list[i], y_list[i])
@@ -28,19 +27,12 @@ while True:
             y_list[i] -= sd.random_number(-5, 20)
             x_list[i] += sd.random_number(-15, 15)
             point = sd.get_point(x_list[i], y_list[i])
-            # print(i, y_list[i])
             sd.snowflake(center=point, length=size_list[i], color=sd.COLOR_WHITE)
         else:
-            fallen = []  # TODO Эта строка ничего не меняет
-            fallen = i, y_list[i], x_list[i]  # TODO тк тут эта переменная перезаписывается
-            # TODO (не важно был там выше список или нет)
-            new_list.append(fallen)  # TODO Тут достаточно добавлять только i - индекс упавшей снежинки
-            print("добавлена упавшая снежинка в список", new_list)
-
-            y_list[i] += sd.random_number(600, 1200)  # TODO Увеличивать координату при таком методе не надо
+            new_list.append(i)
+            point1 = sd.get_point(x_list[i], y_list[i])
+            sd.snowflake(center=point1, length=size_list[i], color=sd.background_color)
             sd.user_want_exit()
-            break  # TODO И break тут не нужен - если его оставить, то когда упадёт первая снежинка - он сработает
-            # TODO И прервет цикл, не дав проверить остальные снежинки
 
         # Попробуйте реализовать следующую идею:
         # Снежинки, которые дошли до границы - записывайте по индексам в отдельный список
@@ -48,25 +40,11 @@ while True:
         # Только удаляйте не с начала, а с конца (иначе индексы перепутаются)
     sd.sleep(0.02)
     sd.finish_drawing()
-    for i, y, x in new_list:
-
-        if y <= 30:
-            point1 = sd.get_point(x, y)
-            sd.snowflake(center=point1, length=size_list[i], color=sd.background_color)
-            new_list.pop()  # Я не совсем понял что нужно сделать, в цикле выше добавляю снежинки в список
-                            # В этом их удаляю, но они же там не задерживаются надолго...
-            # TODO Тут нам надо удалить снежинки, по записанным номерам
-            # TODO Как это выглядит:
-            # TODO Снежинки падают -- две из них упали за границу 30 -- появляется список [4, 10]
-            # TODO -- снежинки с этими индексами надо удалить
-            # TODO -- в новом цикле по этому списку for index in new_list
-            # TODO мы удаляем снежинку 10, затем 4 при помощи переменной цикла --> pop(index)
-            # TODO Почему нельзя удалять сперва 4, потом 10?
-            # TODO Удалив 4 - мы сдвигаем все снежинки после неё на -1
-            # TODO и наша снежинка под индексом 10 изменит индекса на 9
-            # TODO перевернуть список можно при помощи reversed() или использовав срез -- список[::-1]
-
-        print("упавшие снежинки удалены", new_list)
+    for index in reversed(new_list):
+        size_list.pop(index)
+        y_list.pop(index)
+        x_list.pop(index)
+        new_list.pop()
 
 sd.pause()
 

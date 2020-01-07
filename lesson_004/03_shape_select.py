@@ -13,15 +13,13 @@ import simple_draw as sd
 
 
 def figure(point, tilt, length, sides):
-    angle = (sides - 2) / sides * 180
-    # print(angle)
+    angle = 360 // sides
     angle2 = tilt + angle
     point1 = point
-    for i in range(sides - 1):
+    for angle_step in range(0, 360 - angle, angle):
         v1 = sd.get_vector(point, angle2, length)
         v1.draw()
-        angle2 += 180 - angle
-        # print(angle, angle2)
+        angle2 -= angle
         point = v1.end_point
     sd.line(point1, point)
 
@@ -57,15 +55,12 @@ for list, name in figures.items():  # выводим словарь фигур
     print(list, name.get('figure'))
 
 userfigure = input("Выберите фигуру > ")
-# TODO Тут можно хитро воспользоваться тем, что input() передает ввод пользователя в строках (str)
-# TODO И ключи у нас в словаре строчные '0'...
-# TODO Можем просто написать условие while ввод не в словаре
-while userfigure.isalpha() or int(userfigure) < 0 or int(userfigure) > 3:  # проверяем корректность ввода
+
+while userfigure not in figures:  # проверяем корректность ввода
     print('Вы ввели некорректный номер!')
     userfigure = input("Выберите фигуру > ")
 
 drawing = figures[userfigure]['sd_name']
-angle = None  # TODO А зачем нужен angle этот?
 tilt = 0
 length = 100
 point = sd.get_point(300, 300)

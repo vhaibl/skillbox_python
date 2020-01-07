@@ -31,15 +31,12 @@ import simple_draw as sd
 
 def figure(point, tilt, length, sides):
     angle = 360 // sides
-    angle2 = tilt + angle  # TODO Вы можете убрать эту строку
     point1 = point
     for angle_step in range(0, 360 - angle, angle):
-        v1 = sd.get_vector(point, angle2, length)
-        # TODO А тут просто указать угол angle_step + tilt вместо angle2
+        v1 = sd.get_vector(point, angle_step + tilt, length)
         v1.draw()
-        angle2 -= angle  # TODO И можно убрать эту
         point = v1.end_point
-    sd.line(point1, point)  # Остальное всё отлично :)
+    sd.line(point1, point)  # Так коротко получилось, впечатлен :) Спасибо!
 
 
 def triangle(point, tilt, length):
@@ -74,7 +71,7 @@ square(point, tilt, length)
 point = sd.get_point(300, 150)
 penta(point, tilt, length)
 
-point = sd.get_point(300, 450)
+point = sd.get_point(300, 400)
 hexa(point, tilt, length)
 #
 #

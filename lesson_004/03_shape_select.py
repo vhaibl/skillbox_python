@@ -12,15 +12,12 @@ import simple_draw as sd
 # figures = {'Треугольник': 'triangle', 'Квадрат': 'square', 'Пятиугольник': 'penta', 'Шестиугольник': 'hexa'}
 
 
-# TODO Тут нужно будет скопировать код из 1ого задания, остальное всё хорошо!
 def figure(point, tilt, length, sides):
     angle = 360 // sides
-    angle2 = tilt + angle
     point1 = point
     for angle_step in range(0, 360 - angle, angle):
-        v1 = sd.get_vector(point, angle2, length)
+        v1 = sd.get_vector(point, angle_step + tilt, length)
         v1.draw()
-        angle2 -= angle
         point = v1.end_point
     sd.line(point1, point)
 

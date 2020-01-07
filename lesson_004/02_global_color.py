@@ -14,15 +14,12 @@ import simple_draw as sd
 # sd.get_vector()
 # и константы COLOR_RED, COLOR_ORANGE, COLOR_YELLOW, COLOR_GREEN, COLOR_CYAN, COLOR_BLUE, COLOR_PURPLE
 # Результат решения см lesson_004/results/exercise_02_global_color.jpg
-# TODO Тут нужно будет скопировать код из 1ого задания, остальное всё хорошо!
 def figure(point, tilt, length, sides):
     angle = 360 // sides
-    angle2 = tilt + angle
     point1 = point
     for angle_step in range(0, 360 - angle, angle):
-        v1 = sd.get_vector(point, angle2, length)
+        v1 = sd.get_vector(point, angle_step + tilt, length)
         v1.draw(color=color1)
-        angle2 -= angle
         point = v1.end_point
     sd.line(point1, point, color=color1)
 
@@ -77,6 +74,6 @@ square(point, tilt, length)
 point = sd.get_point(300, 150)
 penta(point, tilt, length)
 
-point = sd.get_point(300, 450)
+point = sd.get_point(300, 400)
 hexa(point, tilt, length)
 sd.pause()

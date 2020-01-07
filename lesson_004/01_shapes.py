@@ -30,11 +30,13 @@ import simple_draw as sd
 
 
 def figure(point, tilt, length, sides):
-    angle = (sides - 2) / sides * 180
+    angle = (sides - 2) / sides * 180  # TODO Тут можно просто 360 // кол-во сторон
     # print(angle)
     angle2 = tilt + angle
     point1 = point
-    for i in range(sides - 1):
+    for i in range(sides - 1):  # TODO Здесь хорошо бы задать цикл сразу по нужным углам
+        # TODO Например для треугольника это будет выглядеть как-то так for angle_step in range(0, 360 - 120, 120)
+        # TODO -120 нужно для того, чтобы было на одну итерацию меньше, тк последняя сторона рисуется отдельно
         v1 = sd.get_vector(point, angle2, length)
         v1.draw()
         angle2 += 180 - angle
@@ -151,8 +153,6 @@ hexa(point, tilt, length)
 # angle_hexa = 0
 # hexa(point=point_hexa, angle=angle_hexa,  length=length_hexa)
 
-# TODO Можете приступать ко второй части. Только обратите внимание на разрыв между последней и первой стороной фигуры
-# TODO Его надо будет устранить
 # Часть 1-бис.
 # Попробуйте прикинуть обьем работы, если нужно будет внести изменения в этот код.
 # Скажем, связывать точки не линиями, а дугами. Или двойными линиями. Или рисовать круги в угловых точках. Или...

@@ -57,25 +57,19 @@ for list, name in figures.items():  # выводим словарь фигур
     print(list, name.get('figure'))
 
 userfigure = input("Выберите фигуру > ")
-
+# TODO Тут можно хитро воспользоваться тем, что input() передает ввод пользователя в строках (str)
+# TODO И ключи у нас в словаре строчные '0'...
+# TODO Можем просто написать условие while ввод не в словаре
 while userfigure.isalpha() or int(userfigure) < 0 or int(userfigure) > 3:  # проверяем корректность ввода
     print('Вы ввели некорректный номер!')
     userfigure = input("Выберите фигуру > ")
 
 drawing = figures[userfigure]['sd_name']
-angle = None
+angle = None  # TODO А зачем нужен angle этот?
 tilt = 0
 length = 100
 point = sd.get_point(300, 300)
 
 drawing(point, tilt, length)
 
-# if selected_figure == 'hexa':  # в зависимости от содержания selected_figure рисуем фигуру
-#     hexa(point=point, angle=angle, length=length)
-# elif selected_figure == 'penta':
-#     penta(point=point, angle=angle, length=length)
-# elif selected_figure == 'square':
-#     square(point=point, angle=angle, length=length)
-# elif selected_figure == 'triangle':
-#     triangle(point=point, angle=angle, length=length)
 sd.pause()

@@ -15,57 +15,6 @@ import simple_draw as sd
 # и константы COLOR_RED, COLOR_ORANGE, COLOR_YELLOW, COLOR_GREEN, COLOR_CYAN, COLOR_BLUE, COLOR_PURPLE
 # Результат решения см lesson_004/results/exercise_02_global_color.jpg
 
-# def triangle(point, angle, length, color):
-#     v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
-#     v1.draw(color=color)
-#     v2 = sd.get_vector(start_point=v1.end_point, angle=angle + 120, length=length, width=3)
-#     v2.draw(color=color)
-#     v3 = sd.get_vector(start_point=v2.end_point, angle=angle + 240, length=length, width=3)
-#     v3.draw(color=color)
-#
-#
-# def square(point, angle, length, color):
-#     v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
-#     v1.draw(color=color)
-#     v2 = sd.get_vector(start_point=v1.end_point, angle=angle + 90, length=length, width=3)
-#     v2.draw(color=color)
-#     v3 = sd.get_vector(start_point=v2.end_point, angle=angle - 180, length=length, width=3)
-#     v3.draw(color=color)
-#     v4 = sd.get_vector(start_point=v3.end_point, angle=angle - 90, length=length, width=3)
-#     v4.draw(color=color)
-#
-#
-# def penta(point, angle, length, color):
-#     v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
-#     v1.draw(color=color)
-#     v2 = sd.get_vector(start_point=v1.end_point, angle=angle + 72, length=length, width=3)
-#     v2.draw(color=color)
-#     v3 = sd.get_vector(start_point=v2.end_point, angle=angle + 144, length=length, width=3)
-#     v3.draw(color=color)
-#     v4 = sd.get_vector(start_point=v3.end_point, angle=angle + 216, length=length, width=3)
-#     v4.draw(color=color)
-#     v5 = sd.get_vector(start_point=v4.end_point, angle=angle - 72, length=length, width=3)
-#     v5.draw(color=color)
-#
-#
-# def hexa(point, angle, length, color):
-#     v1 = sd.get_vector(start_point=point, angle=angle, length=length, width=3)
-#     v1.draw(color=color)
-#     v2 = sd.get_vector(start_point=v1.end_point, angle=angle + 60, length=length, width=3)
-#     v2.draw(color=color)
-#     v3 = sd.get_vector(start_point=v2.end_point, angle=angle + 120, length=length, width=3)
-#     v3.draw(color=color)
-#     v4 = sd.get_vector(start_point=v3.end_point, angle=angle + 180, length=length, width=3)
-#     v4.draw(color=color)
-#     v5 = sd.get_vector(start_point=v4.end_point, angle=angle - 120, length=length, width=3)
-#     v5.draw(color=color)
-#     v6 = sd.get_vector(start_point=v5.end_point, angle=angle - 60, length=length, width=3)
-#     v6.draw(color=color)
-
-
-# colors = {, 'orange': sd.COLOR_ORANGE, 'yellow': sd.COLOR_YELLOW, 'green': sd.COLOR_GREEN,
-# 'cyan': sd.COLOR_CYAN, 'blue': sd.COLOR_BLUE, 'purple': sd.COLOR_PURPLE}
-
 def figure(point, tilt, length, sides):
     angle = (sides - 2) / sides * 180
     angle2 = tilt + angle
@@ -111,12 +60,15 @@ for number, color in color_list.items():
     print(number, ':', color.get('color_name'))
 
 usercolor = input("Введите желаемый цвет > ")
+# TODO Тут можно хитро воспользоваться тем, что input() передает ввод пользователя в строках (str)
+# TODO И ключи у нас в словаре строчные '0'...
+# TODO Можем просто написать условие while ввод не в словаре
 while usercolor.isalpha() or int(usercolor) < 0 or int(usercolor) > 6:  # проверяем корректность ввода
     print('Вы ввели некорректный номер!')
     usercolor = input("Введите желаемый цвет > ")
 
 color1 = color_list[usercolor]['sd_name']
-angle = None
+angle = None  # TODO Зачем нужен этот angle?
 tilt = 0
 length = 100
 
@@ -131,25 +83,4 @@ penta(point, tilt, length)
 
 point = sd.get_point(500, 400)
 hexa(point, tilt, length)
-
-# point_triangle = sd.get_point(100, 400)
-# angle_triangle = 50
-# length_triangle = 100
-# triangle(point=point_triangle, angle=angle_triangle, length=length_triangle, color=color1)
-#
-# point_square = sd.get_point(100, 100)
-# length_square = 100
-# angle_square = 0
-# square(point=point_square, angle=angle_square, length=length_square, color=color1)
-#
-# point_penta = sd.get_point(400, 100)
-# length_penta = 100
-# angle_penta = 0
-# penta(point=point_penta, angle=angle_penta, length=length_penta, color=color1)
-#
-# point_hexa = sd.get_point(400, 400)
-# length_hexa = 100
-# angle_hexa = 0
-# hexa(point=point_hexa, angle=angle_hexa, length=length_hexa, color=color1)
-
 sd.pause()

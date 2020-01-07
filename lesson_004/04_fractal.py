@@ -52,3 +52,4 @@ sd.finish_drawing()
 # sd.random_number()
 
 sd.pause()
+#зачет!

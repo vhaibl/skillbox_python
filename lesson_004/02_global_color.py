@@ -77,3 +77,5 @@ penta(point, tilt, length)
 point = sd.get_point(300, 400)
 hexa(point, tilt, length)
 sd.pause()
+
+#зачет!

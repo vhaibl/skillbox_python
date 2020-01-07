@@ -171,3 +171,4 @@ hexa(point, tilt, length)
 
 
 sd.pause()
+#зачет!

@@ -66,3 +66,5 @@ point = sd.get_point(300, 300)
 drawing(point, tilt, length)
 
 sd.pause()
+
+#зачет!

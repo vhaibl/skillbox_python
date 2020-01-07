@@ -2,6 +2,7 @@
 
 import simple_draw as sd
 
+
 # Часть 1.
 # Написать функции рисования равносторонних геометрических фигур:
 # - треугольника
@@ -28,25 +29,55 @@ import simple_draw as sd
 # Результат решения см lesson_004/results/exercise_01_shapes.jpg
 
 
-def figure(point, angle, length, sides):
-    n = sides
-    angle = (n - 2) / n * 180
-    new_angle = 0 + angle
+def figure(point, tilt, length, sides):
+    angle = (sides - 2) / sides * 180
+    # print(angle)
+    angle2 = tilt + angle
     point1 = point
-    for _ in range(0, n - 1):
-        v1 = sd.get_vector(point, new_angle, length, 5)
+    for i in range(sides - 1):
+        v1 = sd.get_vector(point, angle2, length)
         v1.draw()
-        new_angle += 180 - angle
+        angle2 += 180 - angle
+        # print(angle, angle2)
         point = v1.end_point
-    sd.line(point1, point, width=5)
+    sd.line(point1, point)
 
 
+def triangle(point, tilt, length):
+    sides = 3
+    figure(point, tilt, length, sides)
 
-point = sd.get_point(300, 300)
-angle = 50
+
+def square(point, tilt, length):
+    sides = 4
+    figure(point, tilt, length, sides)
+
+
+def penta(point, tilt, length):
+    sides = 5
+    figure(point, tilt, length, sides)
+
+
+def hexa(point, tilt, length):
+    sides = 6
+    figure(point, tilt, length, sides)
+
+
+angle = None
+tilt = 0
 length = 100
-sides = 5
-figure(point=point, angle=angle, length=length, sides=3)
+
+point = sd.get_point(150, 400)
+triangle(point, tilt, length)
+
+point = sd.get_point(200, 100)
+square(point, tilt, length)
+
+point = sd.get_point(500, 100)
+penta(point, tilt, length)
+
+point = sd.get_point(500, 400)
+hexa(point, tilt, length)
 #
 #
 # def triangle(point, angle, length,):
@@ -100,7 +131,6 @@ figure(point=point, angle=angle, length=length, sides=3)
 #     v5.draw()
 #     v6 = sd.get_vector(start_point=v5.end_point, angle=angle - 60, length=length-1, width=3)
 #     v6.draw()
-# # TODO Не забывайте про стиль - Code/Reformat Code попробуйте применить
 # point_triangle = sd.get_point(100, 400)
 # angle_triangle = 50
 # length_triangle = 100

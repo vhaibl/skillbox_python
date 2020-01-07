@@ -8,59 +8,52 @@ import simple_draw as sd
 
 N = 20
 
-# Пригодятся функции
-# sd.get_point()
-# sd.snowflake()
-# sd.sleep()
-# sd.random_number()
-# sd.user_want_exit()
-
 x_list = []
 y_list = []
-size_list= [] # инициализация списков
-# TODO Надо подправить стиль Code/Reformat Code
+size_list = []  # инициализация списков
+new_list = []
 for list_create in range(N + 1):
-    x_list.append(sd.random_number(10,600))
-    y_list.append(sd.random_number(600,1200)) # создание рандомных координат и размеров
-    size_list.append(sd.random_number(10,50)) # для N снежинок
-
+    x_list.append(sd.random_number(10, 600))
+    y_list.append(sd.random_number(600, 1200))  # создание рандомных координат и размеров
+    size_list.append(sd.random_number(10, 50))  # для N снежинок
 
 while True:
     sd.start_drawing()
-    for draw in range(N):
-        # TODO Лучшей практикой будет for i, y in enumerate(список):
-        # TODO Так у вас будет доступ и к индексам (i) и к объектам списка
-        # TODO Сам же алгоритм лучше не разбивать на разные циклы:
-        # TODO циклом проходим по списку со снежинками
-        # TODO     получаем точку из текущих координат
-        # TODO     рисуем снежинку фоном
-        # TODO     меняем координату и получаем новую точку
-        # TODO     рисуем снежинку белым цветом
-        if y_list[draw] >= 30:
-            y_list[draw] -= sd.random_number(-5, 20)  #снег кружится
-            x_list[draw] += sd.random_number(-15, 15) #снег летает
-            point = sd.get_point(x_list[draw], y_list[draw])
-            sd.snowflake(center=point, length=size_list[draw], color=sd.COLOR_WHITE)
+    for i, y in enumerate(y_list):
+        # print(i, y, x_list[i])
+
+        if y_list[i] >= 30:
+            point = sd.get_point(x_list[i], y_list[i])
+            sd.snowflake(center=point, length=size_list[i], color=sd.background_color)
+            y_list[i] -= sd.random_number(-5, 20)
+            x_list[i] += sd.random_number(-15, 15)
+            point = sd.get_point(x_list[i], y_list[i])
+            # print(i, y_list[i])
+            sd.snowflake(center=point, length=size_list[i], color=sd.COLOR_WHITE)
         else:
-            y_list[draw] += sd.random_number(600, 1200) #постоянно не хватает
+            fallen = []
+            fallen = i, y_list[i], x_list[i]
+            new_list.append(fallen)
+            print("добавлена упавшая снежинка в список", new_list)
+
+            y_list[i] += sd.random_number(600, 1200)
+            sd.user_want_exit()
+            break
         # TODO Попробуйте реализовать следующую идею:
         # TODO Снежинки, которые дошли до границы - записывайте по индексам в отдельный список
         # TODO Дальше, после этого цикла, пройдитесь циклом по списку с индексами и удаляйте упавшие снежинки
         # TODO Только удаляйте не с начала, а с конца (иначе индексы перепутаются)
-
+    sd.sleep(0.02)
     sd.finish_drawing()
-    sd.sleep(0.01)
-    sd.start_drawing()
+    for i, y, x in new_list:
 
-    for clear in range(N):
-        if y_list[clear] >= 31: #Тает, тает, тает снег
-            point2 = sd.get_point(x_list[clear], y_list[clear])
-            sd.snowflake(center=point2, length=size_list[clear], color=sd.background_color)
-# https://mirmagi.ru/news/mr_credo_sneg_letaet_sneg_kruzhitsja/2010-11-13-9637
-# ps: не пропаганда, строки припева к комментариям хорошо подошли)
-    sd.finish_drawing()
-    if sd.user_want_exit():
-         break
+        if y <= 30:
+            point1 = sd.get_point(x, y)
+            sd.snowflake(center=point1, length=size_list[i], color=sd.background_color)
+            new_list.pop()  # TODO Я не совсем понял что нужно сделать, в цикле выше добавляю снежинки в список
+                            # TODO В этом их удаляю, но они же там не задерживаются надолго...
+
+        print("упавшие снежинки удалены", new_list)
 
 sd.pause()
 
@@ -78,5 +71,3 @@ sd.pause()
 # - сделать сугоб внизу экрана - если снежинка долетает до низа, оставлять её там,
 #   и добавлять новую снежинку
 # Результат решения см https://youtu.be/XBx0JtxHiLg
-
-

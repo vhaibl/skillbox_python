@@ -20,18 +20,16 @@ import simple_draw as sd
 
 
 def draw_bunches(start_point, angle, length):
-    if length < 3:
+    if length < 10:
         return
-    angle1 = angle - 30
-    angle2 = angle + 30
     v1 = sd.get_vector(start_point=start_point, angle=angle, length=length, width=1)
     v1.draw(sd.COLOR_GREEN)
-    next_angle1 = angle1 * (1 + (sd.random_number(-40, 40) / 100))
-    next_angle2 = angle2 * (1 + (sd.random_number(-40, 40) / 100))
+    angle1 = (angle - 30) * (1 + (sd.random_number(-40, 40) / 100))
+    angle2 = (angle + 30) * (1 + (sd.random_number(-40, 40) / 100))
     next_point = v1.end_point
     next_length = length * 0.75 * (1 + (sd.random_number(-20, 20) / 100))
-    draw_bunches(start_point=next_point, angle=next_angle1, length=next_length)
-    draw_bunches(start_point=next_point, angle=next_angle2, length=next_length)
+    draw_bunches(start_point=next_point, angle=angle1, length=next_length)
+    draw_bunches(start_point=next_point, angle=angle2, length=next_length)
 
 
 root_point = sd.get_point(300, 30)

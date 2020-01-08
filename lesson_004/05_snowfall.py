@@ -44,7 +44,7 @@ while True:
         size_list.pop(index)
         y_list.pop(index)
         x_list.pop(index)
-    new_list = []  # Только вот тут) а то только мы пойдём по списку - и сразу его очистим
+    new_list = [] 
 
 sd.pause()
 

@@ -1,5 +1,27 @@
 # -*- coding: utf-8 -*-
 
+import simple_draw as sd
+import picture.tree
+import picture.sky
+sd.resolution = (1200,800)
+
+def tree():
+    root_point = sd.get_point(900, 30)
+    color = sd.COLOR_DARK_YELLOW
+    sd.start_drawing()
+    picture.tree.draw_bunches(start_point=root_point, angle=90, length=80, color=color)
+    sd.finish_drawing()
+def tree2():
+    root_point = sd.get_point(1100, 00)
+    color = sd.COLOR_DARK_RED
+    sd.start_drawing()
+    picture.tree.draw_bunches(start_point=root_point, angle=90, length=50, color=color)
+    sd.finish_drawing()
+
+tree()
+tree2()
+picture.sky.rainbow()
+picture.sky.sun2()
 # Создать пакет, в который скопировать функции отрисовки из предыдущего урока
 #  - радуги
 #  - стены
@@ -24,3 +46,4 @@
 # Анимировать картину.
 # Пусть слева идет снегопад, радуга переливается цветами, смайлик моргает, солнце крутит лучами, етс.
 # Задержку в анимировании все равно надо ставить, пусть даже 0.01 сек - так библиотека устойчивей работает.
+sd.pause()

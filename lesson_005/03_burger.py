@@ -16,3 +16,12 @@
 # Если не хватает инградиентов - создать соответствующие функции в модуле my_burger
 
 # TODO здесь ваш код
+import my_burger
+
+my_burger.buns()
+my_burger.cutlets()
+my_burger.onion()
+my_burger.cucumber()
+my_burger.tomato()
+my_burger.cheese()
+my_burger.mayo()

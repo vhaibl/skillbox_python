@@ -1,31 +1,46 @@
 # -*- coding: utf-8 -*-
 
 import simple_draw as sd
-import picture.tree
-import picture.sky
-import picture.house
-import picture.redneck
+from picture.tree import draw_bunches
+from picture.sky import sun
+from picture.sky import rainbow
+from picture.house import house
+from picture.redneck import smile
+from picture.snowfall import snowfall
 sd.resolution = (1200,800)
 
 def tree():
     root_point = sd.get_point(900, 30)
     color = sd.COLOR_DARK_YELLOW
-    sd.start_drawing()
-    picture.tree.draw_bunches(start_point=root_point, angle=90, length=80, color=color)
-    sd.finish_drawing()
+   # sd.start_drawing()
+    draw_bunches(start_point=root_point, angle=90, length=80, color=color)
+
+    #sd.finish_drawing()
 def tree2():
     root_point = sd.get_point(1100, 00)
     color = sd.COLOR_DARK_RED
-    sd.start_drawing()
-    picture.tree.draw_bunches(start_point=root_point, angle=90, length=50, color=color)
-    sd.finish_drawing()
+   # sd.start_drawing()
+    draw_bunches(start_point=root_point, angle=90, length=50, color=color)
+   # sd.finish_drawing()
 
-tree()
-tree2()
-picture.sky.rainbow()
-picture.sky.sun2()
-picture.house.house()
-picture.redneck.smile(color=sd.COLOR_DARK_YELLOW, x=550,  y=200)
+sd.clear_screen()
+while True:
+
+    sd.start_drawing()
+    tree_clear = sd.get_point(700, 0)
+    sd.square(tree_clear, side=550, color=sd.background_color, width=0)
+    tree()
+    tree2()
+    house()
+    rainbow()
+    sun()
+    smile(color=sd.COLOR_DARK_YELLOW, x=550,  y=200)
+    #picture.snowfall.animate = 200
+    snowfall()
+
+    sd.finish_drawing()
+    sd.sleep(0.01)
+
 # Создать пакет, в который скопировать функции отрисовки из предыдущего урока
 #  - радуги
 #  - стены

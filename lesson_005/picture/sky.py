@@ -10,8 +10,10 @@ def rainbow():
         radius1 += 20
         circle = sd.circle(center_position=point, width=20, color=rainbow2, radius=radius1)
 
-def sun2():
+def sun():
     start = sd.get_point(100, 700)
     sd.circle(start, 50, sd.COLOR_YELLOW, 50)
+
     for i in range(0, 360, 30):
         sd.vector(start, i, 100, sd.COLOR_YELLOW, 5)
+

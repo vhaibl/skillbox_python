@@ -3,6 +3,8 @@
 import simple_draw as sd
 import picture.tree
 import picture.sky
+import picture.house
+import picture.redneck
 sd.resolution = (1200,800)
 
 def tree():
@@ -22,6 +24,8 @@ tree()
 tree2()
 picture.sky.rainbow()
 picture.sky.sun2()
+picture.house.house()
+picture.redneck.smile(color=sd.COLOR_DARK_YELLOW, x=550,  y=200)
 # Создать пакет, в который скопировать функции отрисовки из предыдущего урока
 #  - радуги
 #  - стены

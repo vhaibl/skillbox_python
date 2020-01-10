@@ -6,7 +6,10 @@ from picture.sky import sun
 from picture.sky import rainbow
 from picture.house import house
 from picture.redneck import smile
+from picture.redneck import smile2
 from picture.snowfall import snowfall
+
+
 sd.resolution = (1200,800)
 
 def tree():
@@ -24,8 +27,9 @@ def tree2():
    # sd.finish_drawing()
 
 sd.clear_screen()
+counter = 0
 while True:
-
+    counter += 1
     sd.start_drawing()
     tree_clear = sd.get_point(700, 0)
     sd.square(tree_clear, side=550, color=sd.background_color, width=0)
@@ -34,13 +38,18 @@ while True:
     house()
     rainbow()
     sun()
-    smile(color=sd.COLOR_DARK_YELLOW, x=550,  y=200)
-    #picture.snowfall.animate = 200
+
+    if counter % 5:
+        smile2(color=sd.COLOR_DARK_YELLOW, x=550, y=200)
+    else:
+        smile(color=sd.COLOR_DARK_YELLOW, x=550,  y=200)
+
     snowfall()
 
     sd.finish_drawing()
     sd.sleep(0.01)
-
+    if counter > 100: counter = 0
+    print (counter)
 # Создать пакет, в который скопировать функции отрисовки из предыдущего урока
 #  - радуги
 #  - стены

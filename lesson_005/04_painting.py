@@ -12,7 +12,7 @@ from picture.snowfall import snowfall
 
 
 sd.resolution = (1200,800)
-
+# TODO В этом модуле должны остаться только вызовы функций - весь остальной код в пакет отправить
 def tree():
     root_point = sd.get_point(900, 30)
     color = sd.COLOR_DARK_YELLOW
@@ -30,6 +30,7 @@ def tree2():
 sd.clear_screen()
 counter = 0
 while True:
+    # TODO Это же касается и этого кода (оставляем только вызовы функций)
     counter += 1
     sd.start_drawing()
     tree_clear = sd.get_point(700, 0)
@@ -37,7 +38,11 @@ while True:
     tree()
     tree2()
     house()
-    rainbow() # TODO Вообще не понимаю, как анимировать радугу(
+    rainbow()
+    # TODO Что касается радуги - надо добавить какой-то изменяемый элемент в функцию,
+    # TODO Например обращать список цветов список = список[::-1]
+    # TODO Тогда при каждом вызове мы будем рисовать то правильную радугу, то обратнную
+    # TODO Можно и какое-то изменение посложнее придумать
 
     if counter % 3:
         sun_clear = sd.get_point(000, 600)
@@ -57,6 +62,8 @@ while True:
 
     sd.finish_drawing()
     sd.sleep(0.01)
+
+    # TODO И ещё не забывайте про Code/Reformat Code)
     if counter > 100: counter = 0
     print (counter)
 # Создать пакет, в который скопировать функции отрисовки из предыдущего урока

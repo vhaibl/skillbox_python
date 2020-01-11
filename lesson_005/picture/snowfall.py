@@ -8,7 +8,7 @@ size_list = []  # инициализация списков
 new_list = []
 for list_create in range(N + 1):
     x_list.append(sd.random_number(10, 250))
-    y_list.append(sd.random_number(500, 600))  # создание рандомных координат и размеров
+    y_list.append(sd.random_number(600, 1200))  # создание рандомных координат и размеров
     size_list.append(sd.random_number(10, 50))  # для N снежинок
 
 
@@ -26,7 +26,7 @@ def snowfall():
             point = sd.get_point(x_list[i], y_list[i])
             sd.snowflake(center=point, length=size_list[i], color=sd.COLOR_WHITE)
         else:
-            y_list[i] += sd.random_number(500,600)
+            y_list[i] += sd.random_number(600,1200)
             # new_list.append(i)
             # point1 = sd.get_point(x_list[i], y_list[i])
             # sd.snowflake(center=point1, length=size_list[i], color=sd.background_color)

@@ -25,22 +25,17 @@ def rainbow():
 
 def sun():
     start = sd.get_point(100, 700)
+
     sd.circle(start, 50, sd.COLOR_YELLOW, 50)
 
     for i in range(0, 360, 30):
         sd.vector(start, i, 100, sd.COLOR_YELLOW, 5)
 
-# def rainbow2():
-#     radius1 = 400
-#     color = 0
-#     while True:
-#         for color in color_list[str(color)]['sd_name']:
-#             point = sd.get_point(1200, 1100)
-#             radius1 += 20
-#             color += 1
-#             circle = sd.circle(center_position=point, width=20, color=color, radius=radius1)
-sd.resolution = (1200,800)
-#rainbow()
-for element in enumerate(rainbow_colors):
-    if element > 4:
+def sun2():
+    start = sd.get_point(100, 700)
+
+    sd.circle(start, 50, sd.COLOR_YELLOW, 50)
+
+    for i in range(0, 360, 30):
+        sd.vector(start, i+15, 100, sd.COLOR_YELLOW, 5)
 

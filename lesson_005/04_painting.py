@@ -3,6 +3,7 @@
 import simple_draw as sd
 from picture.tree import draw_bunches
 from picture.sky import sun
+from picture.sky import sun2
 from picture.sky import rainbow
 from picture.house import house
 from picture.redneck import smile
@@ -36,9 +37,17 @@ while True:
     tree()
     tree2()
     house()
-    rainbow()
-    sun()
+    rainbow() # TODO Вообще не понимаю, как анимировать радугу(
 
+    if counter % 3:
+        sun_clear = sd.get_point(000, 600)
+        sd.square(sun_clear, side=220, color=sd.background_color, width=0)
+        sun()
+
+    else:
+        sun_clear = sd.get_point(000, 600)
+        sd.square(sun_clear, side=220, color=sd.background_color, width=0)
+        sun2()
     if counter % 5:
         smile2(color=sd.COLOR_DARK_YELLOW, x=550, y=200)
     else:
@@ -68,7 +77,7 @@ while True:
 # пример см. lesson_005/results/04_painting.jpg
 # Приправить своей фантазией по вкусу (коты? коровы? люди? трактор? что придумается)
 
-# TODO здесь ваш код
+
 
 # Усложненное задание (делать по желанию)
 # Анимировать картину.

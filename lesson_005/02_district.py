@@ -3,23 +3,14 @@
 # Формат вывода: На районе живут ...
 # подсказка: для вывода элементов списка через запятую можно использовать функцию строки .join()
 # https://docs.python.org/3/library/stdtypes.html#str.join
-import district.central_street.house1.room1
-import district.central_street.house1.room2
-import district.central_street.house2.room1
-import district.central_street.house2.room2
-import district.soviet_street.house1.room1
-import district.soviet_street.house1.room2
-import district.soviet_street.house2.room1
-import district.soviet_street.house2.room2
-# TODO Здесь как раз заметнее нужда в конкретном импорте (from ... import ... as)
-# TODO Далее вместо join к каждому отдельному списку - стоит сперва сложить все списки, а затем уже сделать Join
-residents = ', '.join(district.central_street.house1.room1.folks) + ', ' + ', '.join(
-    district.central_street.house1.room2.folks) + ', ' + ', '.join(
-    district.central_street.house2.room1.folks) + ', ' + ', '.join(
-    district.central_street.house2.room2.folks) + ', ' + ', '.join(
-    district.soviet_street.house1.room1.folks) + ', ' + ', '.join(
-    district.soviet_street.house1.room2.folks) + ', ' + ', '.join(
-    district.soviet_street.house2.room1.folks) + ', ' + ', '.join(district.soviet_street.house2.room2.folks)
+from district.central_street.house1.room1 import folks as ch1r1
+from district.central_street.house1.room2 import folks as ch1r2
+from district.central_street.house2.room1 import folks as ch2r1
+from district.central_street.house2.room2 import folks as ch2r2
+from district.soviet_street.house1.room1 import folks as sh1r1
+from district.soviet_street.house1.room2 import folks as sh1r2
+from district.soviet_street.house2.room1 import folks as sh2r1
+from district.soviet_street.house2.room2 import folks as sh2r2
 
-print(residents)
-# TODO здесь ваш код
+residents = ch1r1 + ch1r2 + ch2r1 + ch2r2 + sh1r1 + sh1r2 + sh2r1 + sh2r2
+print(', '.join(residents))

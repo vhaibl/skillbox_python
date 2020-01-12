@@ -13,9 +13,8 @@ for list_create in range(N + 1):
 
 
 def snowfall():
-
-    #while True:
-    #sd.start_drawing()
+    # while True:
+    # sd.start_drawing()
     for i, y in enumerate(y_list):
 
         if y_list[i] >= 30:
@@ -26,7 +25,7 @@ def snowfall():
             point = sd.get_point(x_list[i], y_list[i])
             sd.snowflake(center=point, length=size_list[i], color=sd.COLOR_WHITE)
         else:
-            y_list[i] += sd.random_number(600,1200)
+            y_list[i] += sd.random_number(600, 1200)
             # new_list.append(i)
             # point1 = sd.get_point(x_list[i], y_list[i])
             # sd.snowflake(center=point1, length=size_list[i], color=sd.background_color)
@@ -36,8 +35,8 @@ def snowfall():
         # Снежинки, которые дошли до границы - записывайте по индексам в отдельный список
         # Дальше, после этого цикла, пройдитесь циклом по списку с индексами и удаляйте упавшие снежинки
         # Только удаляйте не с начала, а с конца (иначе индексы перепутаются)
-    #sd.sleep(0.02)
-    #sd.finish_drawing()
+    # sd.sleep(0.02)
+    # sd.finish_drawing()
     # for index in reversed(new_list):
     #     size_list.pop(index)
     #     y_list.pop(index)

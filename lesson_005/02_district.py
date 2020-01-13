@@ -14,3 +14,4 @@ from district.soviet_street.house2.room2 import folks as sh2r2
 
 residents = ch1r1 + ch1r2 + ch2r1 + ch2r2 + sh1r1 + sh1r2 + sh2r1 + sh2r2
 print(', '.join(residents))
+#зачет!

@@ -17,7 +17,8 @@ sd.clear_screen()
 counter = 0
 r_counter = 0
 while True:
-    # TODO Общий цикл и счетчик тоже надо в пакет засунуть?
+    # Общий цикл и счетчик тоже надо в пакет засунуть?
+    # TODO общий цикл нет, а вот счётчики можно попробовать
     counter += 1
     r_counter += 1
     sd.start_drawing()
@@ -30,8 +31,17 @@ while True:
     sd.finish_drawing()
 
     rainbow(r_counter)
-    if r_counter >= 7: r_counter = 0
-    if counter > 100: counter = 0
+    if r_counter >= 7:  # TODO Это можно хитро записать при помощи тернарного оператора
+        # TODO счётчик = 0 if условие else счётчик + 1
+        # TODO Это будет равносильно записи
+        # if условие
+        #     счётчик = 0
+        # else
+        #     счётчик = счётчик + 1
+        r_counter = 0
+    if counter > 100:
+        counter = 0
+# TODO А так - красота! :)
 # Создать пакет, в который скопировать функции отрисовки из предыдущего урока
 #  - радуги
 #  - стены

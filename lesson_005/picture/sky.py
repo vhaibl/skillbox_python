@@ -18,21 +18,20 @@ rainbow_colors = (sd.COLOR_RED, sd.COLOR_ORANGE, sd.COLOR_YELLOW, sd.COLOR_GREEN
 #                   '4': {'color_name': 'cyan', 'sd_name': sd.COLOR_DARK_CYAN},
 #                   '5': {'color_name': 'blue', 'sd_name': sd.COLOR_DARK_BLUE},
 #                   '6': {'color_name': 'purple', 'sd_name': sd.COLOR_DARK_PURPLE}}
-def rainbow():
-    for x in range(len(rainbow_colors)):
-        radius1 = 400
-        for color in rainbow_colors[x:]:
-            sd.start_drawing()
-            point = sd.get_point(1200, 1100)
-            radius1 += 20
-            circle = sd.circle(center_position=point, width=20, color=color, radius=radius1)
-            sd.finish_drawing()
-        for color in rainbow_colors[:x]:
-            sd.start_drawing()
-            point = sd.get_point(1200, 1100)
-            radius1 += 20
-            circle = sd.circle(center_position=point, width=20, color=color, radius=radius1)
-            sd.finish_drawing()
+def rainbow(r_counter):
+    radius1 = 400
+    for color in rainbow_colors[r_counter:]:
+        sd.start_drawing()
+        point = sd.get_point(1200, 1100)
+        radius1 += 20
+        circle = sd.circle(center_position=point, width=20, color=color, radius=radius1)
+        sd.finish_drawing()
+    for color in rainbow_colors[:r_counter]:
+        sd.start_drawing()
+        point = sd.get_point(1200, 1100)
+        radius1 += 20
+        circle = sd.circle(center_position=point, width=20, color=color, radius=radius1)
+        sd.finish_drawing()
     sd.sleep(0.01)
 
 

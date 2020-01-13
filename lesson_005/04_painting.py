@@ -15,9 +15,11 @@ sd.resolution = (1200, 800)
 
 sd.clear_screen()
 counter = 0
+r_counter = 0
 while True:
     # TODO Общий цикл и счетчик тоже надо в пакет засунуть?
     counter += 1
+    r_counter += 1
     sd.start_drawing()
     tree()
     tree2()
@@ -27,9 +29,8 @@ while True:
     snowfall()
     sd.finish_drawing()
 
-    rainbow()  # TODO по радуге пока не понятно, как сделать так, чтобы все цвета полностью не перебирались за
-    # TODO один проход общего цикла
-
+    rainbow(r_counter)
+    if r_counter >= 7: r_counter = 0
     if counter > 100: counter = 0
 # Создать пакет, в который скопировать функции отрисовки из предыдущего урока
 #  - радуги

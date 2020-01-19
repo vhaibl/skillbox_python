@@ -15,10 +15,11 @@ import simple_draw as sd
 
 # создать_снежинки(N)
 while True:
-    #  нарисовать_снежинки_цветом(color=sd.background_color)
-    #  сдвинуть_снежинки()
-    #  нарисовать_снежинки_цветом(color)
+    clear_snowflakes()#  нарисовать_снежинки_цветом(color=sd.background_color)
+    move_snowflakes()#  сдвинуть_снежинки()
+    draw_snowflakes()#  нарисовать_снежинки_цветом(color)
     #  если есть номера_достигших_низа_экрана() то
+
     #       удалить_снежинки(номера)
     #       создать_снежинки(count)
     sd.sleep(0.1)

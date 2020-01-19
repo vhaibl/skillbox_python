@@ -36,10 +36,8 @@
 #       результат быков/коров выводится на консоль
 #  когда игрок угадал таки число - показать количество ходов и вопрос "Хотите еще партию?"
 #
-from mastermind_engine import validator
 
-user2 = validator()
-print(user2, user2, user2)
+
 # При написании кода учитывайте, что движок игры никак не должен взаимодействовать с пользователем.
 # Все общение с пользователем делать в текущем модуле. Представьте, что движок игры могут использовать
 # разные клиенты - веб, чатбот, приложение, етс - они знают как спрашивать и отвечать пользователю.
@@ -47,4 +45,44 @@ print(user2, user2, user2)
 # Это пример применения SOLID принципа (см https://goo.gl/GFMoaI) в архитектуре программ.
 # Точнее, в этом случае важен принцип единственной ответственности - https://goo.gl/rYb3hT
 
-# TODO здесь ваш код...
+from mastermind_engine import make_a_number, guess_a_number, MAX_SYMBOLS
+import mastermind_engine as me
+
+
+def validator():
+    global userinput
+    userinput = input("Угадай число:")
+
+    if len(userinput) != MAX_SYMBOLS:
+        print('Ошибка! Неверное количество символов')
+        validator()
+    elif sorted(userinput) != sorted(set(userinput)):
+        print('Ошибка! Есть одинаковые цифры')
+        validator()
+    elif userinput.isdigit() == False:
+        print('Ошибка! Введены не цифровые данные')
+        validator()
+    else:
+        userinput = [int(i) for i in str(userinput)]
+
+    return userinput
+
+
+def game():
+    me.won = 0
+    make_a_number()
+
+    while me.won == 0:
+        validator()
+        guess_a_number(userinput)
+        if me.won == 1:
+            print("Поздравляю с победой!")
+            if str(input('Введи цифру 1, если хочешь попробовать еще раз:')) == '1':
+                game()
+            else:
+                break
+        else:
+            print("Коровы: " + str(me.cow) + " Быки: " + str(me.bull))
+
+
+game()

@@ -1,24 +1,31 @@
-# Составить отдельный модуль mastermind_engine, реализующий функциональность игры.
-# В этом модуле нужно реализовать функции:
-#   загадать_число()
-#   проверить_число(NN) - возвращает словарь {'bulls': N, 'cows': N}
-# Загаданное число хранить в глобальной переменной.
-# Обратите внимание, что строки - это список символов.
+import random
+
+won = 0
 MAX_SYMBOLS = 4
+
+number = None
+
+
 def make_a_number():
-    pass
+    global number
+    number = []
+    while len(set(number)) < MAX_SYMBOLS or number[0] == 0:
+        number = [random.randint(0, 9) for n in range(MAX_SYMBOLS)]
+    print(number)
+    return number
 
-def guess_a_number():
-    pass
 
-def validator():
-    global userinput
-    userinput = input("загадай четырехзначное число с уникальными цифрами:")
+def guess_a_number(userinput):
+    if number == userinput:
+        global won, cow, bull
+        won = 1
+        return won
+    else:
+        cow = 0
+        bull = 0
 
-    if len(userinput) != MAX_SYMBOLS:
-        print('Ошибка! Неверное количество символов')
-        validator()
-    elif sorted(userinput) != sorted(set(userinput)):
-        print('Есть одинаковые')
-        validator()
-    return userinput
+        for x in range(0, MAX_SYMBOLS):
+            if userinput[x] == number[x]:
+                bull += 1
+            elif userinput[x] in number:
+                cow += 1

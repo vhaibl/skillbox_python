@@ -16,14 +16,14 @@ def make_a_number():
 
 
 def guess_a_number(userinput):
-    if number == userinput:
-        global won, cow, bull
-        won = 1
+    if number == userinput:  # TODO Вот тут интересный момент. Это частный случай при проверке
+        global won, cow, bull  # TODO Если с его помощью мы избегаем длительных вычислений - то оправдать
+        won = 1  # TODO Такое действие можно...
         return won
     else:
         cow = 0
-        bull = 0
-
+        bull = 0  # TODO ...НО. Если мы можем убрать проверку на частный случай и делать вывод на основе
+        # TODO количества посчитанных быков - лучше так и поступить. Код станет меньше и понятнее.
         for x in range(0, MAX_SYMBOLS):
             if userinput[x] == number[x]:
                 bull += 1

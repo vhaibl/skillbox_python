@@ -49,9 +49,9 @@ from mastermind_engine import make_a_number, guess_a_number, MAX_SYMBOLS
 import mastermind_engine as me
 
 
-def validator():
+def validator():  # TODO Нэйминг. Для функция надо использовать глаголы
     global userinput
-    userinput = input("Угадай число:")
+    userinput = input("Угадай число:")  # TODO Нэйминг опять :) юзер_инпут. Пробелы делают слова понятнее)
 
     if len(userinput) != MAX_SYMBOLS:
         print('Ошибка! Неверное количество символов')
@@ -59,12 +59,13 @@ def validator():
     elif sorted(userinput) != sorted(set(userinput)):
         print('Ошибка! Есть одинаковые цифры')
         validator()
-    elif userinput.isdigit() == False:
+    elif userinput.isdigit() == False:  # TODO Сравнение с True/False/None лучше производить через is
+        # TODO Это будет быстрее
         print('Ошибка! Введены не цифровые данные')
         validator()
     else:
         userinput = [int(i) for i in str(userinput)]
-
+    # TODO Ещё бы проверку на первый элемент == 0 добавить, для полного комплекта :)
     return userinput
 
 

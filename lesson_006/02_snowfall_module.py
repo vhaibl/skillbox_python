@@ -13,17 +13,24 @@ import simple_draw as sd
 # В текущем модуле реализовать главный цикл падения снежинок,
 # обращаясь ТОЛЬКО к функциям модуля snowfall
 
-# создать_снежинки(N)
-while True:
-    clear_snowflakes()#  нарисовать_снежинки_цветом(color=sd.background_color)
-    move_snowflakes()#  сдвинуть_снежинки()
-    draw_snowflakes()#  нарисовать_снежинки_цветом(color)
-    #  если есть номера_достигших_низа_экрана() то
 
-    #       удалить_снежинки(номера)
-    #       создать_снежинки(count)
+from snowfall import create_snowflakes, clear_snowflakes, move_snowflakes, draw_snowflakes, fallen_snowflakes, \
+    remove_snowflakes, new_snowflakes, x_list, y_list, size_list, count, new_list
+
+N = 10
+
+create_snowflakes(N)
+while True:
+    sd.start_drawing()
+    clear_snowflakes(x_list, y_list, size_list)
+    move_snowflakes(x_list, y_list)
+    draw_snowflakes(x_list, y_list, size_list)
+    sd.finish_drawing()
+    fallen_snowflakes(x_list, y_list, size_list, new_list, count)
+    remove_snowflakes(x_list, y_list, size_list, new_list)
+    new_list = []
+    new_snowflakes(x_list, y_list, size_list, count)
     sd.sleep(0.1)
     if sd.user_want_exit():
         break
-
 sd.pause()

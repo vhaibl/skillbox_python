@@ -49,34 +49,35 @@ from mastermind_engine import make_a_number, guess_a_number, MAX_SYMBOLS
 import mastermind_engine as me
 
 
-def validator():  # TODO Нэйминг. Для функция надо использовать глаголы
-    global userinput
-    userinput = input("Угадай число:")  # TODO Нэйминг опять :) юзер_инпут. Пробелы делают слова понятнее)
+def validate():
+    global user_input
+    user_input = input("Угадай число:")
 
-    if len(userinput) != MAX_SYMBOLS:
+    if len(user_input) != MAX_SYMBOLS:
         print('Ошибка! Неверное количество символов')
-        validator()
-    elif sorted(userinput) != sorted(set(userinput)):
+        validate()
+    elif sorted(user_input) != sorted(set(user_input)):
         print('Ошибка! Есть одинаковые цифры')
-        validator()
-    elif userinput.isdigit() == False:  # TODO Сравнение с True/False/None лучше производить через is
-        # TODO Это будет быстрее
+        validate()
+    elif user_input.isdigit() is False:
         print('Ошибка! Введены не цифровые данные')
-        validator()
+        validate()
+    elif user_input[0] == '0':
+        print('Ошибка! Первый символ равен 0')
+        validate()
     else:
-        userinput = [int(i) for i in str(userinput)]
-    # TODO Ещё бы проверку на первый элемент == 0 добавить, для полного комплекта :)
-    return userinput
+        user_input = [int(i) for i in str(user_input)]
+    return user_input
 
 
 def game():
-    me.won = 0
+    me.bull = 0
     make_a_number()
 
-    while me.won == 0:
-        validator()
-        guess_a_number(userinput)
-        if me.won == 1:
+    while me.bull < 4:
+        validate()
+        guess_a_number(user_input)
+        if me.bull == 4:
             print("Поздравляю с победой!")
             if str(input('Введи цифру 1, если хочешь попробовать еще раз:')) == '1':
                 game()

@@ -1,5 +1,6 @@
 import random
 
+
 MAX_SYMBOLS = 4
 number = None
 

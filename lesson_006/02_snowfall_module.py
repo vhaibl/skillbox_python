@@ -15,22 +15,30 @@ import simple_draw as sd
 
 
 from snowfall import create_snowflakes, clear_snowflakes, move_snowflakes, draw_snowflakes, fallen_snowflakes, \
-    remove_snowflakes, new_snowflakes, x_list, y_list, size_list, count, new_list
+    remove_snowflakes, new_snowflakes, new_list, count
 
-N = 10
-
+N = 20
 create_snowflakes(N)
 while True:
     sd.start_drawing()
-    clear_snowflakes(x_list, y_list, size_list)
-    move_snowflakes(x_list, y_list)
-    draw_snowflakes(x_list, y_list, size_list)
+    clear_snowflakes()
+    move_snowflakes()
+    draw_snowflakes()
     sd.finish_drawing()
-    fallen_snowflakes(x_list, y_list, size_list, new_list, count)
-    remove_snowflakes(x_list, y_list, size_list, new_list)
+    fallen_snowflakes(new_list, count)
+    remove_snowflakes(new_list)
     new_list = []
-    new_snowflakes(x_list, y_list, size_list, count)
-    sd.sleep(0.1)
+    new_snowflakes(count)
+
+    sd.sleep(0.01)
     if sd.user_want_exit():
         break
 sd.pause()
+# создать_снежинки(N)
+
+#  нарисовать_снежинки_цветом(color=sd.background_color)
+#  сдвинуть_снежинки()
+#  нарисовать_снежинки_цветом(color)
+#  если есть номера_достигших_низа_экрана() то
+#       удалить_снежинки(номера)
+#       создать_снежинки(count)

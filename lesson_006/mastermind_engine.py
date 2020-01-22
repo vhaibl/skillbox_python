@@ -1,8 +1,8 @@
 import random
 
-
 MAX_SYMBOLS = 4
 number = None
+
 
 def make_a_number():
     global number

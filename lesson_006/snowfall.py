@@ -39,7 +39,10 @@ def draw_snowflakes():
             sd.snowflake(center=point, length=size_list[i], color=sd.COLOR_WHITE)
 
 
-def fallen_snowflakes(new_list, count):  # TODO А вот здесь и далее, убрать new_list и count не получается...
+def fallen_snowflakes(new_list, count):  # А вот здесь и далее, убрать new_list и count не получается...
+    # TODO count можно попросту удалить, нам особо не нужна эта информация
+    # TODO а new_list можно создавать заново внутри этой функции new_list = []
+    # TODO И его тогда возвращать return-ом, чтобы потом передавать этот список в функцию удаления
     global x_list, y_list, size_list
     for i, y in enumerate(y_list):
         if y_list[i] < 30:

@@ -25,7 +25,7 @@ while True:
     move_snowflakes()
     draw_snowflakes()
     sd.finish_drawing()
-    fallen_snowflakes(new_list, count)
+    fallen_snowflakes(new_list)
     remove_snowflakes(new_list)
     new_list = []
     new_snowflakes(count)

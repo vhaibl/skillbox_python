@@ -13,7 +13,6 @@ import simple_draw as sd
 # В текущем модуле реализовать главный цикл падения снежинок,
 # обращаясь ТОЛЬКО к функциям модуля snowfall
 
-import snowfall
 from snowfall import create_snowflakes, clear_snowflakes, move_snowflakes, draw_snowflakes, fallen_snowflakes, \
     remove_snowflakes, new_snowflakes
 
@@ -26,10 +25,9 @@ while True:
     move_snowflakes()
     draw_snowflakes()
     sd.finish_drawing()
-    fallen_snowflakes()
-    snowfall.new_list = fallen_snowflakes()  # TODO Всё работает, но не смог разобраться, как правильно импортировать
-    remove_snowflakes()  # TODO new_list, ради одной строчки пришлось импортировать весь модуль...
-    new_snowflakes()
+    new_list = fallen_snowflakes()
+    remove_snowflakes(new_list)
+    new_snowflakes(new_list)
 
     sd.sleep(0.01)
     if sd.user_want_exit():

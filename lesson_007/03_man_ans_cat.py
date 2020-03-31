@@ -27,7 +27,6 @@ from random import randint
 
 from random import randint
 
-
 from termcolor import cprint
 
 
@@ -66,7 +65,8 @@ class Man:
             self.house.food += 50
         else:
             cprint('{} деньги кончились!'.format(self.name), color='red')
-    def zooshopping(self):
+
+    def zoo_shopping(self):
         if self.house.money >= 50:
             cprint('{} сходил в магазин за кошачим кормом'.format(self.name), color='magenta')
             self.house.money -= 50
@@ -80,7 +80,8 @@ class Man:
         cprint('{} Вьехал в дом'.format(self.name), color='cyan')
 
     def get_a_pet(self, pet, house):
-        self.pet = pet
+        self.pet = pet  # TODO Всё верно, но self.pet сперва стоит создать в init
+        # TODO ещё бы хорошо было разные названия использовать, а то так и запутаться можно :)
         self.pet.house = house
         cprint('{} Взял кота {}'.format(self.name, self.pet.name), color='cyan')
 
@@ -104,7 +105,7 @@ class Man:
         elif self.house.food <= 20:
             self.shopping()
         elif self.house.petfood <= 10:
-            self.zooshopping()
+            self.zoo_shopping()
         elif self.house.money < 100:
             self.work()
         elif dice == 1:

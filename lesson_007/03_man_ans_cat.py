@@ -36,7 +36,7 @@ class Man:
         self.name = name
         self.fullness = 50
         self.house = None
-
+        self.cat = None
     def __str__(self):
         return 'Я - {}, сытость {}'.format(
             self.name, self.fullness)
@@ -80,10 +80,9 @@ class Man:
         cprint('{} Вьехал в дом'.format(self.name), color='cyan')
 
     def get_a_pet(self, pet, house):
-        self.pet = pet  # TODO Всё верно, но self.pet сперва стоит создать в init
-        # TODO ещё бы хорошо было разные названия использовать, а то так и запутаться можно :)
-        self.pet.house = house
-        cprint('{} Взял кота {}'.format(self.name, self.pet.name), color='cyan')
+        self.cat = pet  
+        self.cat.house = house
+        cprint('{} Взял кота {}'.format(self.name, self.cat.name), color='cyan')
 
     def clean_mess(self):
         self.house.mess = 0

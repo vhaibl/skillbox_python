@@ -80,7 +80,7 @@ class Man:
         cprint('{} Вьехал в дом'.format(self.name), color='cyan')
 
     def get_a_pet(self, pet, house):
-        self.cat = pet  
+        self.cat = pet
         self.cat.house = house
         cprint('{} Взял кота {}'.format(self.name, self.cat.name), color='cyan')
 

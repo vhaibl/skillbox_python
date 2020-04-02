@@ -28,7 +28,8 @@ class Snowflake:
         sd.snowflake(center=self.point, length=self.size, color=sd.COLOR_WHITE)
 
     def can_fall(self):
-        return True if self.y > -100 else False
+        return True if self.y > -100 else False  # TODO Можно просто вернуть само условие)
+    # TODO ретурн у > -100
 
 
 flake = Snowflake()
@@ -61,6 +62,7 @@ def get_fallen_flakes():
     for _ in flakes:
         if not flake.can_fall():
             fallen += 1
+            # TODO Чтобы решить проблему ниже - возможно стоит собирать тут индексы упавших
     return fallen
 
 
@@ -70,6 +72,8 @@ def append_flakes(count):
 
 
 def remove_flakes(count):
+    # TODO Тут есть проблема. Удаляются то похоже случайные снежинки, а не упавшие
+    # TODO Можно тут получать список индексов и по ним уже удалять
     for _ in reversed(range(count)):
         flakes.pop()
         print(count)
@@ -86,7 +90,8 @@ while True:
         flake.draw()
     fallen_flakes = get_fallen_flakes()  # подчитать сколько снежинок уже упало
     if fallen_flakes:
-        remove_flakes(count=fallen_flakes) # TODO непонимаю, почему мусор остается
+        remove_flakes(count=fallen_flakes)  # непонимаю, почему мусор остается  TODO потому что путанница с удалением
+        # TODO происходит
         append_flakes(count=fallen_flakes)  # добавить еще сверху
 
     sd.finish_drawing()

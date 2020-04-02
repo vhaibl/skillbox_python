@@ -37,6 +37,7 @@ class Man:
         self.fullness = 50
         self.house = None
         self.cat = None
+
     def __str__(self):
         return 'Я - {}, сытость {}'.format(
             self.name, self.fullness)
@@ -181,6 +182,8 @@ my_sweet_home = House()
 for citisen in citizens:
     citisen.go_to_the_house(house=my_sweet_home)
     for cat in pets:
+        # TODO Если кошек много - то в атрибутах у человека должна быть уже не просто переменная
+        # TODO А список, который будет пополняться при вызове get_a_pet
         citisen.get_a_pet(pet=cat, house=my_sweet_home)
 for day in range(1, 366):
     print('================ день {} =================='.format(day))

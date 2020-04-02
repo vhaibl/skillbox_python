@@ -16,11 +16,43 @@
 # Вывод элемента на консоль реализовывать через __str__
 #
 # Примеры преобразований:
-#   print(Water(), '+', Air(), '=', Water() + Air())
+
 #   print(Fire(), '+', Air(), '=', Fire() + Air())
 
-# TODO здесь ваш код
+class Water:
 
+    def __str__(self):
+        return 'Вода'
+
+    def __add__(self, other):
+        return Storm(part1=self, part2=other)
+
+
+class Air:
+
+    def __str__(self):
+        return 'Воздух'
+
+    def __add__(self, other):
+        return Storm(part1=self, part2=other)
+
+
+class Storm:
+
+    def __init__(self, part1, part2):
+        self.part1 = part1
+        self.part2 = part2
+
+    def __str__(self):
+        return 'Шторм'
+
+
+
+print(Water(), '+', Air(), '=', Water() + Air())
+vozduh = Air()
+voda = Water()
+result = voda + vozduh
+print(result)
 # Усложненное задание (делать по желанию)
 # Добавить еще элемент в игру.
 # Придумать что будет при сложении существующих элементов с новым.

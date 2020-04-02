@@ -2,12 +2,11 @@
 
 import simple_draw as sd
 
-
 # Шаг 1: Реализовать падение снежинки через класс. Внести в методы:
 #  - создание снежинки с нужными параметрами
 #  - отработку изменений координат
 #  - отрисовку
-N = 20
+N = 10
 
 
 class Snowflake:
@@ -29,7 +28,7 @@ class Snowflake:
         sd.snowflake(center=self.point, length=self.size, color=sd.COLOR_WHITE)
 
     def can_fall(self):
-        return True if self.y > 0 else False
+        return True if self.y > -100 else False
 
 
 flake = Snowflake()
@@ -52,24 +51,47 @@ def get_flakes(count=N):
     for i in range(count):
         flakes_list.append(Snowflake())
     return flakes_list
+
+
 fallen = 0
+
+
 def get_fallen_flakes():
     global fallen
+    for _ in flakes:
+        if not flake.can_fall():
+            fallen += 1
+    return fallen
 
-    if flake.y >= 0:
-        fallen +=1
+
+def append_flakes(count):
+    for _ in range(count):
+        flakes.append(Snowflake())
+
+
+def remove_flakes(count):
+    for _ in reversed(range(count)):
+        flakes.pop()
+        print(count)
+
 
 flakes = get_flakes(count=N)  # создать список снежинок
 while True:
+    fallen = 0
+    sd.start_drawing()
+
     for flake in flakes:
         flake.clear_previous_picture()
         flake.move()
         flake.draw()
     fallen_flakes = get_fallen_flakes()  # подчитать сколько снежинок уже упало
-#     if fallen_flakes:
-#         append_flakes(count=fallen_flakes)  # добавить еще сверху
+    if fallen_flakes:
+        remove_flakes(count=fallen_flakes) # TODO непонимаю, почему мусор остается
+        append_flakes(count=fallen_flakes)  # добавить еще сверху
+
+    sd.finish_drawing()
     sd.sleep(0.01)
-    print(fallen)
+
     if sd.user_want_exit():
         break
 

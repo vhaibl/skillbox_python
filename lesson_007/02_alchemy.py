@@ -25,7 +25,12 @@ class Water:
         return 'Вода'
 
     def __add__(self, other):
-        return Storm(part1=self, part2=other)
+        if isinstance(other, Air):
+            return Storm(self, Air)
+        elif isinstance(other, Fire):
+            return Steam(self, Fire)
+        elif isinstance(other, Earth):
+            return Mood(self, Earth)
 
 
 class Air:
@@ -34,25 +39,155 @@ class Air:
         return 'Воздух'
 
     def __add__(self, other):
-        return Storm(part1=self, part2=other)
+        if isinstance(other, Fire):
+            return Lightning(self, Fire)
+        if isinstance(other, Earth):
+            return Dust(self, Earth)
+
+
+class Fire:
+
+    def __str__(self):
+        return 'Огонь'
+
+    def __add__(self, other):
+        if isinstance(other, Earth):
+            return Lava(self, Earth)
+
+
+class Earth:
+
+    def __str__(self):
+        return 'Земля'
 
 
 class Storm:
 
     def __init__(self, part1, part2):
-        self.part1 = part1
-        self.part2 = part2
+        self.part1 = Water
+        self.part2 = Air
 
     def __str__(self):
         return 'Шторм'
 
 
+class Steam:
+
+    def __init__(self, part1, part2):
+        self.part1 = Air
+        self.part2 = Fire
+
+    def __str__(self):
+        return 'Пар'
+
+
+class Mood:
+
+    def __init__(self, part1, part2):
+        self.part1 = Air
+        self.part2 = Earth
+
+    def __str__(self):
+        return 'Грязь'
+
+
+class Lightning:
+
+    def __init__(self, part1, part2):
+        self.part1 = Air
+        self.part2 = Fire
+
+    def __str__(self):
+        return 'Молния'
+
+
+class Dust:
+
+    def __init__(self, part1, part2):
+        self.part1 = Air
+        self.part2 = Earth
+
+    def __str__(self):
+        return 'Пыль'
+
+
+class Lava:
+
+    def __init__(self, part1, part2):
+        self.part1 = Fire
+        self.part2 = Earth
+
+    def __str__(self):
+        return 'Лава'
+
+
+class Life:
+
+    def __str__(self):
+        return 'Жизнь'
+
+    def __add__(self, other):
+        if isinstance(other, Fire):
+            return Phoenix(self, Fire)
+        if isinstance(other, Earth):
+            return Troll(self, Earth)
+        if isinstance(other, Air):
+            return Angel(self, Air)
+        if isinstance(other, Water):
+            return Mermaid(self, Water)
+
+
+class Phoenix:
+
+    def __init__(self, part1, part2):
+        self.part1 = Fire
+        self.part2 = Life
+
+    def __str__(self):
+        return 'Феникс'
+
+
+class Troll:
+
+    def __init__(self, part1, part2):
+        self.part1 = Life
+        self.part2 = Earth
+
+    def __str__(self):
+        return 'Тролль'
+
+
+class Angel:
+
+    def __init__(self, part1, part2):
+        self.part1 = Air
+        self.part2 = Life
+
+    def __str__(self):
+        return 'Ангел'
+
+
+class Mermaid:
+
+    def __init__(self, part1, part2):
+        self.part1 = Water
+        self.part2 = Life
+
+    def __str__(self):
+        return 'Русалка'
+
 
 print(Water(), '+', Air(), '=', Water() + Air())
-vozduh = Air()
-voda = Water()
-result = voda + vozduh
-print(result)
+print(Water(), '+', Fire(), '=', Water() + Fire())
+print(Water(), '+', Earth(), '=', Water() + Earth())
+print(Air(), '+', Fire(), '=', Air() + Fire())
+print(Air(), '+', Earth(), '=', Air() + Earth())
+print(Fire(), '+', Earth(), '=', Fire() + Earth())
+print(Life(), '+', Air(), '=', Life() + Air())
+print(Life(), '+', Earth(), '=', Life() + Earth())
+print(Life(), '+', Water(), '=', Life() + Water())
+print(Life(), '+', Fire(), '=', Life() + Fire())
+print(Life(), '+', Life(), '=', Life() + Life())
 # Усложненное задание (делать по желанию)
 # Добавить еще элемент в игру.
 # Придумать что будет при сложении существующих элементов с новым.

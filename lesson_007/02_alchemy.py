@@ -31,7 +31,9 @@ class Water:
             return Steam(self, Fire)
         elif isinstance(other, Earth):
             return Mood(self, Earth)
-        # TODO Стоит ещё else добавить для полноты
+        else:
+            return None
+
 
 
 class Air:
@@ -42,9 +44,15 @@ class Air:
     def __add__(self, other):
         if isinstance(other, Fire):
             return Lightning(self, Fire)
-        if isinstance(other, Earth):  # TODO тут правильнее использовать elif будет
+        elif isinstance(other, Earth):
             return Dust(self, Earth)
-        # TODO + нужно перебрать 3 варианта (Water + Air сработает, а вот Air + Water уже нет, а должен)
+        elif isinstance(other, Water):
+            return Storm(self, Water)
+        elif isinstance(other, Life):
+            return Angel(self, Life)
+        else:
+            return None
+
 
 class Fire:
 
@@ -54,14 +62,32 @@ class Fire:
     def __add__(self, other):
         if isinstance(other, Earth):
             return Lava(self, Earth)
-        # TODO Тут соотвтетсвенно тоже должны быть все варианты
+        elif isinstance(other, Water):
+            return Lava(self, Water)
+        elif isinstance(other, Air):
+            return Lava(self, Air)
+        elif isinstance(other, Life):
+            return Phoenix(self, Life)
+        else:
+            return None
 
 
 class Earth:
 
     def __str__(self):
         return 'Земля'
-        # TODO Тут соотвтетсвенно тоже должны быть все варианты
+
+    def __add__(self, other):
+        if isinstance(other, Fire):
+            return Lava(self, Fire)
+        elif isinstance(other, Water):
+            return Mood(self, Water)
+        elif isinstance(other, Air):
+            return Dust(self, Air)
+        elif isinstance(other, Life):
+            return Troll(self, Life)
+        else:
+            return None
 
 
 class Storm:

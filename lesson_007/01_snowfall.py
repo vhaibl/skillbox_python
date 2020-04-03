@@ -12,7 +12,7 @@ N = 10
 class Snowflake:
     def __init__(self):
         self.x = sd.random_number(000, 600)
-        self.y = sd.random_number(500, 600)
+        self.y = sd.random_number(550, 1200)
         self.point = sd.get_point(self.x, self.y)
         self.size = sd.random_number(10, 20)
 
@@ -20,7 +20,7 @@ class Snowflake:
         sd.snowflake(center=self.point, length=self.size, color=sd.background_color)
 
     def move(self):
-        self.y -= sd.random_number(-5, 20)
+        self.y -= sd.random_number(0, 20)
         self.x += sd.random_number(-15, 15)
         self.point = sd.get_point(self.x, self.y)
 
@@ -28,8 +28,7 @@ class Snowflake:
         sd.snowflake(center=self.point, length=self.size, color=sd.COLOR_WHITE)
 
     def can_fall(self):
-        return True if self.y > -100 else False  # TODO Можно просто вернуть само условие)
-    # TODO ретурн у > -100
+        return self.y > -100
 
 
 flake = Snowflake()
@@ -45,7 +44,8 @@ while True:
         break
 
 
-# шаг 2: создать снегопад - список объектов Снежинка в отдельном списке, обработку примерно так:
+
+
 def get_flakes(count=N):
     global flakes_list
     flakes_list = []
@@ -54,30 +54,31 @@ def get_flakes(count=N):
     return flakes_list
 
 
-fallen = 0
+new_list = []
 
 
 def get_fallen_flakes():
-    global fallen
-    for _ in flakes:
+    global new_list
+    new_list = []
+    for i in flakes_list:
         if not flake.can_fall():
-            fallen += 1
-            # TODO Чтобы решить проблему ниже - возможно стоит собирать тут индексы упавших
-    return fallen
+            new_list.append(i)
+    return new_list
+    # TODO Немогу понять, как правильно собирать индексы в текущей ситуации, вариант как в предыдущем модуле не катит
+    # return fallen
 
 
 def append_flakes(count):
-    for _ in range(count):
-        flakes.append(Snowflake())
+    for _ in range(len(new_list)):
+        if not flake.can_fall():
+            flakes.append(Snowflake())
 
 
-def remove_flakes(count):
-    # TODO Тут есть проблема. Удаляются то похоже случайные снежинки, а не упавшие
-    # TODO Можно тут получать список индексов и по ним уже удалять
-    for _ in reversed(range(count)):
-        flakes.pop()
-        print(count)
-
+def remove_flakes():
+    if not flake.can_fall():
+        for _ in new_list:
+            flakes.remove(_)
+            # print(count)
 
 flakes = get_flakes(count=N)  # создать список снежинок
 while True:
@@ -88,16 +89,17 @@ while True:
         flake.clear_previous_picture()
         flake.move()
         flake.draw()
-    fallen_flakes = get_fallen_flakes()  # подчитать сколько снежинок уже упало
+        fallen_flakes = get_fallen_flakes()
     if fallen_flakes:
-        remove_flakes(count=fallen_flakes)  # непонимаю, почему мусор остается  TODO потому что путанница с удалением
-        # TODO происходит
-        append_flakes(count=fallen_flakes)  # добавить еще сверху
+        remove_flakes()
+        append_flakes(count=enumerate(fallen_flakes))
 
     sd.finish_drawing()
     sd.sleep(0.01)
 
     if sd.user_want_exit():
         break
+
+sd.pause()
 
 sd.pause()

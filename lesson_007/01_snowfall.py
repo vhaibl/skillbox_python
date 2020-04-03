@@ -61,20 +61,27 @@ def get_fallen_flakes():
     global new_list
     new_list = []
     for i in flakes_list:
-        if not flake.can_fall():
+        if not flake.can_fall():  # TODO Обратите внимание, что тут у вас проверяется одна и та же flake
+            # TODO она не изменяется в цикле
+    # TODO Стоит попробовать конструкцию for index, flake in flakes_list, тогда flake будет изменяться
+            # TODO А index будет номером этой снежинки в списке - как раз его и будет добавлять в список
             new_list.append(i)
     return new_list
-    # TODO Немогу понять, как правильно собирать индексы в текущей ситуации, вариант как в предыдущем модуле не катит
-    # return fallen
+    # Немогу понять, как правильно собирать индексы в текущей ситуации, вариант как в предыдущем модуле не катит
+
 
 
 def append_flakes(count):
-    for _ in range(len(new_list)):
+    for _ in range(len(new_list)):  # TODO Вот тут надо count использовать вместо длины списка
         if not flake.can_fall():
             flakes.append(Snowflake())
 
 
 def remove_flakes():
+    # TODO Тут нужно принимать параметром список
+    # TODO Переворачивать его
+    # TODO И запускать по нему цикл
+    # TODO В самом цикле надо брать индекс и удалять по нему снежинку из списка flakes
     if not flake.can_fall():
         for _ in new_list:
             flakes.remove(_)

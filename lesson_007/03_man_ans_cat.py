@@ -81,7 +81,7 @@ class Man:
         cprint('{} Вьехал в дом'.format(self.name), color='cyan')
 
     def get_a_pet(self, pet, house):
-        self.cat = pet
+        self.cat = pet  # TODO Эту строку теперь можно удалить, раз есть список
         self.cat.house = house
         self.cats.append(pet)
         cprint('{} Взял кота {}'.format(self.name, self.cat.name), color='cyan')
@@ -183,7 +183,10 @@ my_sweet_home = House()
 for citisen in citizens:
     citisen.go_to_the_house(house=my_sweet_home)
     for cat in pets:
-        # TODO список с котами теперь пополняется, но как показать их имена, а не адреса объектов?
+        # список с котами теперь пополняется, но как показать их имена, а не адреса объектов?
+        # TODO Пройти по списку с котами и печатать их атрибут name
+        # TODO фор кот ин Человек.список_котов:
+        # TODO     принт(кот.name)
         citisen.get_a_pet(pet=cat, house=my_sweet_home)
 for day in range(1, 366):
     print('================ день {} =================='.format(day))

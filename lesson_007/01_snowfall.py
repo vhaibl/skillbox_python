@@ -44,8 +44,6 @@ while True:
         break
 
 
-
-
 def get_flakes(count=N):
     global flakes_list
     flakes_list = []
@@ -60,32 +58,23 @@ new_list = []
 def get_fallen_flakes():
     global new_list
     new_list = []
-    for i in flakes_list:
-        if not flake.can_fall():  # TODO Обратите внимание, что тут у вас проверяется одна и та же flake
-            # TODO она не изменяется в цикле
-    # TODO Стоит попробовать конструкцию for index, flake in flakes_list, тогда flake будет изменяться
-            # TODO А index будет номером этой снежинки в списке - как раз его и будет добавлять в список
-            new_list.append(i)
+    for index, flake in enumerate(flakes_list):
+        if not flake.can_fall():
+            new_list.append(index)
     return new_list
-    # Немогу понять, как правильно собирать индексы в текущей ситуации, вариант как в предыдущем модуле не катит
-
 
 
 def append_flakes(count):
-    for _ in range(len(new_list)):  # TODO Вот тут надо count использовать вместо длины списка
+    for _ in count:
         if not flake.can_fall():
             flakes.append(Snowflake())
 
 
-def remove_flakes():
-    # TODO Тут нужно принимать параметром список
-    # TODO Переворачивать его
-    # TODO И запускать по нему цикл
-    # TODO В самом цикле надо брать индекс и удалять по нему снежинку из списка flakes
+def remove_flakes(new_list):
     if not flake.can_fall():
-        for _ in new_list:
-            flakes.remove(_)
-            # print(count)
+        for _ in reversed(new_list):
+            flakes.pop(_)
+
 
 flakes = get_flakes(count=N)  # создать список снежинок
 while True:
@@ -98,7 +87,7 @@ while True:
         flake.draw()
         fallen_flakes = get_fallen_flakes()
     if fallen_flakes:
-        remove_flakes()
+        remove_flakes(new_list=new_list)
         append_flakes(count=enumerate(fallen_flakes))
 
     sd.finish_drawing()

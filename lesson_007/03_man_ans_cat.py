@@ -173,13 +173,10 @@ class House:
             self.food, self.petfood, self.money, self.mess)
 
 
-citizens = [
-    Man(name='Бивис')
-
-]
-
+citizens = [Man(name='Бивис')]
 pets = [Pet(name='Васька'), Pet(name='Мурзик'), Pet(name='Кузьмич')]
 my_sweet_home = House()
+
 for citisen in citizens:
     citisen.go_to_the_house(house=my_sweet_home)
     for cat in pets:
@@ -196,11 +193,13 @@ for day in range(1, 366):
         cat.act()
     print('--- в конце дня ---')
     for citisen in citizens:
+
         print(citisen)
     for cat in pets:
         print(cat)
     print(my_sweet_home)
-print(citisen.cats)
+for i in citizens:
+    print(pets)
 # Усложненное задание (делать по желанию)
 # Создать несколько (2-3) котов и подселить их в дом к человеку.
 # Им всем вместе так же надо прожить 365 дней.

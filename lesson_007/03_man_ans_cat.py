@@ -80,11 +80,9 @@ class Man:
         cprint('{} Вьехал в дом'.format(self.name), color='cyan')
 
     def get_a_pet(self, pet, house):
-        #self.cat = pet  # Эту строку теперь можно удалить, раз есть список
-        self.cat.house = house  # Вроде бы все хорошо, но строчку выше удалить не получается(
-        # TODO просто вместо self.cat нужно использовать pet в этом методе
+        pet.house = house
         self.cats.append(pet)
-        cprint('{} Взял кота {}'.format(self.name, self.cat.name), color='cyan')
+        cprint('{} Взял кота {}'.format(self.name, pet.name), color='cyan')
 
     def clean_mess(self):
         self.house.mess = 0

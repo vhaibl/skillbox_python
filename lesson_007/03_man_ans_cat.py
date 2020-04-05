@@ -39,8 +39,7 @@ class Man:
         self.cats =[]
 
     def __str__(self):
-        return 'Я - {}, сытость {}, коты {}' .format(
-            self.name, self.fullness, self.cats)
+        return 'Я - {}, сытость {}'.format(self.name, self.fullness)
 
     def eat(self):
         if self.house.food >= 10:
@@ -81,8 +80,8 @@ class Man:
         cprint('{} Вьехал в дом'.format(self.name), color='cyan')
 
     def get_a_pet(self, pet, house):
-        self.cat = pet  # TODO Эту строку теперь можно удалить, раз есть список
-        self.cat.house = house
+        self.cat = pet  # Эту строку теперь можно удалить, раз есть список
+        self.cat.house = house # TODO Вроде бы все хорошо, но строчку выше удалить не получается(
         self.cats.append(pet)
         cprint('{} Взял кота {}'.format(self.name, self.cat.name), color='cyan')
 
@@ -122,6 +121,7 @@ class Pet:
         self.name = name
         self.fullness = 50
         self.house = None
+
 
     def __str__(self):
         return 'Кот {}, сытость {}'.format(
@@ -180,11 +180,10 @@ my_sweet_home = House()
 for citisen in citizens:
     citisen.go_to_the_house(house=my_sweet_home)
     for cat in pets:
-        # список с котами теперь пополняется, но как показать их имена, а не адреса объектов?
-        # TODO Пройти по списку с котами и печатать их атрибут name
-        # TODO фор кот ин Человек.список_котов:
-        # TODO     принт(кот.name)
         citisen.get_a_pet(pet=cat, house=my_sweet_home)
+    print('{} теперь не один, у него живут, живут коты'.format(citisen.name))
+    for cat in citisen.cats:
+        print(cat.name)
 for day in range(1, 366):
     print('================ день {} =================='.format(day))
     for citisen in citizens:
@@ -198,8 +197,7 @@ for day in range(1, 366):
     for cat in pets:
         print(cat)
     print(my_sweet_home)
-for i in citizens:
-    print(pets)
+
 # Усложненное задание (делать по желанию)
 # Создать несколько (2-3) котов и подселить их в дом к человеку.
 # Им всем вместе так же надо прожить 365 дней.

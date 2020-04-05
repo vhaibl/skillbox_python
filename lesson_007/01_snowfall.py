@@ -66,13 +66,14 @@ def get_fallen_flakes():
 
 def append_flakes(count):
     for _ in count:
-        if not flake.can_fall():
+        if not flake.can_fall():  # TODO Тут проверка не нужна
+            # TODO Да и странно её добавлять, ведь проверяется одна и та же flake
             flakes.append(Snowflake())
 
 
 def remove_flakes(new_list):
-    if not flake.can_fall():
-        for _ in reversed(new_list):
+    if not flake.can_fall():  # TODO И тут надо убрать проверку
+        for _ in reversed(new_list):  # TODO А тут заменить "_" на index или хотя бы i
             flakes.pop(_)
 
 
@@ -85,10 +86,10 @@ while True:
         flake.clear_previous_picture()
         flake.move()
         flake.draw()
-        fallen_flakes = get_fallen_flakes()
+        fallen_flakes = get_fallen_flakes()  # TODO Эту операцию надо выполнить вне цикла и после него (убрать отступ)
     if fallen_flakes:
-        remove_flakes(new_list=new_list)
-        append_flakes(count=enumerate(fallen_flakes))
+        remove_flakes(new_list=new_list)  # TODO сюда передать надо fallen_flakes - список упавших снежинок
+        append_flakes(count=enumerate(fallen_flakes))  # TODO А тут вместо enumerate - len
 
     sd.finish_drawing()
     sd.sleep(0.01)

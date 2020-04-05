@@ -36,7 +36,7 @@ class Man:
         self.name = name
         self.fullness = 50
         self.house = None
-        self.cats =[]
+        self.cats = []
 
     def __str__(self):
         return 'Я - {}, сытость {}'.format(self.name, self.fullness)
@@ -80,8 +80,9 @@ class Man:
         cprint('{} Вьехал в дом'.format(self.name), color='cyan')
 
     def get_a_pet(self, pet, house):
-        self.cat = pet  # Эту строку теперь можно удалить, раз есть список
-        self.cat.house = house # TODO Вроде бы все хорошо, но строчку выше удалить не получается(
+        #self.cat = pet  # Эту строку теперь можно удалить, раз есть список
+        self.cat.house = house  # Вроде бы все хорошо, но строчку выше удалить не получается(
+        # TODO просто вместо self.cat нужно использовать pet в этом методе
         self.cats.append(pet)
         cprint('{} Взял кота {}'.format(self.name, self.cat.name), color='cyan')
 
@@ -121,7 +122,6 @@ class Pet:
         self.name = name
         self.fullness = 50
         self.house = None
-
 
     def __str__(self):
         return 'Кот {}, сытость {}'.format(
@@ -192,7 +192,6 @@ for day in range(1, 366):
         cat.act()
     print('--- в конце дня ---')
     for citisen in citizens:
-
         print(citisen)
     for cat in pets:
         print(cat)

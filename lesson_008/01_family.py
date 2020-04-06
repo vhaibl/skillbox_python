@@ -83,16 +83,19 @@ class Man:
         cprint('{} теперь живет в доме'.format(self.name), color='cyan')
 
 
-# TODO я хотел сделать общий def act, в частности вынести смерти в родительский класс, но они в нем умирают, а потом
-# TODO в своем подклассе все равно делают свои дела...
+# я хотел сделать общий def act, в частности вынести смерти в родительский класс, но они в нем умирают, а потом
+# в своем подклассе все равно делают свои дела...
+# TODO В этом случае можно создать атрибут, что-то вроед alive = True/False
+# TODO И в акте проверять перед действиями - если alive is False --> return False или None кидать
 
 class Husband(Man):
 
     def __init__(self, name):
-        super().__init__(name=name)
+        super().__init__(name=name)  # TODO Если кроме супер вызова ничего нет, то и переопределение не нужно
+        # TODO тк в отсутствии его и так будет вызван init из родителя
 
     def __str__(self):
-        return super().__str__()
+        return super().__str__()  # TODO И тут (и в другом классе ниже)
 
     def act(self):
         if self.house.mess >= 30: self.happiness -= 10
@@ -140,7 +143,8 @@ class Wife(Man):
         return super().__str__()
 
     def act(self):
-        if self.house.mess >= 30: self.happiness -= 10
+        if self.house.mess >= 30:
+            self.happiness -= 10
 
         if self.fullness <= 0:
             cprint('{} умерла...'.format(self.name), color='red')

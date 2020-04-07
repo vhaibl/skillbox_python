@@ -179,6 +179,24 @@ class Wife(Man):
         self.house.mess = 0
         print('{} убралась в доме'.format(self.name))
 
+class Child:
+
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return super().__str__()
+
+    def act(self):
+        pass
+
+    def eat(self):
+        pass
+
+    def sleep(self):
+        pass
+
+
 
 home = House()
 serge = Husband(name='Сережа')
@@ -259,24 +277,7 @@ print("{} шуб куплено".format(home.total_furcoats_purchased))
 # # отличия от взрослых - кушает максимум 10 единиц еды,
 # # степень счастья  - не меняется, всегда ==100 ;)
 #
-# class Child:
-#
-#     def __init__(self):
-#         pass
-#
-#     def __str__(self):
-#         return super().__str__()
-#
-#     def act(self):
-#         pass
-#
-#     def eat(self):
-#         pass
-#
-#     def sleep(self):
-#         pass
-#
-#
+
 # # TODO после реализации второй части - отдать на проверку учителем две ветки
 #
 #

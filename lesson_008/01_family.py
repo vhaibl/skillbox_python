@@ -233,7 +233,7 @@ print("Съедено {} еды".format(home.total_food_eaten))
 print("{} денег заработано".format(home.total_got_money))
 print("{} шуб куплено".format(home.total_furcoats_purchased))
 
-# # TODO после реализации первой части - отдать на проверку учителю
+# # TODO Эта ветка готова к слиянию
 #
 # ######################################################## Часть вторая
 # #

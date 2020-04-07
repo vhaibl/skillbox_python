@@ -64,6 +64,7 @@ class Man:
         self.fullness = 30
         self.happiness = 100
         self.name = name
+        self.alive = True
 
     def __str__(self):
         return '{} - сытость {}, счастье {}'.format(self.name, self.fullness, self.happiness)
@@ -80,47 +81,44 @@ class Man:
     def go_to_the_house(self, house):
         self.house = house
         self.fullness -= 10
+
         cprint('{} теперь живет в доме'.format(self.name), color='cyan')
-
-
-# я хотел сделать общий def act, в частности вынести смерти в родительский класс, но они в нем умирают, а потом
-# в своем подклассе все равно делают свои дела...
-# TODO В этом случае можно создать атрибут, что-то вроед alive = True/False
-# TODO И в акте проверять перед действиями - если alive is False --> return False или None кидать
-
-class Husband(Man):
-
-    def __init__(self, name):
-        super().__init__(name=name)  # TODO Если кроме супер вызова ничего нет, то и переопределение не нужно
-        # TODO тк в отсутствии его и так будет вызван init из родителя
-
-    def __str__(self):
-        return super().__str__()  # TODO И тут (и в другом классе ниже)
 
     def act(self):
         if self.house.mess >= 30: self.happiness -= 10
         if self.fullness <= 0:
-            cprint('{} умер...'.format(self.name), color='red')
+            cprint('{} умер(ла) от голода...'.format(self.name), color='red')
             return
         elif self.house.mess >= 100:
-            cprint('{} задохнулся от грязи...'.format(self.name), color='red')
+            cprint('{} задохнулся(ась) от грязи...'.format(self.name), color='red')
             return
         elif self.happiness <= 10:
-            cprint('{} повесился...'.format(self.name), color='red')
+            cprint('{} повесился(ась)...'.format(self.name), color='red')
             return
-
-        dice = randint(1, 6)
-        if self.fullness <= 20:
-            self.eat()
-        elif self.house.money <= 50:
-            self.work()
+        if self.fullness <= 0 or self.house.mess >= 100 or self.happiness <= 10:
+            return False
         else:
-            if dice == 1:
-                self.work()
-            elif dice == 2:
+            return True
+
+
+class Husband(Man):
+
+    def act(self):
+        if super().act() is True:
+            dice = randint(1, 6)
+            if self.fullness <= 20:
+                self.eat()
+            elif self.house.money <= 50:
                 self.work()
             else:
-                self.gaming()
+                if dice == 1:
+                    self.work()
+                elif dice == 2:
+                    self.work()
+                else:
+                    self.gaming()
+        else:
+            return
 
     def work(self):
         self.fullness -= 10
@@ -136,42 +134,25 @@ class Husband(Man):
 
 class Wife(Man):
 
-    def __init__(self, name):
-        super().__init__(name=name)
-
-    def __str__(self):
-        return super().__str__()
-
     def act(self):
-        if self.house.mess >= 30:
-            self.happiness -= 10
-
-        if self.fullness <= 0:
-            cprint('{} умерла...'.format(self.name), color='red')
-            return
-        elif self.house.mess >= 100:
-            cprint('{} задохнулся от грязи...'.format(self.name), color='red')
-            return
-        elif self.happiness <= 10:
-            cprint('{} порезала вены в ванной и умерла...'.format(self.name), color='red')
-            return
-        dice = randint(1, 6)
-        if self.fullness <= 20:
-            self.eat()
-            return
-        elif self.house.food <= 50:
-            self.shopping()
-            return
-        elif self.happiness <= 30:
-            self.buy_fur_coat()
-            return
-        else:
-            if dice == 1:
+        if super().act() is True:
+            dice = randint(1, 6)
+            if self.fullness <= 20:
                 self.eat()
-            elif dice == 2:
+                return
+            elif self.house.food <= 50:
                 self.shopping()
+                return
+            elif self.happiness <= 30:
+                self.buy_fur_coat()
+                return
             else:
-                self.clean_house()
+                if dice == 1:
+                    self.eat()
+                elif dice == 2:
+                    self.shopping()
+                else:
+                    self.clean_house()
 
     def shopping(self):
         if self.house.money >= 50:
@@ -220,6 +201,8 @@ for day in range(365):
 print("Съедено {} еды".format(home.total_food_eaten))
 print("{} денег заработано".format(home.total_got_money))
 print("{} шуб куплено".format(home.total_furcoats_purchased))
+
+
 # # TODO после реализации первой части - отдать на проверку учителю
 #
 # ######################################################## Часть вторая

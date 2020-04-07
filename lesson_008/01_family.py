@@ -228,7 +228,10 @@ tomas.go_to_the_house(home)
 for day in range(365):
     cprint('================== День {} =================='.format(day), color='red')
     if home.mess >= 95:
-        home.mess == 100
+        home.mess == 100  # TODO Просмотрел видимо где-то этот момент
+        # TODO Это действие само по себе сравнивает грязь в доме с 100
+        # TODO Тут скорее надо заменить == на =
+        # TODO А вообще этот метод хорошо бы в дом убрать, что-то вроде home.act()
     else:
         home.mess += 5
     serge.act()
@@ -242,7 +245,7 @@ print("Съедено {} еды".format(home.total_food_eaten))
 print("{} денег заработано".format(home.total_got_money))
 print("{} шуб куплено".format(home.total_furcoats_purchased))
 
-# # TODO после реализации первой части - отдать на проверку учителю
+# # TODO после правки можете сливать ветки
 #
 # ######################################################## Часть вторая
 # #

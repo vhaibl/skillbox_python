@@ -179,6 +179,23 @@ class Wife(Man):
         self.house.mess = 0
         print('{} убралась в доме'.format(self.name))
 
+class Cat:
+
+    def __init__(self):
+        pass
+
+    def act(self):
+        pass
+
+    def eat(self):
+        pass
+
+    def sleep(self):
+        pass
+
+    def soil(self):
+        pass
+
 
 home = House()
 serge = Husband(name='Сережа')
@@ -230,24 +247,7 @@ print("{} шуб куплено".format(home.total_furcoats_purchased))
 # # Если кот дерет обои, то грязи становится больше на 5 пунктов
 #
 #
-# class Cat:
-#
-#     def __init__(self):
-#         pass
-#
-#     def act(self):
-#         pass
-#
-#     def eat(self):
-#         pass
-#
-#     def sleep(self):
-#         pass
-#
-#     def soil(self):
-#         pass
-#
-#
+
 # ######################################################## Часть вторая бис
 # #
 # # После реализации первой части надо в ветке мастер продолжить работу над семьей - добавить ребенка

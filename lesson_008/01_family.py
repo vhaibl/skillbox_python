@@ -19,7 +19,11 @@ class House:
     def __str__(self):
         return 'В тумбочке {} денег, в холодильнике {} еды, кошачего корма {}, бардак в доме {}%'.format \
             (self.money, self.food, self.petfood, self.mess)
-
+    def act(self):
+        if self.mess >= 95:
+            self.mess = 100
+        else:
+            self.mess += 5
 
 class Man:
 
@@ -227,13 +231,7 @@ tomas.go_to_the_house(home)
 
 for day in range(365):
     cprint('================== День {} =================='.format(day), color='red')
-    if home.mess >= 95:
-        home.mess == 100  # TODO Просмотрел видимо где-то этот момент
-        # TODO Это действие само по себе сравнивает грязь в доме с 100
-        # TODO Тут скорее надо заменить == на =
-        # TODO А вообще этот метод хорошо бы в дом убрать, что-то вроде home.act()
-    else:
-        home.mess += 5
+    home.act()
     serge.act()
     masha.act()
     tomas.act()

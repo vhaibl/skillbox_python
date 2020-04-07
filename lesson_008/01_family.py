@@ -85,7 +85,7 @@ class Man:
         cprint('{} теперь живет в доме'.format(self.name), color='cyan')
 
     def act(self):
-        if self.house.mess >= 30: self.happiness -= 10
+        if self.house.mess >= 70: self.happiness -= 10
         if self.fullness <= 0:
             cprint('{} умер(ла) от голода...'.format(self.name), color='red')
             return
@@ -179,31 +179,42 @@ class Wife(Man):
         self.house.mess = 0
         print('{} убралась в доме'.format(self.name))
 
-class Child:
 
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return super().__str__()
+class Child(Man):
 
     def act(self):
-        pass
+        if self.fullness <= 10:
+            self.eat()
+            return
+        dice = randint(1, 2)
+
+        if dice == 1:
+            self.eat()
+        elif dice == 2:
+            self.sleep()
 
     def eat(self):
-        pass
+        if self.house.food >= 10:
+            self.fullness += 10
+            self.house.food -= 10
+            self.house.total_food_eaten += 10
+            print('{} поел(а)'.format(self.name))
+        else:
+            print('Нет еды')
 
     def sleep(self):
-        pass
-
+        self.fullness -= 10
+        print('{} весь день спал'.format(self.name))
 
 
 home = House()
 serge = Husband(name='Сережа')
 masha = Wife(name='Маша')
+kolya = Child(name='Коля')
 
 serge.go_to_the_house(home)
 masha.go_to_the_house(home)
+kolya.go_to_the_house(home)
 
 for day in range(365):
     cprint('================== День {} =================='.format(day), color='red')
@@ -213,13 +224,14 @@ for day in range(365):
         home.mess += 5
     serge.act()
     masha.act()
+    kolya.act()
     cprint(serge, color='cyan')
     cprint(masha, color='cyan')
+    cprint(kolya, color='cyan')
     cprint(home, color='cyan')
 print("Съедено {} еды".format(home.total_food_eaten))
 print("{} денег заработано".format(home.total_got_money))
 print("{} шуб куплено".format(home.total_furcoats_purchased))
-
 
 # # TODO после реализации первой части - отдать на проверку учителю
 #

@@ -96,7 +96,7 @@ class Man:
         cprint('{} теперь живет в доме'.format(self.name), color='cyan')
 
     def act(self):
-        if self.house.mess >= 80: self.happiness -= 10
+        if self.house.mess >= 90: self.happiness -= 10
         if self.fullness <= 0:
             cprint('{} умер(ла) от голода...'.format(self.name), color='red')
             return
@@ -150,19 +150,19 @@ class Wife(Man):
     def act(self):
         if super().act() is True:
             dice = randint(1, 6)
-            if self.fullness <= 20:
+            if self.fullness <= 10:
                 self.eat()
                 return
-            elif self.house.food <= 50:
+            elif self.house.food <= 30:
                 self.shopping()
                 return
-            elif self.happiness <= 40:
+            elif self.happiness <= 20:
                 self.buy_fur_coat()
                 return
             elif self.house.petfood <= 10:
                 self.zooshopping()
                 return
-            elif self.house.mess >= 70:
+            elif self.house.mess >= 50:
                 self.clean_house()
             else:
                 if dice == 1:
@@ -180,8 +180,8 @@ class Wife(Man):
     def shopping(self):
         if self.house.money >= 50:
             self.fullness -= 10
-            self.house.money -= 50
-            self.house.food += 50
+            self.house.money -= 100
+            self.house.food += 100
             print('{} сходила в магазин за едой'.format(self.name))
         else:
             print('Нет денег')

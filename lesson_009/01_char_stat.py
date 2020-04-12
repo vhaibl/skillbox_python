@@ -36,7 +36,6 @@ class Sorter:
             zfile.extract(filename)
         self.file_name = filename
 
-
     def collect(self):
         if self.file_name.endswith('.zip'):
             self.unzip()
@@ -53,23 +52,32 @@ class Sorter:
                 else:
                     self.stat[char] = 1
             else:
-                pass
+                pass  # TODO else - pass не нужен
 
     def print_out(self):
 
         print('+---------+----------+')
         print('|  буква  | частота  |')
         print('+---------+----------+')
-        for char, ch_val in self.sorted:
+        for char, ch_val in self.sorted:  # TODO название sorted занято стандартными библиотеками
             print('|{:^9}|{:^10}|'.format(char, ch_val))
         print('+---------+----------+')
         print('+  Итого  | {:^9}+'.format(self.total))
         print('+---------+----------+')
 
-
+# TODO Слишком много дублирования кода в наследниках получается
+# TODO 1) Создайте метод, типа run, который будет запускать по-очереди нужные методы
+# TODO 2) Создайте для сортировки отдельный метод и только его переопределяйте в наследниках
+# TODO Чтобы в итоге у вас получилось
+# деф run()
+#     собрать информацию
+#     сортировать
+#     распечатать
 class SortByAscending(Sorter):
     def print_out(self):
         self.sorted = sorted(sorter.stat.items(), key=lambda kv: kv[1], reverse=False)
+        # TODO атрибут нужно сперва задать в init, а потом уже использовать где-то в методах
+        # TODO либо просто использовать переменную, без self
         print('+---------+----------+')
         print('|  буква  | частота  |')
         print('+---------+----------+')

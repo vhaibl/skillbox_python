@@ -24,7 +24,6 @@ import zipfile
 
 
 class Sorter:
-    analize_count = 4
 
     def __init__(self, file_name):
         self.file_name = file_name
@@ -37,12 +36,10 @@ class Sorter:
             zfile.extract(filename)
         self.file_name = filename
 
-    # TODO здесь ваш код
 
     def collect(self):
         if self.file_name.endswith('.zip'):
             self.unzip()
-        self.sequence = ' ' * self.analize_count
         with open(self.file_name, 'r', encoding='cp1251') as file:
             for line in file:
                 self._collect_for_line(line=line[:-1])
@@ -59,32 +56,84 @@ class Sorter:
                 pass
 
     def print_out(self):
-        self.sorted_desc = sorted(sorter.stat.items(), key=lambda kv: kv[1], reverse=True)
-        self.sorted_asc = sorted(sorter.stat.items(), key=lambda kv: kv[1], reverse=False)
+
         print('+---------+----------+')
         print('|  буква  | частота  |')
         print('+---------+----------+')
-        for char, ch_val in self.sorted_asc:
+        for char, ch_val in self.sorted:
             print('|{:^9}|{:^10}|'.format(char, ch_val))
         print('+---------+----------+')
         print('+  Итого  | {:^9}+'.format(self.total))
         print('+---------+----------+')
 
 
+class SortByAscending(Sorter):
+    def print_out(self):
+        self.sorted = sorted(sorter.stat.items(), key=lambda kv: kv[1], reverse=False)
         print('+---------+----------+')
         print('|  буква  | частота  |')
         print('+---------+----------+')
-        for char, ch_val in self.sorted_desc:
+        for char, ch_val in self.sorted:
             print('|{:^9}|{:^10}|'.format(char, ch_val))
         print('+---------+----------+')
         print('+  Итого  | {:^9}+'.format(self.total))
         print('+---------+----------+')
 
 
-sorter = Sorter(file_name='python_snippets\\voyna-i-mir.txt.zip')
+class SortByDescending(Sorter):
+    def print_out(self):
+        self.sorted = sorted(sorter.stat.items(), key=lambda kv: kv[1], reverse=True)
+        print('+---------+----------+')
+        print('|  буква  | частота  |')
+        print('+---------+----------+')
+        for char, ch_val in self.sorted:
+            print('|{:^9}|{:^10}|'.format(char, ch_val))
+        print('+---------+----------+')
+        print('+  Итого  | {:^9}+'.format(self.total))
+        print('+---------+----------+')
+
+
+class SortByAlphabet(Sorter):
+    def print_out(self):
+        self.sorted = sorted(sorter.stat.items(), key=lambda kv: kv[0], reverse=False)
+        print('+---------+----------+')
+        print('|  буква  | частота  |')
+        print('+---------+----------+')
+        for char, ch_val in self.sorted:
+            print('|{:^9}|{:^10}|'.format(char, ch_val))
+        print('+---------+----------+')
+        print('+  Итого  | {:^9}+'.format(self.total))
+        print('+---------+----------+')
+
+
+class SortByReversedAlphabet(Sorter):
+    def print_out(self):
+        self.sorted = sorted(sorter.stat.items(), key=lambda kv: kv[0], reverse=True)
+        print('+---------+----------+')
+        print('|  буква  | частота  |')
+        print('+---------+----------+')
+        for char, ch_val in self.sorted:
+            print('|{:^9}|{:^10}|'.format(char, ch_val))
+        print('+---------+----------+')
+        print('+  Итого  | {:^9}+'.format(self.total))
+        print('+---------+----------+')
+
+
+sorter = SortByAscending(file_name='python_snippets\\voyna-i-mir.txt.zip')
 sorter.collect()
 sorter.print_out()
 
+sorter = SortByDescending(file_name='python_snippets\\voyna-i-mir.txt.zip')
+sorter.collect()
+sorter.print_out()
+
+sorter = SortByAlphabet(file_name='python_snippets\\voyna-i-mir.txt.zip')
+sorter.collect()
+sorter.print_out()
+
+sorter = SortByReversedAlphabet(file_name='python_snippets\\voyna-i-mir.txt.zip')
+sorter.collect()
+sorter.print_out()
 
 # После выполнения первого этапа нужно сделать упорядочивание статистики
 #  - по частоте по возрастанию
@@ -92,4 +141,4 @@ sorter.print_out()
 #  - по алфавиту по убыванию
 # Для этого пригодится шаблон проектирование "Шаблонный метод"
 #   см https://goo.gl/Vz4828
-#   и пример https://gitlab.skillbox.ru/vadim_shandrinov/python_base_snippets/snippets/4
+#   и пример https://gitlab.skillbox.ru/vadim_shandrinov/python_base_snippets/snippets/

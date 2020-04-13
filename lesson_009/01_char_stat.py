@@ -29,6 +29,7 @@ class Sorter:
         self.file_name = file_name
         self.stat = {}
         self.total = 0
+        self.sorted_data = {}
 
     def unzip(self):
         zfile = zipfile.ZipFile(self.file_name, 'r')
@@ -51,97 +52,62 @@ class Sorter:
                     self.total += 1
                 else:
                     self.stat[char] = 1
-            else:
-                pass  # TODO else - pass не нужен
+
+    def sort_style(self):
+        pass
 
     def print_out(self):
 
         print('+---------+----------+')
         print('|  буква  | частота  |')
         print('+---------+----------+')
-        for char, ch_val in self.sorted:  # TODO название sorted занято стандартными библиотеками
-            print('|{:^9}|{:^10}|'.format(char, ch_val))
+        self.sort_style()
         print('+---------+----------+')
         print('+  Итого  | {:^9}+'.format(self.total))
         print('+---------+----------+')
+        print('----------------------------------------------------')
 
-# TODO Слишком много дублирования кода в наследниках получается
-# TODO 1) Создайте метод, типа run, который будет запускать по-очереди нужные методы
-# TODO 2) Создайте для сортировки отдельный метод и только его переопределяйте в наследниках
-# TODO Чтобы в итоге у вас получилось
-# деф run()
-#     собрать информацию
-#     сортировать
-#     распечатать
+    def run(self):
+        self.collect()
+        self.print_out()
+
+
 class SortByAscending(Sorter):
-    def print_out(self):
-        self.sorted = sorted(sorter.stat.items(), key=lambda kv: kv[1], reverse=False)
-        # TODO атрибут нужно сперва задать в init, а потом уже использовать где-то в методах
-        # TODO либо просто использовать переменную, без self
-        print('+---------+----------+')
-        print('|  буква  | частота  |')
-        print('+---------+----------+')
-        for char, ch_val in self.sorted:
+    def sort_style(self):
+        self.sorted_data = sorted(sorter.stat.items(), key=lambda kv: kv[1], reverse=False)
+        for char, ch_val in self.sorted_data:
             print('|{:^9}|{:^10}|'.format(char, ch_val))
-        print('+---------+----------+')
-        print('+  Итого  | {:^9}+'.format(self.total))
-        print('+---------+----------+')
 
 
 class SortByDescending(Sorter):
-    def print_out(self):
-        self.sorted = sorted(sorter.stat.items(), key=lambda kv: kv[1], reverse=True)
-        print('+---------+----------+')
-        print('|  буква  | частота  |')
-        print('+---------+----------+')
-        for char, ch_val in self.sorted:
+    def sort_style(self):
+        self.sorted_data = sorted(sorter.stat.items(), key=lambda kv: kv[1], reverse=True)
+        for char, ch_val in self.sorted_data:
             print('|{:^9}|{:^10}|'.format(char, ch_val))
-        print('+---------+----------+')
-        print('+  Итого  | {:^9}+'.format(self.total))
-        print('+---------+----------+')
 
 
 class SortByAlphabet(Sorter):
-    def print_out(self):
-        self.sorted = sorted(sorter.stat.items(), key=lambda kv: kv[0], reverse=False)
-        print('+---------+----------+')
-        print('|  буква  | частота  |')
-        print('+---------+----------+')
-        for char, ch_val in self.sorted:
+    def sort_style(self):
+        self.sorted_data = sorted(sorter.stat.items(), key=lambda kv: kv[0], reverse=False)
+        for char, ch_val in self.sorted_data:
             print('|{:^9}|{:^10}|'.format(char, ch_val))
-        print('+---------+----------+')
-        print('+  Итого  | {:^9}+'.format(self.total))
-        print('+---------+----------+')
 
 
 class SortByReversedAlphabet(Sorter):
-    def print_out(self):
-        self.sorted = sorted(sorter.stat.items(), key=lambda kv: kv[0], reverse=True)
-        print('+---------+----------+')
-        print('|  буква  | частота  |')
-        print('+---------+----------+')
-        for char, ch_val in self.sorted:
+    def sort_style(self):
+        self.sorted_data = sorted(sorter.stat.items(), key=lambda kv: kv[0], reverse=True)
+        for char, ch_val in self.sorted_data:
             print('|{:^9}|{:^10}|'.format(char, ch_val))
-        print('+---------+----------+')
-        print('+  Итого  | {:^9}+'.format(self.total))
-        print('+---------+----------+')
 
 
 sorter = SortByAscending(file_name='python_snippets\\voyna-i-mir.txt.zip')
-sorter.collect()
-sorter.print_out()
-
+sorter.run()
 sorter = SortByDescending(file_name='python_snippets\\voyna-i-mir.txt.zip')
-sorter.collect()
-sorter.print_out()
-
+sorter.run()
 sorter = SortByAlphabet(file_name='python_snippets\\voyna-i-mir.txt.zip')
-sorter.collect()
-sorter.print_out()
-
+sorter.run()
 sorter = SortByReversedAlphabet(file_name='python_snippets\\voyna-i-mir.txt.zip')
-sorter.collect()
-sorter.print_out()
+sorter.run()
 
 # После выполнения первого этапа нужно сделать упорядочивание статистики
 #  - по частоте по возрастанию

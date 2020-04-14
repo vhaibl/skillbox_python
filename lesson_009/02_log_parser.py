@@ -23,9 +23,10 @@ file_name = 'events.txt'
 
 
 class Parser:
-    def __init__(self, file_name):
+    def __init__(self, file_name, out_file):
         self.filtered = {}
         self.file_name = file_name
+        self.out_file = out_file
 
     def prepare(self):
         with open(file_name, 'r', encoding='utf-8') as file:
@@ -44,10 +45,16 @@ class Parser:
                 self.filtered = {filter: 1}
 
     def result(self):
-        print('__________________MINUTE STATS___________________')
+        my_file = open(self.out_file, "w", encoding='utf-8')
+        my_file.write('__________________MINUTE STATS___________________\n')
+
+        print('__________________MINUTE STATS___________________\n')
 
         for date, count in self.filtered.items():
-            print(date, count)
+            print(date, ' -', count)
+
+            my_file.write('{} {}\n'.format(date, count))
+        my_file.close()
 
     def run(self):
         self.prepare()
@@ -62,9 +69,16 @@ class Hours(Parser):
                 self.create(filter, line)
 
     def result(self):
-        print('__________________HOUR STATS___________________')
+
+        my_file = open(self.out_file, "w", encoding='utf-8')
+        my_file.write('__________________HOUR STATS___________________\n')
+
+        print('__________________HOUR STATS___________________\n')
         for date, count in self.filtered.items():
             print(date, 'hour -', count)
+            my_file.write('{} hour - {}\n'.format(date, count))
+        my_file.close()
+
 
 class Month(Parser):
     def prepare(self):
@@ -74,9 +88,15 @@ class Month(Parser):
                 self.create(filter, line)
 
     def result(self):
-        print('__________________MONTH STATS___________________')
+        my_file = open(self.out_file, "w", encoding='utf-8')
+        my_file.write('__________________MONTH STATS___________________\n')
+
+        print('__________________MONTH STATS___________________\n')
         for date, count in self.filtered.items():
             print(date[0:4], 'year', date[5:7], 'month - ', count)
+            my_file.write('{} year {} month - {}\n'.format(date[0:4], date[5:7], count))
+        my_file.close()
+
 
 class Year(Parser):
     def prepare(self):
@@ -86,20 +106,26 @@ class Year(Parser):
                 self.create(filter, line)
 
     def result(self):
-        print('__________________YEAR STATS___________________')
+        my_file = open(self.out_file, "w", encoding='utf-8')
+        my_file.write('__________________YEAR STATS___________________\n')
+
+        print('__________________YEAR STATS___________________\n')
         for date, count in self.filtered.items():
             print(date[0:4], 'year - ', count)
+            my_file.write('{} year - {}\n'.format(date[0:4], count))
+        my_file.close()
 
-parse = Parser(file_name='events.txt')
+
+parse = Parser(file_name='events.txt', out_file='out_minute.txt')
 parse.run()
 
-parse = Hours(file_name='events.txt')
+parse = Hours(file_name='events.txt', out_file='out_hour.txt')
 parse.run()
 
-parse = Month(file_name='events.txt')
+parse = Month(file_name='events.txt', out_file='out_month.txt')
 parse.run()
 
-parse = Year(file_name='events.txt')
+parse = Year(file_name='events.txt', out_file='out_year.txt')
 parse.run()
 # После выполнения первого этапа нужно сделать группировку событий
 #  - по часам

@@ -34,7 +34,60 @@ import os, time, shutil
 # Чтение документации/гугла по функциям - приветствуется. Как и поиск альтернативных вариантов :)
 # Требования к коду: он должен быть готовым к расширению функциональности. Делать сразу на классах.
 
-# TODO здесь ваш код
+import time
+import os
+import shutil
+
+
+class Sorter:
+    def __init__(self, path, new_path):
+        self.path = path
+        self.new_path = new_path
+        self.path_normalized = os.path.normpath(path)
+
+    def takefromfolder(self):
+        for dirpath, dirnames, filenames in os.walk(self.path_normalized):
+            for file in filenames:
+                full_file_path = os.path.join(dirpath, file)
+                secs = os.path.getmtime(full_file_path)
+                file_time = time.gmtime(secs)
+                new_dest = self.sortby(file_time)
+                print(new_dest)
+                if not os.path.exists(new_dest):
+                    os.makedirs(new_dest)
+                shutil.copy2(full_file_path, new_dest)
+
+    def sortby(self, file_time):
+        new_dest = os.path.join(str(new_path) + '\\' + str(file_time.tm_year) + '\\' + str(file_time.tm_mon))
+        return new_dest
+
+
+path = 'icons'
+new_path = 'sorted_icons'
+sorticons = Sorter(path=path, new_path=new_path)
+sorticons.takefromfolder()
+
+
+#TODO _________________________________
+#TODO Не могу разобраться с усложненной частью. Вроде создаю список с отсортированными путями, но все равно
+#TODO добавляются лишние папки
+
+import zipfile
+from pprint import pprint
+
+outdir = 'sorted_icons2'
+pathlist=[]
+archive = zipfile.ZipFile('icons.zip', 'r')
+for afile in archive.filelist:
+    ayear = afile.date_time[0]
+    amonth = afile.date_time[1]
+    aday = afile.date_time[2]
+    apath = str(outdir) + '\\' + str(ayear) + '\\' + str(amonth) + '\\' + str(afile.filename.split('/')[-1])
+    pathlist.append(apath)
+    pprint(pathlist)
+    archive.extract(member=afile, path=apath)
+
+
 
 # Усложненное задание (делать по желанию)
 # Нужно обрабатывать zip-файл, содержащий фотографии, без предварительного извлечения файлов в папку.

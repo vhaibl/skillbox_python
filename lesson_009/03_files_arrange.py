@@ -67,16 +67,15 @@ new_path = 'sorted_icons'
 sorticons = Sorter(path=path, new_path=new_path)
 sorticons.takefromfolder()
 
-
-#TODO _________________________________
-#TODO Не могу разобраться с усложненной частью. Вроде создаю список с отсортированными путями, но все равно
-#TODO добавляются лишние папки
+# _________________________________
+# Не могу разобраться с усложненной частью. Вроде создаю список с отсортированными путями, но все равно
+# добавляются лишние папки
 
 import zipfile
 from pprint import pprint
 
 outdir = 'sorted_icons2'
-pathlist=[]
+pathlist = []
 archive = zipfile.ZipFile('icons.zip', 'r')
 for afile in archive.filelist:
     ayear = afile.date_time[0]
@@ -86,8 +85,8 @@ for afile in archive.filelist:
     pathlist.append(apath)
     pprint(pathlist)
     archive.extract(member=afile, path=apath)
-
-
+    # TODO Этот метод создает свои пути внутри себя
+    # TODO Нужно использовать что-то другое например shutil.copyfileobj
 
 # Усложненное задание (делать по желанию)
 # Нужно обрабатывать zip-файл, содержащий фотографии, без предварительного извлечения файлов в папку.

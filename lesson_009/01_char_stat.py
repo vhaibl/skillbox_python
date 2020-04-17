@@ -116,3 +116,4 @@ sorter.run()
 # Для этого пригодится шаблон проектирование "Шаблонный метод"
 #   см https://goo.gl/Vz4828
 #   и пример https://gitlab.skillbox.ru/vadim_shandrinov/python_base_snippets/snippets/
+#зачет!

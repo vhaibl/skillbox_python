@@ -76,7 +76,6 @@ sorticons.takefromfolder()
 
 def fromzip():
     outdir = 'sorted_from_zip'
-    pathlist = []
     archive = zipfile.ZipFile('icons.zip', 'r')
     for afile in archive.filelist:
 
@@ -87,7 +86,6 @@ def fromzip():
         createpath = str(outdir) + '\\' + str(ayear) + '\\' + str(amonth)
         if createpath and not os.path.exists(createpath):
             os.makedirs(createpath)
-        pathlist.append(apath)
         if not apath.endswith("/"):
             if not apath.endswith("\\"):
                 source = archive.open(afile, 'r')

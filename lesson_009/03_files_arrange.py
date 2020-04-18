@@ -88,12 +88,10 @@ def fromzip():
         if createpath and not os.path.exists(createpath):
             os.makedirs(createpath)
         pathlist.append(apath)
-
-        target = os.path.join(apath)
-        if not target.endswith("/"):
-            if not target.endswith("\\"):
+        if not apath.endswith("/"):
+            if not apath.endswith("\\"):
                 source = archive.open(afile, 'r')
-                target2 = open(target, 'wb')
+                target2 = open(apath, 'wb')
                 shutil.copyfileobj(source, target2)
                 target2.close()
                 source.close()

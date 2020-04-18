@@ -37,6 +37,7 @@ import os, time, shutil
 import time
 import os
 import shutil
+import zipfile
 
 
 class Sorter:
@@ -67,30 +68,42 @@ new_path = 'sorted_icons'
 sorticons = Sorter(path=path, new_path=new_path)
 sorticons.takefromfolder()
 
+
 # _________________________________
 # Не могу разобраться с усложненной частью. Вроде создаю список с отсортированными путями, но все равно
 # добавляются лишние папки
 
-import zipfile
-from pprint import pprint
 
-outdir = 'sorted_icons2'
-pathlist = []
-archive = zipfile.ZipFile('icons.zip', 'r')
-for afile in archive.filelist:
-    ayear = afile.date_time[0]
-    amonth = afile.date_time[1]
-    aday = afile.date_time[2]
-    apath = str(outdir) + '\\' + str(ayear) + '\\' + str(amonth) + '\\' + str(afile.filename.split('/')[-1])
-    pathlist.append(apath)
-    pprint(pathlist)
-    archive.extract(member=afile, path=apath)
-    # TODO Этот метод создает свои пути внутри себя
-    # TODO Нужно использовать что-то другое например shutil.copyfileobj
+def fromzip():
+    outdir = 'sorted_from_zip'
+    pathlist = []
+    archive = zipfile.ZipFile('icons.zip', 'r')
+    for afile in archive.filelist:
 
-# Усложненное задание (делать по желанию)
-# Нужно обрабатывать zip-файл, содержащий фотографии, без предварительного извлечения файлов в папку.
-# Это относится ктолько к чтению файлов в архиве. В случае паттерна "Шаблонный метод" изменяется способ
-# получения данных (читаем os.walk() или zip.namelist и т.д.)
-# Документация по zipfile: API https://docs.python.org/3/library/zipfile.html
-# Для этого пригодится шаблон проектирование "Шаблонный метод" см https://goo.gl/Vz4828
+        ayear = afile.date_time[0]
+        amonth = afile.date_time[1]
+        aday = afile.date_time[2]
+        apath = str(outdir) + '\\' + str(ayear) + '\\' + str(amonth) + '\\' + str(afile.filename.split('/')[-1])
+        createpath = str(outdir) + '\\' + str(ayear) + '\\' + str(amonth)
+        if createpath and not os.path.exists(createpath):
+            os.makedirs(createpath)
+        pathlist.append(apath)
+
+        target = os.path.join(apath)
+        if not target.endswith("/"):
+            if not target.endswith("\\"):
+                source = archive.open(afile, 'r')
+                target2 = open(target, 'wb')
+                shutil.copyfileobj(source, target2)
+                target2.close()
+                source.close()
+
+
+fromzip()
+
+# # Усложненное задание (делать по желанию)
+# # Нужно обрабатывать zip-файл, содержащий фотографии, без предварительного извлечения файлов в папку.
+# # Это относится ктолько к чтению файлов в архиве. В случае паттерна "Шаблонный метод" изменяется способ
+# # получения данных (читаем os.walk() или zip.namelist и т.д.)
+# # Документация по zipfile: API https://docs.python.org/3/library/zipfile.html
+# # Для этого пригодится шаблон проектирование "Шаблонный метод" см https://goo.gl/Vz4828

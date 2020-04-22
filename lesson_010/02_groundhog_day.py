@@ -16,9 +16,72 @@
 # кармы до уровня ENLIGHTENMENT_CARMA_LEVEL. Исключения обработать и записать в лог.
 # При создании собственных исключений максимально использовать функциональность
 # базовых встроенных исключений.
+from random import randint
+
+
+class IamGodError(Exception):
+    pass
+
+
+class DrunkError(Exception):
+    pass
+
+
+class CarCrushError(Exception):
+    pass
+
+
+class GluttonyError(Exception):
+    pass
+
+
+class DepressionError(Exception):
+    pass
+
+
+class SuicideError(Exception):
+    pass
+
+
+def one_day(carma):
+    situation = randint(1, 13)
+    if situation == 1:
+        raise IamGodError("I am God")
+    elif situation == 2:
+        raise DrunkError("Got Drunk")
+    elif situation == 3:
+        raise CarCrushError("Crushed in a car")
+    elif situation == 4:
+        raise GluttonyError("Died from gluttony")
+    elif situation == 5:
+        raise DepressionError("Died in depression")
+    elif situation == 6:
+        raise SuicideError("Suicide death")
+
+
+def day_by_day():
+    carma = 0
+    day = 0
+    my_file = open('log_groundhound_day.txt', "w", encoding='utf-8')
+    while carma < ENLIGHTENMENT_CARMA_LEVEL:
+
+        try:
+            day += 1
+            one_day(carma)
+            if carma < 772:
+                carma += randint(1, 7)
+            else:
+                carma = 777
+
+        except Exception as esc:
+            out = 'Day ' + str(day) + ' : ' + str(esc)
+            print(out)
+            my_file.write(out + '\n')
+        print('Day', day, 'carma:', carma)
+    my_file.close()
+
 
 ENLIGHTENMENT_CARMA_LEVEL = 777
-
-# TODO здесь ваш код
+day_by_day()
 
 # https://goo.gl/JnsDqu

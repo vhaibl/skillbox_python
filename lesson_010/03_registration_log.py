@@ -44,8 +44,8 @@ def validate(line):
 def check_regs(filename):
     with open(filename, 'r', encoding='utf8') as ff:
         count = 0
-        bad_regs = open('bad_regs.txt.txt', "w", encoding='utf-8')
-        good_regs = open('good_regs.txt.txt', "w", encoding='utf-8')
+        bad_regs = open('registrations_bad.log', "w", encoding='utf-8')
+        good_regs = open('registrations_good.log', "w", encoding='utf-8')
         for line in ff:
             line = line[:-1]
             count += 1

@@ -43,9 +43,8 @@ class SuicideError(Exception):
     pass
 
 
-def one_day(carma):  # TODO Карма тут вроде не нужна
-    situation = randint(1, 13)
-    # TODO В итоге получается на 1 к 13 шанс, а 6 к 13 :)
+def one_day():
+    situation = randint(1, 6)
     if situation == 1:
         raise IamGodError("I am God")
     elif situation == 2:
@@ -65,21 +64,28 @@ def day_by_day():
     day = 0
     my_file = open('log_groundhound_day.txt', "w", encoding='utf-8')
     while carma < ENLIGHTENMENT_CARMA_LEVEL:
-
-        try:
-            day += 1
-            one_day(carma)
-            if carma < 772:
-                carma += randint(1, 7)
-            else:
-                carma = 777
-
-        except Exception as esc:
-            out = 'Day ' + str(day) + ' : ' + str(esc)
-            print(out)
-            my_file.write(out + '\n')
+        chance = randint(1, 13)
+        day += 1
+        if chance == 1:
+            try:
+                one_day()
+                carma = carma_gen(carma)
+            except Exception as esc:
+                out = 'Day ' + str(day) + ' : ' + str(esc)
+                print(out)
+                my_file.write(out + '\n')
+        else:
+            carma = carma_gen(carma)
         print('Day', day, 'carma:', carma)
     my_file.close()
+
+
+def carma_gen(carma):
+    if carma < 772:
+        carma += randint(1, 7)
+    else:
+        carma = 777
+    return carma
 
 
 ENLIGHTENMENT_CARMA_LEVEL = 777

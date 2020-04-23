@@ -33,7 +33,7 @@ def validate(line):
     username, email, age = line.split(' ')
     age = int(age)
 
-    if username.isalpha() == False:  # TODO С объектами типа False/True/None лучше использовать is вместо ==
+    if username.isalpha() is False:
         raise NotNameError
     elif '@' not in email and '.' not in email:
         raise NotEmailError
@@ -44,7 +44,7 @@ def validate(line):
 def check_regs(filename):
     with open(filename, 'r', encoding='utf8') as ff:
         count = 0
-        bad_regs = open('registrations_bad.log', "w", encoding='utf-8')
+        bad_regs = open('registrations_bad.log  ', "w", encoding='utf-8')
         good_regs = open('registrations_good.log', "w", encoding='utf-8')
         for line in ff:
             line = line[:-1]
@@ -70,8 +70,8 @@ def check_regs(filename):
                 emailerror = f'Неправильно указана электронная почта в строке {count}: {line}'
                 print(emailerror)
                 bad_regs.write(emailerror + '\n')
-        # TODO good файл забываете закрыть
         bad_regs.close()
+        good_regs.close()
 
 
 check_regs('registrations.txt')

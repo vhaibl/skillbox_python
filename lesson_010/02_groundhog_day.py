@@ -92,3 +92,4 @@ ENLIGHTENMENT_CARMA_LEVEL = 777
 day_by_day()
 
 # https://goo.gl/JnsDqu
+#зачет!

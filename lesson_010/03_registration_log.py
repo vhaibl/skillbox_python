@@ -75,3 +75,4 @@ def check_regs(filename):
 
 
 check_regs('registrations.txt')
+#зачет!

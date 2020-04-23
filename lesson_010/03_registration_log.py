@@ -33,7 +33,7 @@ def validate(line):
     username, email, age = line.split(' ')
     age = int(age)
 
-    if username.isalpha() == False:
+    if username.isalpha() == False:  # TODO С объектами типа False/True/None лучше использовать is вместо ==
         raise NotNameError
     elif '@' not in email and '.' not in email:
         raise NotEmailError
@@ -70,7 +70,7 @@ def check_regs(filename):
                 emailerror = f'Неправильно указана электронная почта в строке {count}: {line}'
                 print(emailerror)
                 bad_regs.write(emailerror + '\n')
-
+        # TODO good файл забываете закрыть
         bad_regs.close()
 
 

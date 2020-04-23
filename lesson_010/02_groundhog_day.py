@@ -43,8 +43,9 @@ class SuicideError(Exception):
     pass
 
 
-def one_day(carma):
+def one_day(carma):  # TODO Карма тут вроде не нужна
     situation = randint(1, 13)
+    # TODO В итоге получается на 1 к 13 шанс, а 6 к 13 :)
     if situation == 1:
         raise IamGodError("I am God")
     elif situation == 2:

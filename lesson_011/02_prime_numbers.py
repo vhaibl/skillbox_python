@@ -20,11 +20,30 @@ def get_prime_numbers(n):
 #
 # Распечатать все простые числа до 10000 в столбик
 
-
 class PrimeNumbers:
-    pass
-    # TODO здесь ваш код
 
+    def __init__(self, n):
+        self.i = 0
+        self.a = []
+        self.n = n
+        self.b = self.i + 1
+
+    def __iter__(self):
+        self.i = 0
+        return self
+
+    def __next__(self):
+        while True:
+            self.i += 1
+            self.b += 1
+            if self.i > self.n:
+                raise StopIteration()
+            for number in self.a:
+                if self.b % number == 0:
+                    break
+            else:
+                self.a.append(self.b)
+                return self.b
 
 prime_number_iterator = PrimeNumbers(n=10000)
 for number in prime_number_iterator:

@@ -32,3 +32,4 @@ draw_triangle(point=sd.get_point(200, 200), tilt=13, length=100)
 
 
 sd.pause()
+#зачет!

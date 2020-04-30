@@ -23,48 +23,121 @@ def get_prime_numbers(n):
 
 class PrimeNumbers:
 
-    def __init__(self, n):
-        self.i = 0
+    def __init__(self, n, zfilter):
         self.a = []
         self.n = n
-        self.b = self.i + 1
+        self.b = 1
+        self.zfilter = zfilter
 
     def __iter__(self):
-        self.i = 0
+        self.b = 1
         return self
 
     def __next__(self):
         while True:
-            self.i += 1
-            self.b += 1  # TODO Почему бы не оставить только одно из этих чисел?
-            if self.i > self.n:
+            self.b += 1
+            self.strnumber = str(self.b)
+            if self.b >= self.n:
                 raise StopIteration()
             for number in self.a:
                 if self.b % number == 0:
                     break
             else:
                 self.a.append(self.b)
-                return self.b
+                if self.zfilter == '1':
+                    if self.is_pal():
+                        return self.b
+                elif self.zfilter == '2':
+                    if self.hasthreenines():
+                        return self.b
+                elif self.zfilter == '3':
+                    if self.is_lucky():
+                        return self.b
+                elif self.zfilter == '4':
+                    if self.is_lucky() and self.is_pal():
+                        return self.b
+                elif self.zfilter == '5':
+                    if self.is_lucky() and self.hasthreenines():
+                        return self.b
+                elif self.zfilter == '5':
+                    if self.is_pal() and self.hasthreenines():
+                        return self.b
+                else:
+                    return self.b
+
+    def sum_digits(self, numn):
+        return sum(map(int, numn))
+
+    def hasthreenines(self):
+        if '999' in str(self.b):
+            return True
+
+    def is_lucky(self):
+        center = len(self.strnumber) // 2
+        return self.sum_digits(self.strnumber[:center]) == self.sum_digits(self.strnumber[-center:])
+
+    def is_pal(self):
+        return str(self.b) == str(self.b)[::-1] and int(self.b) > 10
+
+    def nocheck(digit):
+        return True
 
 
-prime_number_iterator = PrimeNumbers(n=10000)
+prime_number_iterator = PrimeNumbers(n=100000, zfilter='5')
+print('Фильтры: 1 - Палиндромное, 2 - 999 в номере, 3 - Счастливое, 4 - Счстливе и палиндромное, 5 - Счастливое и 999,'
+      ' 6 - Палиндромное и 999')
 for number in prime_number_iterator:
     print(number)
 
-
-# TODO Можете приступать к следующей части!
 # Часть 2
 # Теперь нужно создать генератор, который выдает последовательность простых чисел до n
 # Распечатать все простые числа до 10000 в столбик
 
+def prime_numbers_generator(n, filter1, filter2):
+    a = 1
+    prime_numb = []
+    while True:
+        a += 1
+        for number in prime_numb:
+            if a % number == 0:
+                break
+        else:
+            prime_numb.append(a)
+            if filter1(str(a)) and filter2(str(a)):
+                yield a
+        if a > n:
+            return
 
-def prime_numbers_generator(n):
-    pass
-    # TODO здесь ваш код
+
+def is_lucky(digit):
+    center = len(digit) // 2
+    return sum_digits(digit[:center]) == sum_digits(digit[-center:])
 
 
-for number in prime_numbers_generator(n=10000):
+def is_pal(digit):
+    return str(digit) == str(digit)[::-1] and int(digit) > 10
+
+
+def hasthreethrees(digit):
+    if '333' in digit:
+        return True
+
+
+def nocheck(digit):
+    return True
+
+
+def sum_digits(digit):
+    return sum(map(int, digit))
+
+
+for number in prime_numbers_generator(n=100000, filter1=hasthreethrees, filter2=is_pal):
     print(number)
+
+#TODO Сделал фильтры счатливого, палиндромного и наличия 999 в числе, добавил их в генератор и итератор, сделал
+#TODO возможость запускать несколько фильтров на выбор
+#TODO Насчет "придумать свою" прошу предложить какой тип число выбрать, если проверки на 999 недостаточно,
+#TODO выбирать в википедии то, что может подойти, не очень просто
 
 # Часть 3
 # Написать несколько функций-фильтров, которые выдает True, если число:

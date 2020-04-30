@@ -38,7 +38,7 @@ module_1.func_2()
 ###
 # Мы можем добавлять или изменять значения переменных в пространстве имен модуля
 
-module_1.abc = 'some string'
+module_1.hasthreenines = 'some string'
 
 module_1.x = 'INJECTO'
 

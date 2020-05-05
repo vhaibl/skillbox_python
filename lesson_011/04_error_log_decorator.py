@@ -15,11 +15,13 @@ def get_log_errors(filename):
             except ValueError as e:
                 with open(filename, 'a') as a:
                     a.write(f"{func} {args} {kwargs} ValueError: {e}" + "\n")
-                return func(*args, **kwargs)
+                return func(*args, **kwargs)  # TODO ретурн нужен только в try, тут нужен raise
+            # TODO Чтобы вызвать ошибку после того, как мы её поймали и записали.
             except ZeroDivisionError as e:
                 print(f'ZeroDivisionError: {e}')
                 with open(filename, 'a') as a:
                     a.write(f"{func} {args} {kwargs} ValueError: {e}" + "\n")
+                # TODO И тут raise
 
         return wrapped
     return log_errors

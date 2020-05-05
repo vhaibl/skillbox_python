@@ -76,7 +76,7 @@ for value in fibonacci(n=10):
 class Fibonacci:
     """Итератор последовательности Фибоначчи до N элементов"""
 
-    def __init__(self, n):
+    def __init__(self, n)   :
         self.i, self.a, self.b, self.n = 0, 0, 1, n
 
     def __iter__(self):

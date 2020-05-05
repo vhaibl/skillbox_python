@@ -14,4 +14,23 @@
 #
 # [2018-05-17 01:57] 1234
 
-# TODO здесь ваш код
+def generate(file_name):
+    filtered = {}
+    with open(file_name, 'r', encoding='utf-8') as file:
+        for line in file:
+            filter = line[1:17]
+            if 'NOK' in line:
+                if filter in line:
+                    if filter in filtered:
+                        filtered[filter] += 1
+                    else:
+                        filtered[filter] = 1
+                else:
+                    filtered = {filter: 1}
+    for dates, events in filtered.items():
+        yield dates, events
+
+
+grouped_events = generate(file_name='events.txt')
+for group_time, event_count in grouped_events:
+    print(f'[{group_time}] {event_count}')

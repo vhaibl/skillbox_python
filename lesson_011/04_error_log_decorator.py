@@ -19,7 +19,7 @@ def get_log_errors(filename):
             except ZeroDivisionError as e:
                 print(f'ZeroDivisionError: {e}')
                 with open(filename, 'a') as a:
-                    a.write(f"{func} {args} {kwargs} ValueError: {e}" + "\n")
+                    a.write(f"{func} {args} {kwargs} ZeroDivisionError: {e}" + "\n")
                 raise ZeroDivisionError
 
         return wrapped

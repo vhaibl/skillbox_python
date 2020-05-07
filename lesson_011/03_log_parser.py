@@ -23,18 +23,25 @@ def generate(file_name):
     with open(file_name, 'r', encoding='utf-8') as file:
         for line in file:
             filter = line[1:17]
+            minute = line[15:17]
+#TODO Никак не могу понять, как мне читать поминутно. Через цикл while по срезу минут? но как его вставить, и как при
+#TODO втором обращении начать с другой минуты?
             if 'NOK' in line:
+
                 if filter in line:
                     if filter in filtered:
-                        filtered[filter] += 1
+                       filtered[filter] += 1
+
                     else:
                         filtered[filter] = 1
+                    if filter in filtered:
+                      yield filter, filtered[filter]
+
+
                 else:
                     filtered = {filter: 1}
-    for dates, events in filtered.items():
-        yield dates, events
 
 
 grouped_events = generate(file_name='events.txt')
-for group_time, event_count in grouped_events:
-    print(f'[{group_time}] {event_count}')
+for a,b in grouped_events:
+    print(f'[{a}]: {b}')

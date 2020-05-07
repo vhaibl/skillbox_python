@@ -24,18 +24,22 @@ def generate(file_name):
         for line in file:
             filter = line[1:17]
             minute = line[15:17]
-#TODO Никак не могу понять, как мне читать поминутно. Через цикл while по срезу минут? но как его вставить, и как при
-#TODO втором обращении начать с другой минуты?
+            # Никак не могу понять, как мне читать поминутно. Через цикл while по срезу минут? но как его вставить, и как при
+            # втором обращении начать с другой минуты?
+            # TODO Нужна отдельная переменная, созданная до цикла. Сперва там будет None - нужно будет отдельно
+            # TODO Этот случай обработать и поместить туда первую встреченную минуту.
+            # TODO Когда же будет встречена следующая минута (отличная от этой переменной)
+            # TODO Мы будем отправлять данные по прошлой минуте и записывать новую минуту в эту переменную
             if 'NOK' in line:
 
                 if filter in line:
                     if filter in filtered:
-                       filtered[filter] += 1
+                        filtered[filter] += 1
 
                     else:
                         filtered[filter] = 1
                     if filter in filtered:
-                      yield filter, filtered[filter]
+                        yield filter, filtered[filter]
 
 
                 else:
@@ -43,5 +47,5 @@ def generate(file_name):
 
 
 grouped_events = generate(file_name='events.txt')
-for a,b in grouped_events:
+for a, b in grouped_events:
     print(f'[{a}]: {b}')

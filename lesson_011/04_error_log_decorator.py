@@ -23,7 +23,9 @@ def get_log_errors(filename):
                 raise ZeroDivisionError
 
         return wrapped
+
     return log_errors
+
 
 # Проверить работу на следующих функциях
 @get_log_errors('function_errors_1.log')
@@ -62,4 +64,4 @@ perky(param=42)
 # @log_errors('function_errors.log')
 # def func():
 #     pass
-
+#зачет!

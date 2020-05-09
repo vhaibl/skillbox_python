@@ -15,20 +15,22 @@
 # [2018-05-17 01:57] 1234
 
 def generate(file_name):
-    filtered = {'2018-05-14 19:37' : 1} #TODO получилось, но первое значение из словаря пришлось добавить вручную
-    chkmin = None                       #TODO подскажите, плз, как сделать универсально
+    filtered = {}
+    chkmin = None
     with open(file_name, 'r', encoding='utf-8') as file:
         for line in file:
             filter = line[1:17]
-            if chkmin is None : chkmin = filter
-
             if 'NOK' in line:
-                    if filter in filtered:
-                        filtered[filter] += 1
-                    else:
-                        filtered[filter] = 1
-                        yield chkmin, filtered[chkmin]
+                if filter in filtered:
+                    filtered[filter] += 1
+                else:
+                    filtered[filter] = 1
+                    if chkmin is None:
                         chkmin = filter
+                        continue  # TODO Вот сюда если перенести всё будет работать верно
+                    yield chkmin, filtered[chkmin]
+                    chkmin = filter
+        # TODO Только последняя запись не выводится. Её нужно отдельно после цикла вернуть отдельным yield-ом
 
 
 grouped_events = generate(file_name='events.txt')

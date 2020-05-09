@@ -27,10 +27,10 @@ def generate(file_name):
                     filtered[filter] = 1
                     if chkmin is None:
                         chkmin = filter
-                        continue  # TODO Вот сюда если перенести всё будет работать верно
+                        continue  # Вот сюда если перенести всё будет работать верно
                     yield chkmin, filtered[chkmin]
                     chkmin = filter
-        # TODO Только последняя запись не выводится. Её нужно отдельно после цикла вернуть отдельным yield-ом
+        yield chkmin, filtered[chkmin]
 
 
 grouped_events = generate(file_name='events.txt')

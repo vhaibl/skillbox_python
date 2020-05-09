@@ -20,10 +20,12 @@
 # TODO обратились ещё раз - продолжил чтение со следующей строки, прочитал строки до другой минуты и отправил yield-ом
 def generate(file_name):
     filtered = {}
+    chkmin = None
     with open(file_name, 'r', encoding='utf-8') as file:
         for line in file:
             filter = line[1:17]
             minute = line[15:17]
+
             # Никак не могу понять, как мне читать поминутно. Через цикл while по срезу минут? но как его вставить, и как при
             # втором обращении начать с другой минуты?
             # TODO Нужна отдельная переменная, созданная до цикла. Сперва там будет None - нужно будет отдельно
@@ -34,17 +36,22 @@ def generate(file_name):
 
                 if filter in line:
                     if filter in filtered:
-                        filtered[filter] += 1
 
+                        filtered[filter] += 1
                     else:
                         filtered[filter] = 1
-                    if filter in filtered:
-                        yield filter, filtered[filter]
-
 
                 else:
                     filtered = {filter: 1}
+                if chkmin is None: chkmin = minute
+                if chkmin != minute:
+                    yield filter, filtered[filter]
+                    chkmin = minute
+                else:
+                    yield filter, filtered[filter]
 
+                #TODO Все равно я не догоняю, как выводить минуты,в которых больше одного события, уже тысячц вариантов
+                #TODO с if-else перепробовал, может быть не в том месте это делаю?
 
 grouped_events = generate(file_name='events.txt')
 for a, b in grouped_events:

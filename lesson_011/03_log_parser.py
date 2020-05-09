@@ -15,33 +15,20 @@
 # [2018-05-17 01:57] 1234
 
 def generate(file_name):
-    filtered = {}
-    chkmin = None
+    filtered = {'2018-05-14 19:37' : 1} #TODO получилось, но первое значение из словаря пришлось добавить вручную
+    chkmin = None                       #TODO подскажите, плз, как сделать универсально
     with open(file_name, 'r', encoding='utf-8') as file:
         for line in file:
             filter = line[1:17]
-            # TODO Тут добавляем проверку, если chkmin is None -> записываем в неё filter
-            minute = line[15:17]  # TODO Эту строку можно удалить, чтобы не путаться лишний раз
+            if chkmin is None : chkmin = filter
+
             if 'NOK' in line:
-                if filter in line:  # TODO Эту проверку тоже надо убрать
                     if filter in filtered:
                         filtered[filter] += 1
                     else:
                         filtered[filter] = 1
-                        # TODO Вот тут добавляем yield chkmin, filtered[chkmin]
-                        # TODO после yield изменяем chkmin, записывая в неё filter с новой минутой
-                else:  # TODO Код ниже будет не нужен
-                    filtered = {filter: 1}
-                if chkmin is None:
-                    chkmin = minute
-                if chkmin != minute:
-                    yield filter, filtered[filter]
-                    chkmin = minute
-                else:
-                    yield filter, filtered[filter]
-
-                # TODO Все равно я не догоняю, как выводить минуты,в которых больше одного события, уже тысячц вариантов
-                # TODO с if-else перепробовал, может быть не в том месте это делаю?
+                        yield chkmin, filtered[chkmin]
+                        chkmin = filter
 
 
 grouped_events = generate(file_name='events.txt')

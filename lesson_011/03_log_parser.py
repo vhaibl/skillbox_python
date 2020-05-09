@@ -36,3 +36,4 @@ def generate(file_name):
 grouped_events = generate(file_name='events.txt')
 for a, b in grouped_events:
     print(f'[{a}]: {b}')
+#зачет!

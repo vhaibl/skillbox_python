@@ -119,33 +119,52 @@ def prepare(path):
         yield tickerfile
 
 
-def output(posvol, zerovol):  # Пока не очень понял, по передаче списков параметром...
-    posvol.sort(key=lambda x: x[1])
+# def output(posvol, zerovol):
+#     posvol.sort(key=lambda x: x[1])
+#     print('Тикеры с минимальной волатильностью:')
+#     for x, y in reversed(posvol[:3]):
+#         print(f'{x} - {y:.03f}%')
+#     print('Тикеры с максимальной волатильностью:')
+#     for x, y in posvol[:-4:-1]:
+#         print(f'{x} - {y:.03f}%')
+#     print('Тикеры с нулевой волатильностью:')
+#     zerovol.sort(key=lambda x: x[0])
+#     for x, y in zerovol:
+#         print(x, end=' ')
+
+def output_new(fullvol):
+    fullvol.sort(key=lambda x: x[1])
     print('Тикеры с минимальной волатильностью:')
-    for x, y in reversed(posvol[:3]):
-        print(f'{x} - {y:.03f}%')
+    count = 0
+    minlist=[]
+    for x, y in fullvol:
+        if y > 0:
+            count += 1
+            minlist.append((x,y))
+            if count == 3: break
+    for x,y in reversed(minlist): print(f'{x} - {y:.03f}%')
     print('Тикеры с максимальной волатильностью:')
-    for x, y in posvol[:-4:-1]:
+    for x, y in fullvol[:-4:-1]:
         print(f'{x} - {y:.03f}%')
     print('Тикеры с нулевой волатильностью:')
-    zerovol.sort(key=lambda x: x[0])
-    for x, y in zerovol:
-        print(x, end=' ')
+    fullvol.sort(key=lambda x: x[0])
+    for x, y in fullvol:
+        if y == 0:
+            print(x, end=' ')
 
 
 tickerfile = prepare(path='trades\\')
-posvol = []
-zerovol = []
-# TODO Тут вы создаете объекты, считаете каждый файл и собираете данные в один список
-# TODO Его передаете в функцию с принтом, а там уже отдельно печатаете нулевые, отдельно минимальные, отдельно
-# TODO максимальные
+# posvol = []
+# zerovol = []
+fullvol = []
 for ticker in tickerfile:
     vc = VolatilityCalculator(file=ticker)
     tickername, tickervol = vc.run()
     print(f'обработка тикера {tickername}')
-    if tickervol > 0:
-        posvol.append(vc.run())
-    else:
-        zerovol.append(vc.run())
-
-output(posvol, zerovol)
+    # if tickervol > 0:
+    #     posvol.append(vc.run())
+    # else:
+    #     zerovol.append(vc.run())
+    fullvol.append(vc.run())
+# output(posvol, zerovol)
+output_new(fullvol)

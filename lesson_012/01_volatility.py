@@ -88,6 +88,7 @@ class VolatilityCalculator:
     def run(self):
         with open(self.file) as File:
             reader = csv.DictReader(File)
+            ticker, volatility = None, None
             for row in reader:
                 quantity = int(row['QUANTITY'])
                 ticker = row['SECID']
@@ -100,7 +101,7 @@ class VolatilityCalculator:
                 self.price_list.append(float(row['PRICE']))
             average_price = (min(self.price_list) + max(self.price_list)) / 2
             volatility = ((max(self.price_list) - min(self.price_list)) / average_price) * 100
-            return ticker, volatility  # TODO стоит подстраховаться и задать ticker до цикла (хотя бы равным None)
+            return ticker, volatility
 
             # avg_price = price_total / len(price_list)
             # avg_cost = cost_total / quantity_total
@@ -111,24 +112,14 @@ class VolatilityCalculator:
             # print(f'Максимальная цена {max(self.price_list)}')
 
 
-def prepare():  # TODO Эти функции можно обобщить, чтобы использовать в каждом из заданий
-    # TODO Для этого из этой функции нужно сделать генератор путей по переданному параметром пути к директории
-    #    global posvol, zerovol, path
+def prepare(path):
     tickerlist = (os.listdir(path))
     for ticker in tickerlist:
         tickerfile = os.path.join(path, ticker)
-        vc = VolatilityCalculator(file=tickerfile)  # TODO Само создание объектов класса и их запуск реализовать вне
-        # TODO функции
-        tickername, tickervol = vc.run()
-        print(f'обработка тикера {tickername}')
-        if tickervol > 0:
-            posvol.append(vc.run())
-        else:
-            zerovol.append(vc.run())
+        yield tickerfile
 
 
-def output():  # TODO А тут печатать данные, переданные параметром
-    # global x
+def output(posvol, zerovol):  # TODO Пока не очень понял, по передаче списков параметром...
     posvol.sort(key=lambda x: x[1])
     print('Тикеры с минимальной волатильностью:')
     for x, y in reversed(posvol[:3]):
@@ -142,9 +133,17 @@ def output():  # TODO А тут печатать данные, переданн�
         print(x, end=' ')
 
 
+tickerfile = prepare(path='trades\\')
 posvol = []
 zerovol = []
-path = 'trades\\'
 
-prepare()
-output()
+for ticker in tickerfile:
+    vc = VolatilityCalculator(file=ticker)
+    tickername, tickervol = vc.run()
+    print(f'обработка тикера {tickername}')
+    if tickervol > 0:
+        posvol.append(vc.run())
+    else:
+        zerovol.append(vc.run())
+
+output(posvol, zerovol)

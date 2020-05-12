@@ -73,5 +73,76 @@
 #     def run(self):
 #         <обработка данных>
 
-# TODO написать код в однопоточном/однопроцессорном стиле
+import csv
+import os
 
+
+class VolatilityCalculator:
+    def __init__(self, file):
+        self.quantity_total = 0
+        self.price_total = 0
+        self.cost_total = 0
+        self.price_list = []
+        self.file = file
+
+    def run(self):
+        with open(self.file) as File:
+            reader = csv.DictReader(File)
+            for row in reader:
+                quantity = int(row['QUANTITY'])
+                ticker = row['SECID']
+                price = float(row['PRICE'])
+                # print(row['SECID'], row['TRADETIME'], row['PRICE'], row['QUANTITY'])
+                self.quantity_total += quantity
+                cost = quantity * price
+                self.price_total += price
+                self.cost_total += cost
+                self.price_list.append(float(row['PRICE']))
+            average_price = (min(self.price_list) + max(self.price_list)) / 2
+            volatility = ((max(self.price_list) - min(self.price_list)) / average_price) * 100
+            return ticker, volatility
+
+            # avg_price = price_total / len(price_list)
+            # avg_cost = cost_total / quantity_total
+            # print(f'Средняя стоимость: {avg_cost}')
+            # print(f'Средняя цена: {average_price}')
+            # print(f'Волатильность: {volatility:.3f}%')
+            # print(f'Минимальная цена {min(self.price_list)}')
+            # print(f'Максимальная цена {max(self.price_list)}')
+
+
+def prepare():
+    #    global posvol, zerovol, path
+    tickerlist = (os.listdir(path))
+    for ticker in tickerlist:
+        tickerfile = os.path.join(path, ticker)
+        vc = VolatilityCalculator(file=tickerfile)
+        tickername, tickervol = vc.run()
+        print(f'обработка тикера {tickername}')
+        if tickervol > 0:
+            posvol.append(vc.run())
+        else:
+            zerovol.append(vc.run())
+
+
+def output():
+    # global x
+    posvol.sort(key=lambda x: x[1])
+    print('Тикеры с минимальной волатильностью:')
+    for x, y in reversed(posvol[:3]):
+        print(f'{x} - {y:.03f}%')
+    print('Тикеры с максимальной волатильностью:')
+    for x, y in posvol[:-4:-1]:
+        print(f'{x} - {y:.03f}%')
+    print('Тикеры с нулевой волатильностью:')
+    zerovol.sort(key=lambda x: x[0])
+    for x, y in zerovol:
+        print(x, end=' ')
+
+
+posvol = []
+zerovol = []
+path = 'trades\\'
+
+prepare()
+output()

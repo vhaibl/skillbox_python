@@ -21,17 +21,18 @@ import csv
 import os
 import time
 import threading
+import queue
 
 
 class VolatilityCalculator(threading.Thread):
-    def __init__(self, file):
+    def __init__(self, file, catcher):
         super().__init__()
         self.quantity_total = 0
         self.price_total = 0
         self.cost_total = 0
         self.price_list = []
         self.file = file
-        self.need_stop = False
+        self.catcher = catcher
 
     def run(self):
         try:
@@ -44,8 +45,8 @@ class VolatilityCalculator(threading.Thread):
         with open(self.file) as File:
             reader = csv.DictReader(File)
             ticker, volatility = None, None
+
             for row in reader:
-                time.sleep(0.01)
                 quantity = int(row['QUANTITY'])
                 ticker = row['SECID']
                 price = float(row['PRICE'])
@@ -57,7 +58,7 @@ class VolatilityCalculator(threading.Thread):
 
             average_price = (min(self.price_list) + max(self.price_list)) / 2
             volatility = ((max(self.price_list) - min(self.price_list)) / average_price) * 100
-            fullvol.append((ticker, volatility))
+            self.catcher.put((ticker, volatility))
 
 
 def prepare(path):
@@ -104,25 +105,27 @@ def time_track(func):
 
 @time_track
 def main():
-    tickers = [VolatilityCalculator(file=file1) for file1 in tickerfile]
+    tickers = [VolatilityCalculator(file=file1, catcher=ticker_queue) for file1 in tickerfile]
 
     for ticker in tickers:
         ticker.start()
-        print('обработка потока', ticker.name)
-    for ticker in tickers:
-        if ticker.is_alive():  # Немного не понял, как завершить отработавший поток, поставил таймаут 0.5 в join
-            # TODO Проблема скорее в том, что потоки обращаются к одному элементу fullvol
-            # TODO Тут нужно либо Queue использовать, либо сбор информации добавить после join-ов (вне класса)
-            # TODO т.е. в классе делаем расчёты, сохраняем данные в атрибуте объекта
-            # TODO после join-а проходим по списку объектов и собираем информацию из атрибутов в одном списке
-            # TODO А далее уже распечатываем
-            ticker.need_stop = True
+
+    while True:
+        try:
+            ticker_result = ticker_queue.get(timeout=0.1)
+            fullvol.append(ticker_result)
+            print(f'{ticker_result[0]} обработано', flush=True)
+        except queue.Empty:
+            print('.', end='', flush=True)
+            if not any(ticker.is_alive() for ticker in tickers):
+                break
+
     for ticker in tickers:
         ticker.join()
-        print('ожидание потока', ticker.name)
 
 
 if __name__ == '__main__':
+    ticker_queue = queue.Queue(maxsize=8)
     tickerfile = prepare(path='trades\\')
     fullvol = []
     main()

@@ -130,3 +130,4 @@ if __name__ == '__main__':
     fullvol = []
     main()
     output_new(fullvol)
+#зачет!

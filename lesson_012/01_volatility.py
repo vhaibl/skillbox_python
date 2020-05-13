@@ -93,7 +93,6 @@ class VolatilityCalculator:
                 quantity = int(row['QUANTITY'])
                 ticker = row['SECID']
                 price = float(row['PRICE'])
-                # print(row['SECID'], row['TRADETIME'], row['PRICE'], row['QUANTITY'])
                 self.quantity_total += quantity
                 cost = quantity * price
                 self.price_total += price
@@ -103,46 +102,25 @@ class VolatilityCalculator:
             volatility = ((max(self.price_list) - min(self.price_list)) / average_price) * 100
             return ticker, volatility
 
-            # avg_price = price_total / len(price_list)
-            # avg_cost = cost_total / quantity_total
-            # print(f'Средняя стоимость: {avg_cost}')
-            # print(f'Средняя цена: {average_price}')
-            # print(f'Волатильность: {volatility:.3f}%')
-            # print(f'Минимальная цена {min(self.price_list)}')
-            # print(f'Максимальная цена {max(self.price_list)}')
-
 
 def prepare(path):
-    tickerlist = (os.listdir(path))
-    for ticker in tickerlist:
-        tickerfile = os.path.join(path, ticker)
-        yield tickerfile
+    ticker_list = (os.listdir(path))
+    for ticker in ticker_list:
+        ticker_file = os.path.join(path, ticker)
+        yield ticker_file
 
-
-# def output(posvol, zerovol):
-#     posvol.sort(key=lambda x: x[1])
-#     print('Тикеры с минимальной волатильностью:')
-#     for x, y in reversed(posvol[:3]):
-#         print(f'{x} - {y:.03f}%')
-#     print('Тикеры с максимальной волатильностью:')
-#     for x, y in posvol[:-4:-1]:
-#         print(f'{x} - {y:.03f}%')
-#     print('Тикеры с нулевой волатильностью:')
-#     zerovol.sort(key=lambda x: x[0])
-#     for x, y in zerovol:
-#         print(x, end=' ')
 
 def output_new(fullvol):
     fullvol.sort(key=lambda x: x[1])
     print('Тикеры с минимальной волатильностью:')
     count = 0
-    minlist=[]
+    minlist = []
     for x, y in fullvol:
         if y > 0:
             count += 1
-            minlist.append((x,y))
+            minlist.append((x, y))
             if count == 3: break
-    for x,y in reversed(minlist): print(f'{x} - {y:.03f}%')
+    for x, y in reversed(minlist): print(f'{x} - {y:.03f}%')
     print('Тикеры с максимальной волатильностью:')
     for x, y in fullvol[:-4:-1]:
         print(f'{x} - {y:.03f}%')
@@ -153,18 +131,12 @@ def output_new(fullvol):
             print(x, end=' ')
 
 
-tickerfile = prepare(path='trades\\')
-# posvol = []
-# zerovol = []
-fullvol = []
-for ticker in tickerfile:
+ticker_file = prepare(path='trades\\')
+full_vol = []
+for ticker in ticker_file:
     vc = VolatilityCalculator(file=ticker)
-    tickername, tickervol = vc.run()
-    print(f'обработка тикера {tickername}')
-    # if tickervol > 0:
-    #     posvol.append(vc.run())
-    # else:
-    #     zerovol.append(vc.run())
-    fullvol.append(vc.run())
-# output(posvol, zerovol)
-output_new(fullvol)
+    ticker_name, ticker_vol = vc.run()
+    print(f'обработка тикера {ticker_name}')
+    full_vol.append(vc.run())
+output_new(full_vol)
+#зачет!

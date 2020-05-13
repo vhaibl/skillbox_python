@@ -22,6 +22,7 @@ import os
 import time
 import threading
 
+
 class VolatilityCalculator(threading.Thread):
     def __init__(self, file):
         super().__init__()
@@ -31,6 +32,7 @@ class VolatilityCalculator(threading.Thread):
         self.price_list = []
         self.file = file
         self.need_stop = False
+
     def run(self):
         try:
             self._calculate()
@@ -64,17 +66,18 @@ def prepare(path):
         tickerfile = os.path.join(path, ticker)
         yield tickerfile
 
+
 def output_new(fullvol):
     fullvol.sort(key=lambda x: x[1])
     print('Тикеры с минимальной волатильностью:')
     count = 0
-    minlist=[]
+    minlist = []
     for x, y in fullvol:
         if y > 0:
             count += 1
-            minlist.append((x,y))
+            minlist.append((x, y))
             if count == 3: break
-    for x,y in reversed(minlist): print(f'{x} - {y:.03f}%')
+    for x, y in reversed(minlist): print(f'{x} - {y:.03f}%')
     print('Тикеры с максимальной волатильностью:')
     for x, y in fullvol[:-4:-1]:
         print(f'{x} - {y:.03f}%')
@@ -83,7 +86,6 @@ def output_new(fullvol):
     for x, y in fullvol:
         if y == 0:
             print(x, end=' ')
-
 
 
 def time_track(func):
@@ -96,7 +98,9 @@ def time_track(func):
         elapsed = round(ended_at - started_at, 4)
         print(f'Функция работала {elapsed} секунд(ы)')
         return result
+
     return surrogate
+
 
 @time_track
 def main():
@@ -104,13 +108,19 @@ def main():
 
     for ticker in tickers:
         ticker.start()
-        print ('обработка потока', ticker.name)
+        print('обработка потока', ticker.name)
     for ticker in tickers:
-        if ticker.is_alive():  # TODO Немного не понял, как завершить отработавший поток, поставил таймаут 0.5 в join
+        if ticker.is_alive():  # Немного не понял, как завершить отработавший поток, поставил таймаут 0.5 в join
+            # TODO Проблема скорее в том, что потоки обращаются к одному элементу fullvol
+            # TODO Тут нужно либо Queue использовать, либо сбор информации добавить после join-ов (вне класса)
+            # TODO т.е. в классе делаем расчёты, сохраняем данные в атрибуте объекта
+            # TODO после join-а проходим по списку объектов и собираем информацию из атрибутов в одном списке
+            # TODO А далее уже распечатываем
             ticker.need_stop = True
     for ticker in tickers:
-        ticker.join(0.5)
-        print ('ожидание потока', ticker.name)
+        ticker.join()
+        print('ожидание потока', ticker.name)
+
 
 if __name__ == '__main__':
     tickerfile = prepare(path='trades\\')

@@ -106,6 +106,7 @@ def time_track(func):
 @time_track
 def main():
     tickers = [VolatilityCalculator(file=file1, catcher=ticker_queue) for file1 in tickerfile]
+    fullvol = []
 
     for ticker in tickers:
         ticker.start()
@@ -122,12 +123,10 @@ def main():
 
     for ticker in tickers:
         ticker.join()
-
+    return fullvol
 
 if __name__ == '__main__':
     ticker_queue = multiprocessing.Queue(maxsize=8)
     tickerfile = prepare(path='trades\\')
-    fullvol = []
-    main()
-    output_new(fullvol)
+    output_new(main())
 #зачет!

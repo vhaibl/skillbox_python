@@ -52,7 +52,7 @@ args = parser.parse_args()
 
 make_ticket(fio=args.fio, from_=args.from_, to=args.to, date=args.date, out_path=args.out_path)
 
-# TODO Использование в консоли; 01_ticket.py "NAME SURNAME" FROM TO DATE --out_path PATH
+# Использование в консоли; 01_ticket.py "NAME SURNAME" FROM TO DATE --out_path PATH
 
 # Усложненное задание (делать по желанию).
 # Написать консольный скрипт c помощью встроенного python-модуля argparse.
@@ -63,3 +63,4 @@ make_ticket(fio=args.fio, from_=args.from_, to=args.to, date=args.date, out_path
 #   --date - обязательный, когда летим.
 #   --save_to - необязательный, путь для сохранения заполненнего билета.
 # и заполнять билет.
+#зачет!

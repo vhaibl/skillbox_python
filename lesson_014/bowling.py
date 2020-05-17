@@ -21,6 +21,9 @@ def get_score(result):
         if 'X' in chunk or 'Х' in chunk:
             sum += 20
             print(f'STRIKE!! 20 points and now sum is {sum}')
+        elif chunk.isdigit() and int(chunk[1]) > (10 - int(chunk[0])):
+            raise ValueError('Invalid inout data: Too Many Pins')
+
         elif chunk.isdigit():
             score = (int(chunk[0]) + int(chunk[1]))
             sum += score
@@ -31,6 +34,8 @@ def get_score(result):
         elif '/' in chunk[-1]:
             sum += 15
             print(f'SPARE! 15 ponts and now sum is {sum}')
-
         else:
             raise ValueError('Invalid input data')
+
+    print(f'Количество очков для результатов {result} - {sum}')
+    return sum

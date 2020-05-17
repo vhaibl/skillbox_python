@@ -37,4 +37,19 @@
 # При написании кода помнить, что заказчик может захотеть доработок и новых возможностей...
 # И, возможно, вам пригодится паттерн проектирования "Состояние",
 #   см https://clck.ru/Fudd8 и https://refactoring.guru/ru/design-patterns/state
+import argparse
 
+from bowling import get_score
+
+parser = argparse.ArgumentParser(description='Bowling score parser')
+parser.add_argument('--result', type=str, default=None)
+args = parser.parse_args()
+
+result = args.result
+
+if result is None:
+    result = 'Х4/34-48/48173/X18'
+else:
+    result = args.result
+
+get_score(result=result)

@@ -23,7 +23,6 @@ class GetScoreTest(unittest.TestCase):
     def test_mixed(self):
         result = get_score('185/X--26X-/X349/')
         self.assertEqual(result, 129)
-    # TODO Нужно ещё добавить тесты с ошибками
 
     def test_too_many_pins(self):
         self.assertRaises(ValueError, get_score, '55-/8/8/34X8/5/1854')
@@ -43,8 +42,6 @@ class GetScoreTest(unittest.TestCase):
     def test_input_error(self):
         self.assertRaises(ValueError, get_score, 'zzzzzzzzzzzzzzzzzzzz')
 
-        # with self.assertRaises(ValueError)
-        #     get_score('55-/8/8/34X8/5/1854')
 
 if __name__ == '__main__':
     unittest.main()

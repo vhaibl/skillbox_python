@@ -52,3 +52,4 @@ else:
     result = args.result
 
 get_score(result=result)
+#зачет!

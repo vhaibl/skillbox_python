@@ -23,7 +23,10 @@ class GetScoreTest(unittest.TestCase):
     def test_mixed(self):
         result = get_score('185/X--26X-/X349/')
         self.assertEqual(result, 129)
-
+    # TODO Нужно ещё добавить тесты с ошибками
+    # with self.assertRaises(ValueError):
+    #     get_score(...)
+    # TODO Для этого можно пользоваться подобной конструкцией
 
 if __name__ == '__main__':
     unittest.main()

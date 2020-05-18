@@ -59,7 +59,7 @@ class Bot:
             log.debug("отправляем сообщение назад")
             # print("Новое сообщение:", event.object.message['text'])
             peer_id = event.object.message['peer_id']
-            self.api.messages.send(message="Привет! Я пока тупой, но я учусь",
+            self.api.messages.send(message=event.object.message['text'],
                                    random_id=random.randint(0, 2 ** 20),
                                    peer_id=peer_id)
         else:

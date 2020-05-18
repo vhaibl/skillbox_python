@@ -1,0 +1,44 @@
+2020-05-17 18:00:54,383 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-05-17 18:00:57,993 DEBUG отправляем сообщение назад
+2020-05-17 18:00:58,315 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-05-17 18:01:54,355 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-05-17 18:01:54,959 DEBUG отправляем сообщение назад
+2020-05-17 18:01:55,364 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-05-17 18:02:01,364 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-05-17 18:02:06,847 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-05-17 18:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-05-17 18:12 DEBUG отправляем сообщение назад
+2020-05-17 18:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+17-05-2020 18:13 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+17-05-2020 18:14 DEBUG отправляем сообщение назад
+17-05-2020 18:14 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+17-05-2020 18:49 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+17-05-2020 18:49 DEBUG отправляем сообщение назад
+17-05-2020 18:49 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+17-05-2020 18:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+17-05-2020 18:55 DEBUG отправляем сообщение назад
+17-05-2020 18:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+18-05-2020 16:57 DEBUG отправляем сообщение назад
+18-05-2020 16:57 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+18-05-2020 17:21 DEBUG отправляем сообщение назад
+18-05-2020 17:21 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 48, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 62, in on_event
+    self.api.messages.send(message=event.object.message.text,
+AttributeError: 'dict' object has no attribute 'text'
+18-05-2020 17:21 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+18-05-2020 17:21 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+18-05-2020 17:22 DEBUG отправляем сообщение назад
+18-05-2020 17:22 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 48, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 62, in on_event
+    self.api.messages.send(message=event.object.message['[text]'],
+KeyError: '[text]'
+18-05-2020 17:22 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+18-05-2020 17:22 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+18-05-2020 17:22 DEBUG отправляем сообщение назад
+18-05-2020 17:22 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY

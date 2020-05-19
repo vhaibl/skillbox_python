@@ -25,44 +25,31 @@
 #
 # Из текущего файла сделать консольный скрипт для формирования файла с результатами турнира.
 # Параметры скрипта: --input <файл протокола турнира> и --output <файл результатов турнира>
+import argparse
 from collections import defaultdict
-from pprint import pprint
-
 from bowling import get_score
+from btour import calc_tour
 
-input_file = 'tournament.txt'
-output_file = 'tournament_result.txt'
-game = None
-respas = []
-respas2 = []
+parser = argparse.ArgumentParser(description='Bowling score parser')
+parser.add_argument('--input_file', type=str, default=None)
+parser.add_argument('--output_file', type=str, default=None)
+args = parser.parse_args()
 
-forout = None
-gamedict = defaultdict()
-with open(output_file, 'w', encoding='utf-8') as out:
-    with open(input_file, 'r', encoding='utf-8') as file:
-        for line in file:
-            line = line.strip('\n')
-            if '###' in line:
-                out.write('{}\n'.format(line))
-                gamenumber = line.strip('### Tour')
-            elif 'winner' in line:
-                pass
-            elif '	' in line:
-                respas = line.split('	')
-                try:
-                    respas.append(get_score(respas[1]))
-                    out.write('{} {}\n'.format(line, get_score(respas[1])))
-                except Exception as esc:
-                    respas.append('0')
-                    out.write('{} 0 - {}\n'.format(line, esc))
-                respas.append(gamenumber)
-                respas2.append(respas)
-                # out.write(forout)
+input_file = args.input_file
+output_file = args.output_file
 
+if input_file is None:
+    input_file = 'tournament.txt'
+else:
+    input_file = args.input_file
 
-#
-# print(game)
-pprint(respas2)
+if output_file is None:
+    output_file = 'tournament_result_def_args.txt'
+else:
+    output_file = args.output_file
+
+calc_tour(input_file=input_file, output_file=output_file)
+
 # Усложненное задание (делать по желанию)
 #
 # После обработки протокола турнира вывести на консоль рейтинг игроков в виде таблицы:

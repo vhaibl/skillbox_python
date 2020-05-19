@@ -19,10 +19,10 @@ def chunks(s, n):
 def get_score(result):
     sum = 0
     for chunk in chunks(convert(result), 2):
-        print(chunk, end=' ')
+        # print(chunk, end=' ')
         if 'X' in chunk[0] or 'Х' in chunk[0]:
             sum += 20
-            print(f'STRIKE!! 20 points and now sum is {sum}')
+            # print(f'STRIKE!! 20 points and now sum is {sum}')
 
         elif 'X' in chunk[1] or 'Х' in chunk[1]:
             raise ValueError('Invalid input data: Strike in second throw')
@@ -33,20 +33,20 @@ def get_score(result):
         elif chunk.isdigit():
             score = (int(chunk[0]) + int(chunk[1]))
             sum += score
-            print(f'frame score {score} points and now sum is {sum}')
+            # print(f'frame score {score} points and now sum is {sum}')
 
         elif '/' in chunk[0]:
             raise ValueError('Invalid input data: Spare In First Throw')
 
         elif '/' in chunk[-1]:
             sum += 15
-            print(f'SPARE! 15 ponts and now sum is {sum}')
+            # print(f'SPARE! 15 ponts and now sum is {sum}')
 
         else:
             raise ValueError('Invalid input data')
 
-    print(f'Количество очков для результатов {result} - {sum}')
-    return sum
+    # print(f'Количество очков для результатов {result} - {sum}')
+    return int(sum)
 
 
 # result = get_score('55-/8/8/34X8/5/1854')  # Эта строка должна вызывать ошибку, сумма цифр фрэйма не должна

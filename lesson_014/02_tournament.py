@@ -25,9 +25,44 @@
 #
 # Из текущего файла сделать консольный скрипт для формирования файла с результатами турнира.
 # Параметры скрипта: --input <файл протокола турнира> и --output <файл результатов турнира>
+from collections import defaultdict
+from pprint import pprint
 
-# TODO тут ваш код
+from bowling import get_score
 
+input_file = 'tournament.txt'
+output_file = 'tournament_result.txt'
+game = None
+respas = []
+respas2 = []
+
+forout = None
+gamedict = defaultdict()
+with open(output_file, 'w', encoding='utf-8') as out:
+    with open(input_file, 'r', encoding='utf-8') as file:
+        for line in file:
+            line = line.strip('\n')
+            if '###' in line:
+                out.write('{}\n'.format(line))
+                gamenumber = line.strip('### Tour')
+            elif 'winner' in line:
+                pass
+            elif '	' in line:
+                respas = line.split('	')
+                try:
+                    respas.append(get_score(respas[1]))
+                    out.write('{} {}\n'.format(line, get_score(respas[1])))
+                except Exception as esc:
+                    respas.append('0')
+                    out.write('{} 0 - {}\n'.format(line, esc))
+                respas.append(gamenumber)
+                respas2.append(respas)
+                # out.write(forout)
+
+
+#
+# print(game)
+pprint(respas2)
 # Усложненное задание (делать по желанию)
 #
 # После обработки протокола турнира вывести на консоль рейтинг игроков в виде таблицы:

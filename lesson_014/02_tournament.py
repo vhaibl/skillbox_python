@@ -61,3 +61,4 @@ calc_tour(input_file=input_file, output_file=output_file)
 # ...
 # | Алексей  |        20        |       5      |
 # +----------+------------------+--------------+
+#зачет!

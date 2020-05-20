@@ -1,13 +1,22 @@
 from collections import defaultdict
-from bowling import get_score
+from bowling import get_score, get_score2
 
 game, result_list = None, []
 winnor_name = None
 winnor_count, total_games = defaultdict(lambda: 0), defaultdict(lambda: 0)
 tableoffame, tableoffame_line = [], []
+version = None
 
 
-def calc_tour(input_file, output_file):
+def calc_tour(version, input_file, output_file):
+    if version == 'new':
+        calc = get_score2
+        print('running NEW')
+
+    else:
+        calc = get_score
+        print('running OLD')
+
     winner, result_line = 0, []
     with open(output_file, 'w', encoding='utf-8') as out:
         with open(input_file, 'r', encoding='utf-8') as file:
@@ -20,8 +29,8 @@ def calc_tour(input_file, output_file):
                     result_line = line.split('	')
 
                     try:
-                        result_line.append(get_score(result_line[1]))
-                        out.write('{}	{}\n'.format(line, get_score(result_line[1])))
+                        result_line.append(calc(result_line[1]))
+                        out.write('{}	{}\n'.format(line, calc(result_line[1])))
                     except Exception as esc:
                         result_line.append('0')
                         out.write('{}	0 - {}\n'.format(line, esc))

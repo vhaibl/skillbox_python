@@ -57,7 +57,9 @@ def get_score2(result):
     for chunk in chunks(convert(result), 2):
         if 'X' in chunk[0] or 'Х' in chunk[0]:
             sum += 10
-
+            if spare:
+                sum += 10
+                strike = False
             if add_one:
                 sum += 10
                 add_one = False

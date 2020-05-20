@@ -54,7 +54,7 @@ else:
 # else:
 #     version = 'old'
 
-calc_tour(version=version, input_file=input_file, output_file=output_file)
+calc_tour(version='new', input_file=input_file, output_file=output_file)
 """
 console format: 02_tournament --version=version --input_filename=tournament.txt --output_file=new.txt
 version type: 

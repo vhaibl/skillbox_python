@@ -49,6 +49,62 @@ def get_score(result):
     return int(sum)
 
 
+def get_score2(result):
+    sum = 0
+    strike = False
+    spare = False
+    add_one = False
+    for chunk in chunks(convert(result), 2):
+        if 'X' in chunk[0] or 'Х' in chunk[0]:
+            sum += 10
+
+            if add_one:
+                sum += 10
+                add_one = False
+
+            if strike:
+                sum += 10
+                strike = False
+                add_one = True
+
+            strike = True
+            spare = False
+
+        elif 'X' in chunk[1] or 'Х' in chunk[1]:
+            raise ValueError('Invalid input data: Strike in second throw')
+
+        elif chunk.isdigit() and int(chunk[1]) > (9 - int(chunk[0])):
+            raise ValueError('Invalid inout data: Too Many Pins')
+
+        elif chunk.isdigit():
+            score = (int(chunk[0]) + int(chunk[1]))
+            sum += score
+            if strike: sum += score
+            strike = False
+            if spare: sum += int(chunk[0])
+            spare = False
+            if add_one: sum += int(chunk[0])
+            add_one = False
+            # print(f'frame score {score} points and now sum is {sum}')
+
+        elif '/' in chunk[0]:
+            raise ValueError('Invalid input data: Spare In First Throw')
+
+        elif '/' in chunk[-1]:
+            sum += 10
+            if strike: sum += 10
+            if spare:
+                sum += int(chunk[0])
+            strike = False
+            spare = True
+            # print(f'SPARE! 15 ponts and now sum is {sum}')
+
+        else:
+            raise ValueError('Invalid input data')
+
+    # print(f'Количество очков для результатов {result} - {sum}')
+    return int(sum)
+
 # result = get_score('55-/8/8/34X8/5/1854')  # Эта строка должна вызывать ошибку, сумма цифр фрэйма не должна
 #                                            # превышать 9. Иначе это должен быть spare ("5/")
 # print(result, '++++++++++++++++++++')

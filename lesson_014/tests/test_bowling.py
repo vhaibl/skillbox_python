@@ -1,5 +1,5 @@
 import unittest
-from bowling import get_score
+from bowling import get_score, get_score2
 
 
 class GetScoreTest(unittest.TestCase):
@@ -41,6 +41,47 @@ class GetScoreTest(unittest.TestCase):
 
     def test_input_error(self):
         self.assertRaises(ValueError, get_score, 'zzzzzzzzzzzzzzzzzzzz')
+
+
+class GetScore2Test(unittest.TestCase):
+
+    def test_normal(self):
+        result = get_score2('45176181212171614181')
+        self.assertEqual(result, 68)
+
+    def test_spares(self):
+        result = get_score2('-/1/2/3/4/5/6/7/8/9/')
+        self.assertEqual(result, 145)
+
+    def test_strikes(self):
+        result = get_score2('XXXXXXXXXX')
+        self.assertEqual(result, 270)
+
+    def test_null(self):
+        result = get_score2('--------------------')
+        self.assertEqual(result, 0)
+
+    def test_mixed(self):
+        result = get_score2('185/X--26X-/X349/')
+        self.assertEqual(result, 101)
+
+    def test_too_many_pins(self):
+        self.assertRaises(ValueError, get_score2, '55-/8/8/34X8/5/1854')
+
+    def test_second_throw_strike(self):
+        self.assertRaises(ValueError, get_score2, '1X18/8/34X8/5/1854')
+
+    def test_zeroes_in_input(self):
+        self.assertRaises(ValueError, get_score2, '011/8/34X8/5/185412')
+
+    def test_first_throw_spare(self):
+        self.assertRaises(ValueError, get_score2, '/11/8/34X8/5/185412')
+
+    def test_not_ten_frames(self):
+        self.assertRaises(ValueError, get_score2, '-/8/8/34X8/5/1854')
+
+    def test_input_error(self):
+        self.assertRaises(ValueError, get_score2, 'zzzzzzzzzzzzzzzzzzzz')
 
 
 if __name__ == '__main__':

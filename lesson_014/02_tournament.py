@@ -31,13 +31,14 @@ from bowling import get_score
 from btour import calc_tour
 
 parser = argparse.ArgumentParser(description='Bowling score parser')
+parser.add_argument('--version', type=str, default=None)
 parser.add_argument('--input_file', type=str, default=None)
 parser.add_argument('--output_file', type=str, default=None)
 args = parser.parse_args()
 
 input_file = args.input_file
 output_file = args.output_file
-
+version = args.version
 if input_file is None:
     input_file = 'tournament.txt'
 else:
@@ -48,8 +49,19 @@ if output_file is None:
 else:
     output_file = args.output_file
 
-calc_tour(input_file=input_file, output_file=output_file)
+# if version is 'new':
+#     version = 'new'
+# else:
+#     version = 'old'
 
+calc_tour(version=version, input_file=input_file, output_file=output_file)
+"""
+console format: 02_tournament --version=version --input_filename=tournament.txt --output_file=new.txt
+version type: 
+    old = domestic format (DEFAULT)
+    new = international format 
+
+"""
 # Усложненное задание (делать по желанию)
 #
 # После обработки протокола турнира вывести на консоль рейтинг игроков в виде таблицы:
@@ -61,4 +73,4 @@ calc_tour(input_file=input_file, output_file=output_file)
 # ...
 # | Алексей  |        20        |       5      |
 # +----------+------------------+--------------+
-#зачет!
+# зачет!

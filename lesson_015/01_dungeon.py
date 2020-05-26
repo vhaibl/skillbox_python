@@ -106,7 +106,14 @@ field_names = ['current_location', 'current_experience', 'current_date']
 with open("rpg.json", "r") as read_file:
     loaded_json_file = json.load(read_file)
 
-
+# TODO Мне кажется над структурой программы всё же стоит ещё поработать.
+# TODO Создайте три класса - Карта, Герой, Игра
+# TODO К карте отнесите методы - загрузка карты, смена локации и анализ локации
+# TODO К герою методы получения опыта и учет затраченного времени (можно сделать что-то вроде is_alive() метода
+# TODO который вернет True, если герой ещё жив (осталось времени больше 0))
+# TODO Игра же будет инициализировать объекты других классов и запускать их методы
+# TODO + собирать указания пользователя и вызывать выбранные им методы
+# TODO ВАЖНО! Каждый ввод пользователя проверять!
 def action_list():
     global act, current_location
     print(
@@ -182,7 +189,10 @@ while remaining_time > 0:
         current_experience += int(add_exp[0])
         # remaining_time -= Decimal(add_time[0])
         print(current_experience, Decimal(remaining_time), Decimal(add_time[0]))
+        # TODO Почему по итогу результат выводится такой? 320 159.0987654321 159.098765432
+        # TODO 1) опыта должно быть 280 - за выход Hatch опыт не начисляется
         if current_experience >= 200 and Decimal(remaining_time) >= Decimal(add_time[0]):
+            # TODO По условию опыта должно было быть больше 280
             remaining_time = Decimal(remaining_time) - Decimal(add_time[0])
             # current.remove(str(act[action]))
 

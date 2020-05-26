@@ -91,12 +91,145 @@
 #  ...
 #
 # и так далее...
-
+import csv
+import datetime
+import json
+import re
+from decimal import *
+from termcolor import cprint
 
 remaining_time = '123456.0987654321'
-# если изначально не писать число в виде строки - теряется точность!
+remaining_time = Decimal(remaining_time)
+current_experience = 0
 field_names = ['current_location', 'current_experience', 'current_date']
 
-# TODO тут ваш код
+with open("rpg.json", "r") as read_file:
+    loaded_json_file = json.load(read_file)
 
-# Учитывая время и опыт, не забывайте о точности вычислений!
+
+def action_list():
+    global act, current_location
+    print(
+        f"Вы находитесь в локации {name1}. \nВремени осталось {remaining_time}, опыта: {current_experience} \nВы можете:")
+    current_location = name1
+    z = 0
+    act = {}
+
+    for line in current:
+        if type(line) is dict:
+            for loc in line:
+                z += 1
+
+                act[str(z)] = loc
+                hatch_or_loc = (z, " - Перейти в локацию", act[str(z)])
+                if 'atch' in hatch_or_loc[2]:
+                    print(z, " - ОТКРЫТЬ ЛЮК", act[str(z)])
+                else:
+                    print(z, " - Перейти в локацию", act[str(z)])
+        elif 'Mob' in line:
+            z += 1
+            act[str(z)] = line
+            print(z, "- Атаковать монстра", act[str(z)])
+        elif 'Boss' in line:
+            z += 1
+            act[str(z)] = line
+            print(z, "- Напасть на БОССА", act[str(z)])
+    z += 1
+    act[str(z)] = 'exit'
+    print(z, '- Выход')
+
+
+with open('game_log.csv', 'w', encoding='utf-8') as gamelog:
+    writer = csv.writer(gamelog, dialect='excel')  # <_csv.writer object at 0x03B0AD80>
+    writer.writerow(field_names)
+
+name1 = 'Location_0_tm0'
+current = loaded_json_file[name1]
+prev = current
+mob_exp = r'exp(\d{1,5})_'
+find_time = r'tm([\d\.\d]+)'
+add_exp = 0
+nowis = None
+while remaining_time > 0:
+
+    action_list()
+    action = None
+    action = input("Ваши действия >  ")
+    while action not in act:  # проверяем корректность ввода
+        print('Вы ввели некорректный номер!')
+        action = input("Ваши действия > ")
+
+    if 'Mob' in act[action]:
+        add_exp = re.findall(mob_exp, act[action])
+        add_time = re.findall(find_time, act[action])
+        current_experience += int(add_exp[0])
+        remaining_time -= Decimal(add_time[0])
+        current.remove(str(act[action]))
+        cprint(f'Вы убили монстра {act[action]}! Опыта получено {add_exp[0]}, времени потрачено {add_time[0]}',
+               color='green')
+    if 'Boss' in act[action]:
+        add_exp = re.findall(mob_exp, act[action])
+        add_time = re.findall(find_time, act[action])
+        current_experience += int(add_exp[0])
+        remaining_time -= Decimal(add_time[0])
+        current.remove(str(act[action]))
+        cprint(f'Вы убили БОССА {act[action]}! Опыта получено {add_exp[0]}, времени потрачено {add_time[0]}',
+               color='red')
+    if 'Hatch' in act[action]:
+        # add_exp = re.findall(mob_exp, act[action])
+        add_time = re.findall(find_time, act[action])
+        print(add_time)
+        current_experience += int(add_exp[0])
+        # remaining_time -= Decimal(add_time[0])
+        print(current_experience, Decimal(remaining_time), Decimal(add_time[0]))
+        if current_experience >= 200 and Decimal(remaining_time) >= Decimal(add_time[0]):
+            remaining_time = Decimal(remaining_time) - Decimal(add_time[0])
+            # current.remove(str(act[action]))
+
+            cprint(f'Вы выбрались из подземелья! Опыта получено {current_experience}, времени осталось '
+                   f'{Decimal(remaining_time):.10f}', color='blue')
+            break
+        else:
+            remaining_time -= Decimal(add_time[0])
+            cprint(f'У вас не хватило опыта, чтобы открыть люк', color='blue')
+            pass
+    if 'Location' in act[action]:
+        add_time = re.findall(find_time, act[action])
+        remaining_time -= Decimal(add_time[0])
+        name1 = act[action]
+        cprint(f'Вы переместились в локацию {act[action]}. Времени потрачено {add_time[0]}', color='green')
+
+        for x, y in enumerate(current):
+            if act[action] in y:
+                current = current[x][act[action]]
+
+    if 'exit' in act[action]:
+        print("Вы решили сдаться и погибли")
+        break
+
+    if len(current) == 0 or remaining_time <= 0:
+        if len(current) == 0:
+            cprint('ТУПИК, НАЗАД ДОРОГИ НЕТ', color='cyan')
+        if remaining_time <= 0:
+            cprint('ЗАКОНЧИЛОСЬ ВРЕМЯ', color='cyan')
+
+        cprint(
+            'У вас темнеет в глазах... прощай, принцесса...\n Но что это?! Вы воскресли у входа в пещеру... '
+            'Не зря матушка дала вам оберег :)\n Ну, на этот-то раз у вас все получится! Трепещите, монстры!\n '
+            'Вы осторожно входите в пещеру...\n', color='blue')
+        with open("rpg.json", "r") as read_file:
+            loaded_json_file = json.load(read_file)
+        remaining_time = '123456.0987654321'
+        remaining_time = Decimal(remaining_time)
+        current_experience = 0
+        name1 = 'Location_0_tm0'
+        current = loaded_json_file[name1]
+
+    now = datetime.datetime.now()
+    current_time = now.strftime('%H:%M:%S')
+    fields = (current_location, str(current_experience), current_time)
+
+    with open('game_log.csv', 'a', encoding='utf-8') as gamelog:
+        writer = csv.writer(gamelog, dialect='excel')  # <_csv.writer object at 0x03B0AD80>
+        writer.writerow(fields)
+

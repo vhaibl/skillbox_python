@@ -42,3 +42,526 @@ KeyError: '[text]'
 18-05-2020 17:22 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
 18-05-2020 17:22 DEBUG отправляем сообщение назад
 18-05-2020 17:22 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 18:04 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_NEW
+23-05-2020 18:19 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:19 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 18:19 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 94, in on_event
+    peer_id=peer_id)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 681, in __call__
+    return self._vk.method(self._method, kwargs)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 646, in method
+    raise error
+vk_api.exceptions.ApiError: [100] One of the parameters specified was missing or invalid: you should specify peer_id, user_id, domain, chat_id or user_ids param
+23-05-2020 18:22 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:22 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 94, in on_event
+    peer_id=user_id)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 681, in __call__
+    return self._vk.method(self._method, kwargs)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 646, in method
+    raise error
+vk_api.exceptions.ApiError: [100] One of the parameters specified was missing or invalid: you should specify peer_id, user_id, domain, chat_id or user_ids param
+23-05-2020 18:22 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:22 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 94, in on_event
+    peer_id=user_id)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 681, in __call__
+    return self._vk.method(self._method, kwargs)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 646, in method
+    raise error
+vk_api.exceptions.ApiError: [100] One of the parameters specified was missing or invalid: you should specify peer_id, user_id, domain, chat_id or user_ids param
+23-05-2020 18:23 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:23 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 95, in on_event
+    peer_id=user_id)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 681, in __call__
+    return self._vk.method(self._method, kwargs)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 646, in method
+    raise error
+vk_api.exceptions.ApiError: [100] One of the parameters specified was missing or invalid: you should specify peer_id, user_id, domain, chat_id or user_ids param
+23-05-2020 18:24 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:24 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 73, in on_event
+    user_id = event.object.message['user_id']
+KeyError: 'user_id'
+23-05-2020 18:25 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:25 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 73, in on_event
+    user_id = event.object.message['user_id']
+KeyError: 'user_id'
+23-05-2020 18:25 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:25 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 95, in on_event
+    peer_id=user_id)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 681, in __call__
+    return self._vk.method(self._method, kwargs)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 646, in method
+    raise error
+vk_api.exceptions.ApiError: [100] One of the parameters specified was missing or invalid: you should specify peer_id, user_id, domain, chat_id or user_ids param
+23-05-2020 18:26 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:26 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 95, in on_event
+    peer_id=user_id)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 681, in __call__
+    return self._vk.method(self._method, kwargs)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 646, in method
+    raise error
+vk_api.exceptions.ApiError: [100] One of the parameters specified was missing or invalid: you should specify peer_id, user_id, domain, chat_id or user_ids param
+23-05-2020 18:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:27 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 73, in on_event
+    user_id = event.object.user_id['user_id']
+TypeError: 'NoneType' object is not subscriptable
+23-05-2020 18:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:27 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 73, in on_event
+    user_id = event.object.message['user_id']
+KeyError: 'user_id'
+23-05-2020 18:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 18:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:28 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:28 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 18:28 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:28 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 18:28 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 18:28 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:28 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 86, in on_event
+    text_to_send = self.start_scenario(user_id, intent['scenario'])
+  File "C:/python_base/chatbot/bot.py", line 101, in start_scenario
+    self.user_states[user_id] = UserState(scenario_name=scenario_name, step_name=first_step)
+NameError: name 'self' is not defined
+23-05-2020 18:28 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:28 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 18:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_EDIT
+23-05-2020 18:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 18:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:29 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 86, in on_event
+    text_to_send = self.start_scenario(user_id, intent['scenario'])
+  File "C:/python_base/chatbot/bot.py", line 101, in start_scenario
+    user_states[user_id] = UserState(scenario_name=scenario_name, step_name=first_step)
+NameError: name 'user_states' is not defined
+23-05-2020 18:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 18:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:30 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 86, in on_event
+    text_to_send = self.start_scenario(user_id, intent['scenario'])
+  File "C:/python_base/chatbot/bot.py", line 101, in start_scenario
+    self.user_states['user_id'] = UserState(scenario_name=scenario_name, step_name=first_step)
+NameError: name 'self' is not defined
+23-05-2020 18:36 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:36 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:36 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 18:36 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 18:36 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:36 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 18:36 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:36 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 86, in on_event
+    text_to_send = self.start_scenario(user_id, intent['scenario'])
+TypeError: start_scenario() missing 1 required positional argument: 'scenario_name'
+23-05-2020 18:40 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:40 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 18:54 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:54 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 78, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+AttributeError: 'Bot' object has no attribute 'continue_scenario'
+23-05-2020 18:56 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:56 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 18:56 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 18:56 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 78, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 109, in continue_scenario
+    handler = getattr(handlers, step['handler'])
+AttributeError: module 'handlers' has no attribute 'handler_name'
+23-05-2020 19:00 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:00 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:00 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:00 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 78, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 109, in continue_scenario
+    handler = getattr(handlers, steps[step['handler']])
+KeyError: 'handler_name'
+23-05-2020 19:00 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:00 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:00 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 78, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 109, in continue_scenario
+    handler = getattr(handlers, steps['handler'])
+KeyError: 'handler'
+23-05-2020 19:03 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:03 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:03 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 78, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 109, in continue_scenario
+    handler = getattr(handlers, step['handler'])
+AttributeError: module 'handlers' has no attribute 'handler_name'
+23-05-2020 19:04 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:04 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:04 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:06 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:06 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 78, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 13, in handler_email
+    matches = re.findall(re_email, context)
+  File "C:\Python37\lib\re.py", line 223, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+23-05-2020 19:09 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:09 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:09 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:09 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:09 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:09 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:09 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:09 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:09 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:09 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:09 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:09 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:09 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:10 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:11 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:31 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:31 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:31 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:31 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:42 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:42 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:42 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:42 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:42 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:53 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 78, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 111, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 13, in handler_email
+    matches = re.findall(re_email, context)
+  File "C:\Python37\lib\re.py", line 223, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+23-05-2020 19:53 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 78, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 111, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 13, in handler_email
+    matches = re.findall(re_email, context)
+  File "C:\Python37\lib\re.py", line 223, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+23-05-2020 19:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 19:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 19:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 20:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 20:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 20:43 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 20:44 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 20:44 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 20:44 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 20:44 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 112, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 13, in handler_email
+    matches = re.findall(re_email, context)
+  File "C:\Python37\lib\re.py", line 223, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+23-05-2020 20:44 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 112, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 13, in handler_email
+    matches = re.findall(re_email, context)
+  File "C:\Python37\lib\re.py", line 223, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+23-05-2020 20:44 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 20:44 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 112, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 13, in handler_email
+    matches = re.findall(re_email, context)
+  File "C:\Python37\lib\re.py", line 223, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+23-05-2020 20:46 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 20:46 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 20:46 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 20:47 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 20:47 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 20:47 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 20:47 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 20:48 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 20:48 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 20:48 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 20:51 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 20:51 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 20:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 20:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 20:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 21:11 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 21:11 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 21:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 21:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 21:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+23-05-2020 21:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 21:13 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+23-05-2020 21:13 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 11:45 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 11:45 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 11:45 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 11:45 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 11:45 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 11:45 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 11:45 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 11:50 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 11:50 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_NEW
+24-05-2020 11:51 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 11:51 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_NEW
+24-05-2020 11:51 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 11:51 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_NEW
+24-05-2020 11:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 11:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 11:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 11:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 11:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 11:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 11:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 11:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 11:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 11:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 11:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 11:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 11:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 11:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 11:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 11:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 11:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 11:55 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 79, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 116, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 13, in handler_email
+    matches = re.findall(re_email, context)
+  File "C:\Python37\lib\re.py", line 223, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+24-05-2020 11:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 11:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 11:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 11:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 11:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 11:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 11:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 11:59 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 13, in handler_email
+    matches = re.findall(re_email, context)
+  File "C:\Python37\lib\re.py", line 223, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+24-05-2020 12:01 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 12:01 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 12:01 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 12:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 12:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 12:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 12:02 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 14, in handler_email
+    matches = re.findall(re_email, context)
+  File "C:\Python37\lib\re.py", line 223, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+24-05-2020 12:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 12:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 12:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 12:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 12:02 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 15, in handler_email
+    matches = re.findall(re_email, context)
+  File "C:\Python37\lib\re.py", line 223, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+24-05-2020 12:04 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 12:04 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 12:04 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 12:04 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 15, in handler_email
+    matches = re.findall(re_email, context)
+  File "C:\Python37\lib\re.py", line 223, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: expected string or bytes-like object
+24-05-2020 12:14 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 12:14 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 12:14 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 12:14 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 12:14 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 12:14 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 12:14 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 12:14 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 12:14 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 12:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 12:52 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+24-05-2020 12:52 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+24-05-2020 12:52 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+24-05-2020 12:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 12:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 12:52 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+24-05-2020 12:52 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+24-05-2020 12:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 12:52 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+24-05-2020 12:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 12:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 12:52 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+24-05-2020 12:52 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+24-05-2020 12:52 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+24-05-2020 12:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 12:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+24-05-2020 12:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+24-05-2020 12:52 INFO Зарегистрирован васО 123@ass.34
+24-05-2020 12:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY

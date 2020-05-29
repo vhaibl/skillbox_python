@@ -186,7 +186,7 @@ class Hero:
         self.current_experience = 0
         self.mob_exp = r'exp(\d{1,5})_'
         self.find_time = r'tm([\d\.\d]+)'
-        self.name1 = 'Location_0_tm0'
+        self.name1 = 'Location_0_tm0'  # TODO Почему бы не написать self.current_location например?) или loc_name хотя бы
         self.current = gm.loaded_json_file[self.name1]
 
     def mob(self):
@@ -254,19 +254,21 @@ class Hero:
             hero.name1 = 'Location_0_tm0'
             hero.current = loaded_json_file[hero.name1]
             self.is_alive = True  # непонятно, зачем использовать, если при смерти он должен воскрешать в начале
+            # TODO перед использованием атрибута - его надо сперва заявить в init
 
 
 class Logger:
     # def __init__(self):
     #     pass
 
-    def headers():
+    @staticmethod  # пример
+    def headers():  # TODO Тут нужно либо self в параметрах указать, либо сделать метод статическим
         field_names = ['current_location', 'current_experience', 'current_date']
         with open('game_log.csv', 'w', encoding='utf-8') as gamelog:
             writer = csv.writer(gamelog, dialect='excel')  # <_csv.writer object at 0x03B0AD80>
             writer.writerow(field_names)
 
-    def logger():
+    def logger():  # TODO И тут
         current_location = hero.name1
         now = datetime.datetime.now()
         current_time = now.strftime('%H:%M:%S')

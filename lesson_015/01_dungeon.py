@@ -100,28 +100,22 @@ from decimal import *
 from termcolor import cprint
 
 
-# TODO Создайте три класса - Карта, Герой, Игра
-# TODO К карте отнесите методы - загрузка карты, смена локации и анализ локации
-# TODO К герою методы получения опыта и учет затраченного времени (можно сделать что-то вроде is_alive() метода
-# TODO который вернет True, если герой ещё жив (осталось времени больше 0))
-# TODO Игра же будет инициализировать объекты других классов и запускать их методы
-# TODO + собирать указания пользователя и вызывать выбранные им методы
-# TODO ВАЖНО! Каждый ввод пользователя проверять!
-
 class GameMap:
 
     def __init__(self):
         self.act = {}
         self.z = 0
+        with open("rpg.json", "r") as read_file:
+            self.loaded_json_file = json.load(read_file)
 
     def action_list(self):
         print(
-            f"Вы находитесь в локации {params.name1}. \nВремени осталось {params.remaining_time}, "
-            f"опыта: {params.current_experience} \nВы можете:")
+            f"Вы находитесь в локации {hero.name1}. \nВремени осталось {hero.remaining_time}, "
+            f"опыта: {hero.current_experience} \nВы можете:")
         self.z = 0
         self.act = {}
 
-        for line in params.current:
+        for line in hero.current:
             if type(line) is dict:
                 for loc in line:
                     self.z += 1
@@ -145,79 +139,107 @@ class GameMap:
         print(self.z, '- Выход')
         return self.act
 
+
+class Game:
+    def __init__(self):
+        self.action = 0
+        self.is_alive = True
+        self.win = False
+
+    def userinput(self):
+        action = None
+        action = input("Ваши действия >  ")
+        # print(gm.act[action])
+        while action not in gm.act:  # проверяем корректность ввода
+            print('Вы ввели некорректный номер!')
+            action = input("Ваши действия > ")
+            # print(gm.act[action])
+        self.action = action
+        # return action
+
+    def rungame(self):
+        Logger.headers()
+        while self.win is False:
+            gm.action_list()
+            self.userinput()
+            if 'Mob' in gm.act[self.action]:
+                Hero().mob()
+            if 'Boss' in gm.act[self.action]:
+                Hero().boss()
+            if Hero().hatch() is True:
+                break
+                # pass
+            Hero().location()
+            if 'exit' in gm.act[self.action]:
+                print("Вы решили сдаться и погибли")
+                break
+            Hero().deadman()
+            Logger.logger()
+
+
+class Hero:
+
+    def __init__(self):
+
+        self.remaining_time = '123456.0987654321'
+        self.remaining_time = Decimal(self.remaining_time)
+        self.current_experience = 0
+        self.mob_exp = r'exp(\d{1,5})_'
+        self.find_time = r'tm([\d\.\d]+)'
+        self.name1 = 'Location_0_tm0'
+        self.current = gm.loaded_json_file[self.name1]
+
     def mob(self):
-        add_exp = re.findall(params.mob_exp, act[action])
-        add_time = re.findall(params.find_time, act[action])
-        params.current_experience += int(add_exp[0])
-        params.remaining_time -= Decimal(add_time[0])
-        params.current.remove(str(act[action]))
-        cprint(f'Вы убили монстра {act[action]}! Опыта получено {add_exp[0]}, времени потрачено {add_time[0]}',
+        print(gm.act)
+        print(agame.action)
+        add_exp = re.findall(hero.mob_exp, gm.act[agame.action])
+        add_time = re.findall(hero.find_time, gm.act[agame.action])
+        hero.current_experience += int(add_exp[0])
+        hero.remaining_time -= Decimal(add_time[0])
+        hero.current.remove(str(gm.act[agame.action]))
+        cprint(f'Вы убили монстра {gm.act[agame.action]}! Опыта получено {add_exp[0]}, времени потрачено {add_time[0]}',
                color='green')
 
     def boss(self):
-        add_exp = re.findall(params.mob_exp, act[action])
-        add_time = re.findall(params.find_time, act[action])
-        params.current_experience += int(add_exp[0])
-        params.remaining_time -= Decimal(add_time[0])
-        params.current.remove(str(act[action]))
-        cprint(f'Вы убили БОССА {act[action]}! Опыта получено {add_exp[0]}, времени потрачено {add_time[0]}',
+        add_exp = re.findall(hero.mob_exp, gm.act[agame.action])
+        add_time = re.findall(hero.find_time, gm.act[agame.action])
+        hero.current_experience += int(add_exp[0])
+        hero.remaining_time -= Decimal(add_time[0])
+        hero.current.remove(str(gm.act[agame.action]))
+        cprint(f'Вы убили БОССА {gm.act[agame.action]}! Опыта получено {add_exp[0]}, времени потрачено {add_time[0]}',
                color='red')
 
     def hatch(self):
-        if 'Hatch' in act[action]:
+        if 'Hatch' in gm.act[agame.action]:
 
-            win = False
-            add_time = re.findall(params.find_time, act[action])
-            if params.current_experience >= 280 and Decimal(params.remaining_time) >= Decimal(add_time[0]):
-                params.remaining_time = Decimal(params.remaining_time) - Decimal(add_time[0])
+            add_time = re.findall(hero.find_time, gm.act[agame.action])
+            if hero.current_experience >= 280 and Decimal(hero.remaining_time) >= Decimal(add_time[0]):
+                hero.remaining_time = Decimal(hero.remaining_time) - Decimal(add_time[0])
 
-                cprint(f'Вы выбрались из подземелья! Опыта получено {params.current_experience}, времени осталось '
-                       f'{Decimal(params.remaining_time):.10f}', color='blue')
-                win = True
-                return win
+                cprint(f'Вы выбрались из подземелья! Опыта получено {hero.current_experience}, времени осталось '
+                       f'{Decimal(hero.remaining_time):.10f}', color='blue')
+                agame.win = True
             else:
-                params.remaining_time -= Decimal(add_time[0])
+                hero.remaining_time -= Decimal(add_time[0])
                 cprint(f'У вас не хватило опыта, чтобы открыть люк', color='blue')
                 pass
 
     def location(self):
-        if 'Location' in act[action]:
-            add_time = re.findall(params.find_time, act[action])
-            params.remaining_time -= Decimal(add_time[0])
-            params.name1 = act[action]
-            cprint(f'Вы переместились в локацию {act[action]}. Времени потрачено {add_time[0]}', color='green')
+        if 'Location' in gm.act[agame.action]:
+            add_time = re.findall(hero.find_time, gm.act[agame.action])
+            hero.remaining_time -= Decimal(add_time[0])
+            hero.name1 = gm.act[agame.action]
+            cprint(f'Вы переместились в локацию {gm.act[agame.action]}. Времени потрачено {add_time[0]}', color='green')
 
-            for x, y in enumerate(params.current):
-                if act[action] in y:
-                    params.current = params.current[x][act[action]]
+            for x, y in enumerate(hero.current):
+                if gm.act[agame.action] in y:
+                    hero.current = hero.current[x][gm.act[agame.action]]
 
-
-class Parameters:
-    with open("rpg.json", "r") as read_file:
-        loaded_json_file = json.load(read_file)
-    remaining_time = '123456.0987654321'
-    remaining_time = Decimal(remaining_time)
-    current_experience = 0
-    mob_exp = r'exp(\d{1,5})_'
-    find_time = r'tm([\d\.\d]+)'
-    name1 = 'Location_0_tm0'
-    current = loaded_json_file[name1]
-    is_alive = True
-
-    def userinput():
-        action = None
-        action = input("Ваши действия >  ")
-
-        while action not in act:  # проверяем корректность ввода
-            print('Вы ввели некорректный номер!')
-            action = input("Ваши действия > ")
-        return action
-
-    def deadman():
-        if len(params.current) == 0 or params.remaining_time <= 0:
-            if len(params.current) == 0:
+    def deadman(self):
+        if len(hero.current) == 0 or hero.remaining_time <= 0:
+            if len(hero.current) == 0:
                 cprint('ТУПИК, НАЗАД ДОРОГИ НЕТ', color='cyan')
-            if params.remaining_time <= 0:
+            if hero.remaining_time <= 0:
                 cprint('ЗАКОНЧИЛОСЬ ВРЕМЯ', color='cyan')
 
             cprint(
@@ -226,16 +248,13 @@ class Parameters:
                 'Вы осторожно входите в пещеру...\n', color='blue')
             with open("rpg.json", "r") as read_file:
                 loaded_json_file = json.load(read_file)
-            params.remaining_time = '123456.0987654321'
-            params.remaining_time = Decimal(params.remaining_time)
-            params.current_experience = 0
-            name1 = 'Location_0_tm0'
-            params.current = loaded_json_file[name1]
-            params.is_alive = True  # непонятно, зачем использовать, если при смерти он должен воскрешать в начале
-            # TODO Хм, я говорил про метод is_alive(), который бы возвращал True, если в текущей
-            # TODO игре ещё осталось время до затопления.
-            # TODO Так например методом можно было бы пользоваться после каждого перехода в локацию/убийства моба
-            # TODO Или после выхода из Hatch (чтобы проверить, успел ли герой выйти/оставшееся время > 0)
+            hero.remaining_time = '123456.0987654321'
+            hero.remaining_time = Decimal(hero.remaining_time)
+            hero.current_experience = 0
+            hero.name1 = 'Location_0_tm0'
+            hero.current = loaded_json_file[hero.name1]
+            self.is_alive = True  # непонятно, зачем использовать, если при смерти он должен воскрешать в начале
+
 
 class Logger:
     # def __init__(self):
@@ -248,9 +267,10 @@ class Logger:
             writer.writerow(field_names)
 
     def logger():
+        current_location = hero.name1
         now = datetime.datetime.now()
         current_time = now.strftime('%H:%M:%S')
-        fields = (current_location, str(params.current_experience), current_time)
+        fields = (current_location, str(hero.current_experience), current_time)
 
         with open('game_log.csv', 'a', encoding='utf-8') as gamelog:
             writer = csv.writer(gamelog, dialect='excel')
@@ -258,42 +278,6 @@ class Logger:
 
 
 gm = GameMap()
-params = Parameters
-Logger.headers()
-
-
-while params.is_alive is True:
-    # Не могу понять, как убрать этот циклв в класс, слишком много перекрестных обращений уже(
-    # TODO У вас кажется не продумано до конца разделение на классы.
-    # TODO Должен быть один класс-менеджер, который использует остальные классы
-    # TODO И реализует сам механизм игры. Этот метод как раз можно туда добавить.
-        act = gm.action_list()  # TODO При этом распечатка возможных действий и получение ответа пользователя
-    # TODO тоже может быть частью этого класса, а у вас они почему-то раскиданы по разным.
-    # TODO Класс с параметрами я пока не очень хорошо понимаю. Я например предполагал, что загрузка локации
-    # TODO Должна быть в том же классе, где и анализ локаций происходит.
-    # TODO Попробуйте взять лист бумаги, нарисовать на нём круги побольше - это будут классы
-    # TODO Затем в голове попробуйте мысленно начать игру, перебирая действия, которые необходимо реализовать для этого
-    # TODO Все действия записывайте в тот или иной кружок.
-    # TODO Далее можно ещё стрелочки использовать, которые будут наглядно показывать какой класс будет использовать
-    # TODO методы, реализованные в классе.
-    # TODO Например - загрузка локации. Её стоит расположить в классе "Карта", а далее будет стрелочка к классу "Игра"
-    # TODO Т.к. "Игра" будет вызывать этот метод и получать список того, что находится внутри первой локации.
-    # TODO Это всё позволит вам уменьшить перекрестные обращения, в идеале собрав все стрелочки в одном месте
-    # TODO в классе "Игра"
-        action = params.userinput()
-        current_location = params.name1
-
-        if 'Mob' in act[action]:
-            gm.mob()
-        if 'Boss' in act[action]:
-            gm.boss()
-        if gm.hatch() is True:
-            break
-
-        gm.location()
-        if 'exit' in act[action]:
-            print("Вы решили сдаться и погибли")
-            break
-        #
-        params.deadman()
-        Logger.logger()
+hero = Hero()
+agame = Game()
+agame.rungame()

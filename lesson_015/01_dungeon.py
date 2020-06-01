@@ -110,7 +110,7 @@ class GameMap:
 
     def action_list(self):
         print(
-            f"Вы находитесь в локации {hero.name1}. \nВремени осталось {hero.remaining_time}, "
+            f"Вы находитесь в локации {hero.current_location}. \nВремени осталось {hero.remaining_time}, "
             f"опыта: {hero.current_experience} \nВы можете:")
         self.z = 0
         self.act = {}
@@ -186,12 +186,13 @@ class Hero:
         self.current_experience = 0
         self.mob_exp = r'exp(\d{1,5})_'
         self.find_time = r'tm([\d\.\d]+)'
-        self.name1 = 'Location_0_tm0'  # TODO Почему бы не написать self.current_location например?) или loc_name хотя бы
-        self.current = gm.loaded_json_file[self.name1]
+        self.current_location = 'Location_0_tm0'
+        self.current = gm.loaded_json_file[self.current_location]
+        self.is_alive = True
 
     def mob(self):
-        print(gm.act)
-        print(agame.action)
+        # print(gm.act)
+        # print(agame.action)
         add_exp = re.findall(hero.mob_exp, gm.act[agame.action])
         add_time = re.findall(hero.find_time, gm.act[agame.action])
         hero.current_experience += int(add_exp[0])
@@ -228,7 +229,7 @@ class Hero:
         if 'Location' in gm.act[agame.action]:
             add_time = re.findall(hero.find_time, gm.act[agame.action])
             hero.remaining_time -= Decimal(add_time[0])
-            hero.name1 = gm.act[agame.action]
+            hero.current_location = gm.act[agame.action]
             cprint(f'Вы переместились в локацию {gm.act[agame.action]}. Времени потрачено {add_time[0]}', color='green')
 
             for x, y in enumerate(hero.current):
@@ -251,25 +252,25 @@ class Hero:
             hero.remaining_time = '123456.0987654321'
             hero.remaining_time = Decimal(hero.remaining_time)
             hero.current_experience = 0
-            hero.name1 = 'Location_0_tm0'
-            hero.current = loaded_json_file[hero.name1]
-            self.is_alive = True  # непонятно, зачем использовать, если при смерти он должен воскрешать в начале
-            # TODO перед использованием атрибута - его надо сперва заявить в init
+            hero.current_location = 'Location_0_tm0'
+            hero.current = loaded_json_file[hero.current_location]
+            self.is_alive = True
 
 
 class Logger:
     # def __init__(self):
     #     pass
 
-    @staticmethod  # пример
-    def headers():  # TODO Тут нужно либо self в параметрах указать, либо сделать метод статическим
+    @staticmethod
+    def headers():
         field_names = ['current_location', 'current_experience', 'current_date']
         with open('game_log.csv', 'w', encoding='utf-8') as gamelog:
             writer = csv.writer(gamelog, dialect='excel')  # <_csv.writer object at 0x03B0AD80>
             writer.writerow(field_names)
 
-    def logger():  # TODO И тут
-        current_location = hero.name1
+    @staticmethod
+    def logger():
+        current_location = hero.current_location
         now = datetime.datetime.now()
         current_time = now.strftime('%H:%M:%S')
         fields = (current_location, str(hero.current_experience), current_time)

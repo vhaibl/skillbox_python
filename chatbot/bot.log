@@ -565,3 +565,1094 @@ TypeError: expected string or bytes-like object
 24-05-2020 12:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
 24-05-2020 12:52 INFO Зарегистрирован васО 123@ass.34
 24-05-2020 12:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 12:25 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 12:25 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 12:25 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 12:25 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 12:26 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 12:26 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 12:26 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 12:26 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:30 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 13:30 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 13:30 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 13:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:30 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 13:30 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 13:30 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 13:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:30 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 13:30 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 13:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:30 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 13:30 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 13:30 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 13:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:31 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:31 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 109, in continue_scenario
+    handler = getattr(handlers, step['handler'])
+AttributeError: module 'handlers' has no attribute 'handler_name'
+01-06-2020 13:31 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:31 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 109, in continue_scenario
+    handler = getattr(handlers, step['handler'])
+AttributeError: module 'handlers' has no attribute 'handler_name'
+01-06-2020 13:32 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:32 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 109, in continue_scenario
+    handler = getattr(handlers, step['handler'])
+AttributeError: module 'handlers' has no attribute 'handler_name'
+01-06-2020 13:32 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 109, in continue_scenario
+    handler = getattr(handlers, step['handler'])
+AttributeError: module 'handlers' has no attribute 'handler_name'
+01-06-2020 13:32 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:32 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 13:32 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 13:32 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 13:32 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:32 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 13:32 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 13:32 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 13:32 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:32 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:32 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:32 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:32 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:32 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 109, in continue_scenario
+    handler = getattr(handlers, step['handler'])
+AttributeError: module 'handlers' has no attribute 'handler_date'
+01-06-2020 13:33 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:33 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 13:33 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 13:33 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 13:33 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:33 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:33 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:33 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:33 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 113, in continue_scenario
+    text_to_send = next_step['text'].format(**state.context)
+KeyError: 'name'
+01-06-2020 13:40 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:40 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 13:40 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 13:40 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 13:40 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:40 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 13:40 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 13:40 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 13:40 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:40 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:40 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:40 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:40 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 119, in continue_scenario
+    log.info('Зарегистрирован {name} {email}'.format(**state.context))
+KeyError: 'name'
+01-06-2020 13:42 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:42 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 13:42 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 13:42 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 13:42 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:42 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 13:42 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 13:42 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 13:42 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:42 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:42 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:42 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:42 INFO Билет из города йййй в город ййй на дату ййй оформлен
+01-06-2020 13:42 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:44 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:44 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 13:44 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 13:44 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 13:44 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:44 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:44 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:44 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:44 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:44 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:44 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:44 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_EDIT
+01-06-2020 13:44 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:44 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:44 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:46 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:46 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:46 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:47 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:47 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 13:47 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 13:47 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 13:47 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:47 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:47 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:47 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:47 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:47 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:47 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:52 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 13:52 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 13:52 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 13:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:52 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 13:52 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 13:52 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 13:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:52 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 13:52 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 13:52 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 13:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:52 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 27, in handler_date
+    print(match = re.search(re_date, text))
+TypeError: 'match' is an invalid keyword argument for print()
+01-06-2020 13:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:53 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 13:53 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 13:53 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 13:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:59 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 13:59 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 13:59 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 13:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 13:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 13:59 INFO Билет из города dff в город fgfdg на дату vha@gm.co оформлен
+01-06-2020 13:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 14:02 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 14:02 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 14:02 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 14:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 14:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 14:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 14:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 14:03 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:06 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 14:06 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 14:06 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 14:06 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 14:06 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:06 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:06 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:06 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 14:06 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:07 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 14:07 INFO Билет из города fdgdfg в город dfdgf на дату 01/01/2020 оформлен
+01-06-2020 14:07 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:07 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 14:07 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 14:07 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 14:07 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 14:07 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:07 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:07 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:07 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 14:07 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:07 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 14:07 INFO Билет из города fdkgldm в город fdlkndfv на дату 01-20-2000 оформлен
+01-06-2020 14:07 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:10 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 14:10 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+01-06-2020 14:10 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+01-06-2020 14:10 DEBUG User gets {'name': 'Регистрация', 'tokens': ('регист', 'добав', '3'), 'scenario': 'registration', 'answer': None}
+01-06-2020 14:10 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:10 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:10 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 14:10 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+01-06-2020 14:10 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+01-06-2020 14:11 INFO Билет из города Москва в город Лондон на дату 03-09-2020 оформлен
+01-06-2020 14:11 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:00 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 11:00 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 11:00 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 11:00 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:00 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:00 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 11:00 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 11:00 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 11:00 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:00 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:00 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:00 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 11:00 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 11:00 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 11:00 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:02 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:03 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:03 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:03 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:03 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:03 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:03 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 11:03 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 11:03 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 11:03 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:03 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 10, in handler_from
+    print(match(match))
+TypeError: 're.Match' object is not callable
+02-06-2020 11:04 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:04 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 11:04 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 11:04 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 11:04 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:04 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 10, in handler_from
+    print(match(matches))
+TypeError: 're.Match' object is not callable
+02-06-2020 11:05 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:05 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 11:05 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 11:05 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 11:05 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:05 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:05 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:06 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:06 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 11:06 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 11:06 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 11:06 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:06 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 10, in handler_from
+    print(match(object))
+TypeError: 're.Match' object is not callable
+02-06-2020 11:07 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:07 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 11:07 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 11:07 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 11:07 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:07 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:07 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:07 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 11:07 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 11:07 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 11:07 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:07 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 11, in handler_from
+    print(match1(match))
+TypeError: 'str' object is not callable
+02-06-2020 11:10 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:10 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 11:10 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 11:10 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 11:10 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:10 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text, context=state.context):
+TypeError: handler_from() missing 1 required positional argument: 'fromfield'
+02-06-2020 11:11 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:11 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 11:11 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 11:11 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 11:11 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:11 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:11 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:12 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 11:12 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 11:12 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 11:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:12 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 115, in continue_scenario
+    print(fromfield)
+NameError: name 'fromfield' is not defined
+02-06-2020 11:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:12 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 11:12 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 11:12 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 11:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:16 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:16 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 11:16 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 11:16 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 11:16 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:16 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:16 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:25 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:25 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 11:25 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 11:25 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 11:25 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:25 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:25 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:25 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:25 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 113, in continue_scenario
+    text_to_send = next_step['text'].format(**state.context)
+AttributeError: 'tuple' object has no attribute 'format'
+02-06-2020 11:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:27 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 11:27 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 11:27 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 11:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:27 INFO Билет из города жопа в город дда на дату 23-01-2020 оформлен
+02-06-2020 11:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:29 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 11:29 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 11:29 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 11:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 11:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 11:29 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 113, in continue_scenario
+    text_to_send = next_step['text'].format(**state.context)
+AttributeError: 'list' object has no attribute 'format'
+02-06-2020 13:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 13:12 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 13:12 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 13:12 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 13:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 13:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 13:12 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 115, in continue_scenario
+    print(handlers.fromfield)
+AttributeError: module 'handlers' has no attribute 'fromfield'
+02-06-2020 13:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 13:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 13:13 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 13:13 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 13:13 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 13:13 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 13:13 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 13:13 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 13:13 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 13:13 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 84, in handler_date
+    context['list'] = testdict['Москва']['Лондон']
+KeyError: 'Москва'
+02-06-2020 13:13 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 13:14 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 13:14 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 13:14 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 13:14 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 13:14 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 13:14 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 13:14 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 13:14 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 13:14 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 13:14 INFO Билет из города привет в город жопа на дату 23-01-2020 оформлен
+02-06-2020 13:14 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 13:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 13:30 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 13:30 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 13:30 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 13:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 13:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 13:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 13:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 13:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 13:30 INFO Билет из города dfgdf в город fdgdfg на дату 20-20-2020 оформлен
+02-06-2020 13:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:28 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:28 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 14:28 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 14:28 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 14:28 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:28 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:28 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:28 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:28 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:28 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:28 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 88, in handler_date
+    context['list'] = testdict['from']['to']
+KeyError: 'from'
+02-06-2020 14:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:30 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 14:30 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 14:30 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 14:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:30 INFO Билет из города москва в город лондон на дату 23-02-2020 оформлен
+02-06-2020 14:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:30 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 14:30 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 14:30 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 14:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:31 INFO Билет из города париж в город лондон на дату 24-04-2021 оформлен
+02-06-2020 14:31 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:34 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:34 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 14:34 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 14:34 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 14:34 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:34 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:34 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:34 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:34 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:34 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:34 INFO Билет из города лондон в город париж на дату 02-06-2020 оформлен
+02-06-2020 14:34 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:41 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:41 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:41 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 14:41 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 14:41 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 14:41 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:41 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:41 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:41 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:41 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:41 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:41 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:41 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:41 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 88, in handler_date
+    context['list'] = testdict[context['from']][context['to']]
+KeyError: 'Москва'
+02-06-2020 14:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:53 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 14:53 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 14:53 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 14:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:53 INFO Билет из города москва в город лондон на дату 03-03-2020 оформлен
+02-06-2020 14:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:56 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:56 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 14:56 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 14:56 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 14:56 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:56 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 14:56 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 14:56 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 14:56 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:56 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:56 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 14:56 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 14:56 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 14:56 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:56 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:56 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 14:56 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 14:56 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 14:56 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:56 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:56 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:57 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:57 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 113, in continue_scenario
+    text_to_send = next_step['text'].format(**state.context.title)
+AttributeError: 'dict' object has no attribute 'title'
+02-06-2020 14:57 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 113, in continue_scenario
+    text_to_send = next_step['text'].format(**state.context.title)
+AttributeError: 'dict' object has no attribute 'title'
+02-06-2020 14:57 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:57 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 14:57 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 14:57 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 14:57 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:57 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:58 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:58 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:58 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:58 INFO Билет из города москва в город лондон на дату 03-03-2020 оформлен
+02-06-2020 14:58 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:58 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:58 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 14:58 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 14:58 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 14:58 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:58 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 14:58 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 14:58 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 14:58 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:58 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:58 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 14:58 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 14:58 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 14:58 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:58 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:58 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:58 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 14:58 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 14:58 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 113, in continue_scenario
+    text_to_send = next_step['text'].format(**state.context)
+AttributeError: 'str' object has no attribute 'title()'
+02-06-2020 15:20 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 15:20 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 15:20 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 15:20 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 15:20 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 15:20 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 15:20 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 15:20 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 15:20 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 15:20 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 15:20 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text.lower(), context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 48, in handler_date
+    start_date = context['date']
+KeyError: 'date'
+02-06-2020 15:21 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 15:21 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 15:21 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 15:21 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 15:21 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 15:21 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 15:21 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 15:21 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 15:21 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 15:21 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text.lower(), context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 49, in handler_date
+    end_date = start_date + timedelta(days=365)
+TypeError: can only concatenate str (not "datetime.timedelta") to str
+02-06-2020 15:22 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 15:22 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 15:22 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 15:22 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 15:22 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 15:22 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 15:22 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 15:22 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 15:22 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text.lower(), context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 48, in handler_date
+    start_date = text.strfdate('%d%m%Y')
+AttributeError: 'str' object has no attribute 'strfdate'
+02-06-2020 15:24 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 15:24 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 15:24 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 15:24 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 15:24 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 15:24 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 15:24 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 15:24 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 15:24 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 15:24 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text.lower(), context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 48, in handler_date
+    start_date = datetime.datetime.strptime(text, '%d-%m-%Y').date()
+AttributeError: type object 'datetime.datetime' has no attribute 'datetime'
+02-06-2020 15:25 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 15:25 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 15:25 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 15:25 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 15:25 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 15:25 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 15:25 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 15:25 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 15:25 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 15:25 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 15:25 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 113, in continue_scenario
+    text_to_send = next_step['text'].format(**state.context)
+AttributeError: 'str' object has no attribute 'title()'
+02-06-2020 15:26 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 15:26 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+02-06-2020 15:26 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+02-06-2020 15:26 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+02-06-2020 15:26 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 15:26 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 15:26 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 15:26 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+02-06-2020 15:26 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+02-06-2020 15:26 INFO Билет из города москва в город лондон на дату 03-03-2021 оформлен
+02-06-2020 15:26 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:20 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 09:20 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 09:20 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 09:20 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:20 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:20 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:21 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:21 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:21 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:21 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:21 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:21 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:21 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:21 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:29 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 09:29 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 09:29 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 09:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:29 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text.lower(), context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 32, in handler_from
+    match = re.match(re_name, text)
+NameError: name 're_name' is not defined
+03-06-2020 09:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:30 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 09:30 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 09:30 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 09:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:30 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:31 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:31 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:31 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:31 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:31 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:31 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:46 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:46 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 09:46 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 09:46 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 09:46 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:46 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 09:46 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 09:46 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 09:46 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:46 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:46 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:46 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:46 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:46 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:46 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:50 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:50 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 09:50 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 09:50 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 09:50 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:50 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:50 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:50 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:50 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:50 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text.lower(), context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 50, in handler_to
+    if testdict[context['from']][context['to']]:
+NameError: name 'testdict' is not defined
+03-06-2020 09:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:52 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 09:52 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 09:52 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 09:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:52 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:53 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 09:53 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 09:53 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 09:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:53 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:55 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 09:55 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 09:55 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 09:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:55 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:59 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 09:59 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 09:59 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 09:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 09:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 09:59 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text.lower(), context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 50, in handler_to
+    print(text, testdict[context['from']])
+NameError: name 'testdict' is not defined
+03-06-2020 10:00 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:00 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 10:00 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 10:00 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 10:00 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:00 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:00 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:00 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 110, in continue_scenario
+    if handler(text=text.lower(), context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 51, in handler_to
+    print(text, testdict[context['from']])
+NameError: name 'testdict' is not defined
+03-06-2020 10:09 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:10 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:10 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 10:10 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 10:10 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 10:10 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:10 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:10 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:10 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:12 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:13 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:13 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:13 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:13 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 10:13 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 10:13 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 10:13 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:13 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:13 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:13 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:13 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:13 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:13 INFO Билет из города москва в город лондон на дату 14-01-2021 оформлен
+03-06-2020 10:13 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:13 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:14 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:14 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 10:14 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 10:14 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 10:14 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:27 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 10:27 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 10:27 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 10:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:27 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:29 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 10:29 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 10:29 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 10:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:29 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:48 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:49 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 10:49 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 10:49 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 10:49 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:49 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:49 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:49 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:49 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:49 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:49 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:49 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:49 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 10:49 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 10:49 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 10:49 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:49 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:49 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:49 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:49 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:49 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:50 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:50 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:50 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:51 INFO Билет из города москва в город лондон на дату 11-11-2021 оформлен
+03-06-2020 10:51 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:59 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 10:59 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 10:59 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 10:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 10:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 10:59 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 11:00 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 11:00 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 11:06 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 11:06 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 11:06 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 11:06 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 11:06 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 11:06 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 11:06 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 11:06 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 115, in continue_scenario
+    if check:
+NameError: name 'check' is not defined
+03-06-2020 11:07 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 11:07 DEBUG User gets {'name': 'Дата проведения', 'tokens': ('когда', 'сколько', 'дата', 'дату', '1'), 'scenario': None, 'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'}
+03-06-2020 11:07 DEBUG User gets {'name': 'Место проведения', 'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'), 'scenario': None, 'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'}
+03-06-2020 11:07 DEBUG User gets {'name': 'Начало работы', 'tokens': '\\ticket', 'scenario': 'registration', 'answer': None}
+03-06-2020 11:07 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_REPLY
+03-06-2020 11:07 INFO мы пока не умеем обрабатывать событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+03-06-2020 11:07 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 60, in run
+    self.on_event(event)
+  File "C:/python_base/chatbot/bot.py", line 77, in on_event
+    text_to_send = self.continue_scenario(user_id, text)
+  File "C:/python_base/chatbot/bot.py", line 115, in continue_scenario
+    if check:
+NameError: name 'check' is not defined

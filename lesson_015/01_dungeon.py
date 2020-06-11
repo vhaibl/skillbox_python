@@ -284,3 +284,4 @@ gm = GameMap()
 hero = Hero()
 agame = Game()
 agame.rungame()
+#зачет!

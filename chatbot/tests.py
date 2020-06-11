@@ -85,8 +85,12 @@ class Test1(TestCase):
         settings.SCENARIOS['registration']['steps']['step3']['failure_text'],
         settings.SCENARIOS['registration']['steps']['step4']['text'].format(city_from='Москва', city_to='Лондон',
                                                                             date='23-01-2021', list=any),
-        # TODO Пытаюсь покрыть тестами, непонятно как передавать список рейсов в тест, потому что номера рейсов
-        # TODO каждый раз генерируются разные
+        # Пытаюсь покрыть тестами, непонятно как передавать список рейсов в тест, потому что номера рейсов
+        # каждый раз генерируются разные  # TODO А из state.context-а вытащить не пробовали?
+        # TODO Либо из testdict вытащить напрямую (возможно функция понадобится)
+        # TODO Кстати само название testdict нарушает 2 правила
+        # TODO 1) не хватает "_" между словами
+        # TODO 2) хоть я и сам его иногда нарушаю - нельзя использовать dict, list и прочее в названиях
         # settings.SCENARIOS['registration']['steps']['step5']['failure_text'],
         # settings.SCENARIOS['registration']['steps']['step5']['failure_text'],
         # settings.SCENARIOS['registration']['steps']['step5']['text'],

@@ -68,7 +68,7 @@ class Bot:
         :return: None
         """
         if event.type != VkBotEventType.MESSAGE_NEW:
-            log.info('мы пока не умеем обрабатывать событие такого типа %s', event.type)
+            log.info('%s не обрабатывается', event.type)
             return
         user_id = event.object.message['peer_id']
         text = event.object.message['text']
@@ -105,26 +105,65 @@ class Bot:
         state = self.user_states[user_id]
         steps = settings.SCENARIOS[state.scenario_name]['steps']
         step = steps[state.step_name]
-
         handler = getattr(handlers, step['handler'])
 
-        if handler(text=text.lower(), context=state.context):
+
+
+
+        if handler(text=text, context=state.context):
             # next step
+            if state.context['confirm'] == 'No':
+                log.info('Отказ от оформления'.format(**state.context))
+                text_to_send = 'Отказ от оформления. Введите \\ticket чтобы начать заново.'
+                self.user_states.pop(user_id)
+                return text_to_send
+
+
             next_step = steps[step['next_step']]
+
             text_to_send = next_step['text'].format(**state.context)
+
             if next_step['next_step']:
                 state.step_name = step['next_step']
                 # switch to next step
+
+
             else:
 
-                log.info('Билет из города {from} в город {to} на дату {date} оформлен'.format(**state.context))
+                log.info('Билет из города {city_from} в город {city_to} на дату {date} оформлен, телефон {phone}'.format(**state.context))
                 self.user_states.pop(user_id)
                 # finish scenario
+            return text_to_send
 
         else:
-            # retry current step
-            text_to_send = step['failure_text'].format(**state.context)
+            if step['failure_step'] == 'step2':
+                add_text = None
+                if state.context['same']:
+                    if state.context['same'] == 'одинаковые города':
+                        add_text = 'Ошибка! Нельзя улететь из города {from} в город {to}. \nВведите \\ticket ' \
+                                   'чтобы начать заново'
+                        self.user_states.pop(user_id)
+                        text_to_send = add_text.format(**state.context)
+                        state.context['same'] = None
+                        log.info('Ошибка! Нельзя улететь из города {from} в город {to}.'
+                                 .format(**state.context))
 
+                    elif state.context['same'] == 'нет прямых рейсов':
+                        add_text = 'Ошибка! Нет прямых рейсов между городом {from} и городом {to} \n' \
+                                   'Введите \\ticket чтобы начать заново'
+                        log.info('Ошибка! Нет прямых рейсов между городом {from} и городом {to}'
+                                 .format(**state.context))
+
+                        self.user_states.pop(user_id)
+                        text_to_send = add_text.format(**state.context)
+                        state.context['same'] = None
+                    else:
+                        text_to_send = step['failure_text'].format(**state.context)
+                else:
+                    text_to_send = step['failure_text'].format(**state.context)
+
+            else:
+                text_to_send = step['failure_text'].format(**state.context)
         return text_to_send
 
 

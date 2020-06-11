@@ -1,3 +1,4 @@
+
 import random
 from copy import deepcopy
 from unittest import TestCase
@@ -55,22 +56,48 @@ class Test1(TestCase):
 
     INPUTS = [
         'Привет',
-        'А когда',
-        'Где будет проходить конференция?',
-        'Зарегистируй меня',
-        'Вениамин',
-        'мой адрес email@email',
-        'email@email.ru',
+        '\\ticket',
+        'из масквы',
+        'из москвы',
+        'ландон',
+        'лондон',
+        '11-01-2020',
+        '11-01-2021',
+        # 'asd',
+        # '091',
+        # '6',
+        # '3',
+        # 'коммент'
+        # 'чо',
+        # 'да',
+        # 'email@email.ru',
+        # '89253263240',
     ]
 
     EXPECTED_OUTPUTS = [
         settings.DEFAULT_ANSWER,
-        settings.INTENTS[0]['answer'],
-        settings.INTENTS[1]['answer'],
         settings.SCENARIOS['registration']['steps']['step1']['text'],
+        settings.SCENARIOS['registration']['steps']['step1']['failure_text'],
         settings.SCENARIOS['registration']['steps']['step2']['text'],
+
         settings.SCENARIOS['registration']['steps']['step2']['failure_text'],
-        settings.SCENARIOS['registration']['steps']['step3']['text'].format(name='Вениамин', email='email@email.ru'),
+        settings.SCENARIOS['registration']['steps']['step3']['text'],
+        settings.SCENARIOS['registration']['steps']['step3']['failure_text'],
+        settings.SCENARIOS['registration']['steps']['step4']['text'].format(city_from='Москва', city_to='Лондон',
+                                                                            date='23-01-2021', list=any),
+        # TODO Пытаюсь покрыть тестами, непонятно как передавать список рейсов в тест, потому что номера рейсов
+        # TODO каждый раз генерируются разные
+        # settings.SCENARIOS['registration']['steps']['step5']['failure_text'],
+        # settings.SCENARIOS['registration']['steps']['step5']['failure_text'],
+        # settings.SCENARIOS['registration']['steps']['step5']['text'],
+        # settings.SCENARIOS['registration']['steps']['step6']['text'],
+        # settings.SCENARIOS['registration']['steps']['step7']['failure_text'],
+        # settings.SCENARIOS['registration']['steps']['step7']['text'],
+        # settings.SCENARIOS['registration']['steps']['step8']['failure_text'],
+        # settings.SCENARIOS['registration']['steps']['step8']['text'],
+
+        # settings.SCENARIOS['registration']['steps']['step2']['failure_text'],
+        # settings.SCENARIOS['registration']['steps']['step3']['text'].format(name='Вениамин', email='email@email.ru'),
     ]
 
     def test_run_ok(self):
@@ -99,3 +126,4 @@ class Test1(TestCase):
             args, kwargs = call
             real_outputs.append(kwargs['message'])
         assert real_outputs == self.EXPECTED_OUTPUTS
+        # print(real_outputs, self.EXPECTED_OUTPUTS)

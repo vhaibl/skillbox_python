@@ -1,23 +1,10 @@
 TOKEN1= ""
 GROUP_ID = ""
 
-
 INTENTS = [
     {
-        'name': 'Дата проведения',
-        'tokens': ('когда', 'сколько', 'дата', 'дату', '1'),
-        'scenario': None,
-        'answer': 'Конференция проводится 15го апреля, регистрация начнется в 10 утра'
-    },
-    {
-        'name': 'Место проведения',
-        'tokens': ('где', 'место', 'локация', 'адрес', 'метро', '2'),
-        'scenario': None,
-        'answer': 'Конференция пройдет в павильоне 18Г в Экспоцентре'
-    },
-    {
         'name': 'Начало работы',
-        'tokens': ('\\ticket'),
+        'tokens': ('\\ticket', '\\help'),
         'scenario': 'registration',
         'answer': None
 
@@ -31,35 +18,84 @@ SCENARIOS = {
             'step1': {
                 'text': 'Введите город отпраления - Москва, Париж, Лондон',
                 'failure_text': 'Введите название города русскими буквами, выберите один из трех вариантов',
+                'failure_step': None,
                 'handler': 'handler_from',
                 'next_step': 'step2'
             },
             'step2': {
                 'text': 'Введите город назначения - Москва, Париж, Лондон',
-                'failure_text': 'Введите название города русскими буквами, выберите один из трех вариантов',
+                'failure_text': ' Введите название города русскими буквами - Москва, Лондон ири Париж',
+                'failure_step': 'step2',
                 'handler': 'handler_to',
                 'next_step': 'step3'
             },
             'step3': {
                 'text': 'Введите дату вылета в формате 23-01-2020.',
                 'failure_text': 'Неправильно указана дата вылета. Введите дату вылета в формате 23-01-2020.',
+                'failure_step': None,
                 'handler': 'handler_date',
                 'next_step': 'step4'
             },
             'step4': {
                 'text': 'Ближайшие рейсы из города {from} в город {to}, начиная с {date}:\n'
-                        '{list}',
+                        '{list}\n Введите трехначный номер рейса:',
+                'failure_text': 'Неправильно укааан номер рейса. Номер указываеся цифрами, например 000',
+                'failure_step': None,
+                'handler': 'handler_flight',
+                'next_step': 'step5'
+
+            },
+
+            'step5': {
+                'text': 'Выбран рейс номер {flight} из города {from} в город {to}, дата отправления {flight_date}.\n'
+                        'Введите необходимое количество билетов, от 1 до 5',
+                'failure_text': 'Неправильно указано количество билетов. Укажите цифрой, например 3',
+                'failure_step': None,
+                'handler': 'handler_quantity',
+                'next_step': 'step6'
+
+            },
+
+            'step6': {
+                'text': 'Количество билетов: {quantity}. Оставьте пожелания к заказу.',
+                'failure_text': 'Что-то полшо не так',
+                'failure_step': None,
+                'handler': 'handler_comment',
+                'next_step': 'step7'
+
+            },
+            'step7': {
+                'text': 'Проверьте введенные данные. Отпрвление из города {from} в город {to}.\n'
+                        'Рейс {flight}, дата вылета {flight_date}, количество билетов {quantity}\n'
+                        'Комментарий к заказу: {comment},\n Если все вверно, напишите Да. Для отмены напишите Нет',
+                'failure_text': 'Напишите Да или Нет',
+                'failure_step': None,
+                'handler': 'handler_confirm',
+                'next_step': 'step8'
+
+            },
+            'step8': {
+                'text': 'Введите номер телефона для связи',
+                'failure_text': 'Неправильно указан номер телефона. Принимаются только российские номера.',
+                'failure_step': None,
+                'handler': 'handler_phone',
+                'next_step': 'step9'
+
+            },
+            'step9': {
+                'text': 'Спасибо за указанную информацию.\n Билет(ы) из города {from} в город {to} на {flight_date} '
+                        'в количестве {quantity} шт. забронированы.\n Мы свяжемся с вами по телефону {phone}.',
                 'failure_text': None,
+                'failure_step': None,
                 'handler': None,
                 'next_step': None
 
-            }
-        }
+            },
+            'failure_steps':
+                {'step2':
+                     {'failure_text': 'Dummy'}}},
+
     }
 }
 
 DEFAULT_ANSWER = 'Введите \\ticket для заказа билетов или \\help для повтора этого сообщения'
-
-
-
-

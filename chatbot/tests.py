@@ -1,14 +1,14 @@
 
 import random
 from copy import deepcopy
+from pprint import pprint
 from unittest import TestCase
 from unittest.mock import patch, Mock, ANY
 
 from vk_api.bot_longpoll import VkBotMessageEvent, VkBotEvent
 
-import settings
+import settings, handlers
 from bot import Bot
-
 
 class Test1(TestCase):
     RAW_EVENT = {
@@ -83,14 +83,13 @@ class Test1(TestCase):
         settings.SCENARIOS['registration']['steps']['step2']['failure_text'],
         settings.SCENARIOS['registration']['steps']['step3']['text'],
         settings.SCENARIOS['registration']['steps']['step3']['failure_text'],
+
         settings.SCENARIOS['registration']['steps']['step4']['text'].format(city_from='Москва', city_to='Лондон',
-                                                                            date='23-01-2021', list=any),
+                                                                            date='23-01-2021', list=contexts),
         # Пытаюсь покрыть тестами, непонятно как передавать список рейсов в тест, потому что номера рейсов
-        # каждый раз генерируются разные  # TODO А из state.context-а вытащить не пробовали?
-        # TODO Либо из testdict вытащить напрямую (возможно функция понадобится)
-        # TODO Кстати само название testdict нарушает 2 правила
-        # TODO 1) не хватает "_" между словами
-        # TODO 2) хоть я и сам его иногда нарушаю - нельзя использовать dict, list и прочее в названиях
+        # каждый раз генерируются разные  # А из state.context-а вытащить не пробовали?
+        # Либо из flights вытащить напрямую (возможно функция понадобится)
+        # TODO Никак не могу понять, ак мне дотянуться до state.context...
         # settings.SCENARIOS['registration']['steps']['step5']['failure_text'],
         # settings.SCENARIOS['registration']['steps']['step5']['failure_text'],
         # settings.SCENARIOS['registration']['steps']['step5']['text'],
@@ -129,5 +128,9 @@ class Test1(TestCase):
         for call in send_mock.call_args_list:
             args, kwargs = call
             real_outputs.append(kwargs['message'])
+
+        for i, v in handlers.flights['Москва']['Лондон'].items():
+            contexts += (f"Рейс {i} - Дата {v}\n")
+        pprint(handlers.flights)
+        pprint(Bot.context)
         assert real_outputs == self.EXPECTED_OUTPUTS
-        # print(real_outputs, self.EXPECTED_OUTPUTS)

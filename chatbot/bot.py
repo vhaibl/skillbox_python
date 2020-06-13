@@ -102,6 +102,7 @@ class Bot:
         return text_to_send
 
     def continue_scenario(self, user_id, text):
+
         state = self.user_states[user_id]
         steps = settings.SCENARIOS[state.scenario_name]['steps']
         step = steps[state.step_name]

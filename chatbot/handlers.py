@@ -73,7 +73,7 @@ matches = []
 
 
 def handler_date(text, context):
-    global testdict
+    global flights
     match = re.search(re_date, text)
     current_date = date.today()
     start_date = datetime.strptime(text, '%d-%m-%Y').date()
@@ -83,38 +83,38 @@ def handler_date(text, context):
 
             end_date = start_date + timedelta(days=365)
 
-            testdict = {'Москва': {'Лондон': {}}, 'Лондон': {'Москва': {}, 'Париж': {}}, 'Париж': {'Лондон': {}}}
+            flights = {'Москва': {'Лондон': {}}, 'Лондон': {'Москва': {}, 'Париж': {}}, 'Париж': {'Лондон': {}}}
             for single_date in daterange(start_date, end_date):
 
                 if single_date.isoweekday() == 1 or single_date.isoweekday() == 3:
-                    if len(testdict['Москва']['Лондон']) < 5:
+                    if len(flights['Москва']['Лондон']) < 5:
                         tour = str((randint(100, 999)))
                         add_date = single_date.strftime("%d-%m-%Y")
-                        testdict['Москва']['Лондон'][tour] = add_date
+                        flights['Москва']['Лондон'][tour] = add_date
 
                 if single_date.isoweekday() == 2 or single_date.isoweekday() == 4:
-                    if len(testdict['Лондон']['Москва']) < 5:
+                    if len(flights['Лондон']['Москва']) < 5:
                         tour = str((randint(100, 999)))
                         add_date = single_date.strftime("%d-%m-%Y")
-                        testdict['Лондон']['Москва'][tour] = add_date
+                        flights['Лондон']['Москва'][tour] = add_date
 
                 if single_date.day == 10 or single_date.day == 20:
-                    if len(testdict['Лондон']['Париж']) < 5:
+                    if len(flights['Лондон']['Париж']) < 5:
                         tour = str((randint(100, 999)))
                         add_date = single_date.strftime("%d-%m-%Y")
-                        testdict['Лондон']['Париж'][tour] = add_date
+                        flights['Лондон']['Париж'][tour] = add_date
 
                 if single_date.day == 11 or single_date.day == 21:
                     x = 0
-                    if len(testdict['Париж']['Лондон']) < 5:
+                    if len(flights['Париж']['Лондон']) < 5:
                         tour = str((randint(100, 999)))
                         add_date = single_date.strftime("%d-%m-%Y")
-                        testdict['Париж']['Лондон'][tour] = add_date
+                        flights['Париж']['Лондон'][tour] = add_date
                         x += 1
             context['date'] = text
             context['list'] = ''
 
-            for i, v in testdict[context['city_from']][context['city_to']].items():
+            for i, v in flights[context['city_from']][context['city_to']].items():
                 context['list'] += (f"Рейс {i} - Дата {v}\n")
             return True
         except Exception as esc:
@@ -127,9 +127,9 @@ def handler_date(text, context):
 def handler_flight(text, context):
     match = re.match(re_flight, text)
     if match:
-        if text in testdict[context['city_from']][context['city_to']].keys():
+        if text in flights[context['city_from']][context['city_to']].keys():
             context['flight'] = text
-            context['flight_date'] = testdict[context['city_from']][context['city_to']][text]
+            context['flight_date'] = flights[context['city_from']][context['city_to']][text]
 
             return True
         else:

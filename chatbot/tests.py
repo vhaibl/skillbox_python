@@ -1,17 +1,11 @@
-import datetime
-import random
 from copy import deepcopy
-from pprint import pprint
 from unittest import TestCase
-from unittest.mock import patch, Mock, ANY
+from unittest.mock import patch, Mock
 
-from vk_api.bot_longpoll import VkBotMessageEvent, VkBotEvent
+from vk_api.bot_longpoll import  VkBotEvent
 
 import settings, handlers
 from bot import Bot
-
-contexts = ''
-
 
 class Test1(TestCase):
     RAW_EVENT = {
@@ -66,46 +60,18 @@ class Test1(TestCase):
         'лондон',
         '11-01-2020',
         '11-01-2021',
-        # 'asd',
-        # '091',
-        # '6',
-        # '3',
-        # 'коммент'
-        # 'чо',
-        # 'да',
-        # 'email@email.ru',
-        # '89253263240',
+        'asd',
+        '666',
+        '6',
+        '3',
+        'коммент',
+        '8989',
+        'да',
+        'email@email.ru',
+        '89253263240',
     ]
 
-    EXPECTED_OUTPUTS = [
-        settings.DEFAULT_ANSWER,
-        settings.SCENARIOS['registration']['steps']['step1']['text'],
-        settings.SCENARIOS['registration']['steps']['step1']['failure_text'],
-        settings.SCENARIOS['registration']['steps']['step2']['text'],
-
-        settings.SCENARIOS['registration']['steps']['step2']['failure_text'],
-        settings.SCENARIOS['registration']['steps']['step3']['text'],
-        settings.SCENARIOS['registration']['steps']['step3']['failure_text'],
-        settings.SCENARIOS['registration']['steps']['step4']['text'].format(city_from='Москва', city_to='Лондон',
-                                                                            input_date='11-01-2021',
-                                                                            list=handlers.check_flights('Москва',
-                                                                                                        'Лондон')),
-        # TODO Проблема в том, что в момент, когда создается этот список - данных в словаре нет
-        # TODO А появляются они после инициализирования бота
-        # settings.SCENARIOS['registration']['steps']['step5']['failure_text'],
-        # settings.SCENARIOS['registration']['steps']['step5']['failure_text'],
-        # settings.SCENARIOS['registration']['steps']['step5']['text'],
-        # settings.SCENARIOS['registration']['steps']['step6']['text'],
-        # settings.SCENARIOS['registration']['steps']['step7']['failure_text'],
-        # settings.SCENARIOS['registration']['steps']['step7']['text'],
-        # settings.SCENARIOS['registration']['steps']['step8']['failure_text'],
-        # settings.SCENARIOS['registration']['steps']['step8']['text'],
-
-        # settings.SCENARIOS['registration']['steps']['step2']['failure_text'],
-        # settings.SCENARIOS['registration']['steps']['step3']['text'].format(name='Вениамин', email='email@email.ru'),
-    ]
-
-    def test_run_ok(self, contexts=contexts):
+    def test_run_ok(self):
         send_mock = Mock()
         api_mock = Mock()
         api_mock.messages.send = send_mock
@@ -123,6 +89,40 @@ class Test1(TestCase):
             bot = Bot('', '')
             bot.api = api_mock
             bot.run()
+            EXPECTED_OUTPUTS = [
+                settings.DEFAULT_ANSWER,
+                settings.SCENARIOS['registration']['steps']['step1']['text'],
+                settings.SCENARIOS['registration']['steps']['step1']['failure_text'],
+                settings.SCENARIOS['registration']['steps']['step2']['text'],
+
+                settings.SCENARIOS['registration']['steps']['step2']['failure_text'],
+                settings.SCENARIOS['registration']['steps']['step3']['text'],
+                settings.SCENARIOS['registration']['steps']['step3']['failure_text'],
+                settings.SCENARIOS['registration']['steps']['step4']['text'].format(city_from='Москва',
+                                                                                    city_to='Лондон',
+                                                                                    input_date='11-01-2021',
+                                                                                    list=handlers.check_flights(
+                                                                                        'Москва', 'Лондон')),
+                settings.SCENARIOS['registration']['steps']['step4']['failure_text'],
+                settings.SCENARIOS['registration']['steps']['step5']['text'].format(city_from='Москва',
+                                                                                    city_to='Лондон',
+                                                                                    flight_date='13-12-9666',
+                                                                                    flight='666'),
+                settings.SCENARIOS['registration']['steps']['step5']['failure_text'],
+                settings.SCENARIOS['registration']['steps']['step6']['text'].format(quantity='3'),
+                settings.SCENARIOS['registration']['steps']['step7']['text'].format(city_from='Москва',
+                                                                                    city_to='Лондон',
+                                                                                    flight_date='13-12-9666',
+                                                                                    flight='666', quantity='3',
+                                                                                    comment='коммент'),
+                settings.SCENARIOS['registration']['steps']['step7']['failure_text'],
+                settings.SCENARIOS['registration']['steps']['step8']['text'],
+                settings.SCENARIOS['registration']['steps']['step8']['failure_text'],
+                settings.SCENARIOS['registration']['steps']['step9']['text'].format(city_from='Москва',
+                                                                                    city_to='Лондон',
+                                                                                    flight_date='13-12-9666',
+                                                                                    quantity='3', phone='89253263240'),
+            ]
 
         assert send_mock.call_count == len(self.INPUTS)
 
@@ -130,13 +130,8 @@ class Test1(TestCase):
         for call in send_mock.call_args_list:
             args, kwargs = call
             real_outputs.append(kwargs['message'])
-            print(kwargs['message'])
-        # TODO Решить это можно например так.
-        # TODO Либо можно попробовать придумать что-нибудь с random.seed который убирает случайный характер
-        # TODO и заставляет генерировать один и те же числа каждый раз.
-        self.EXPECTED_OUTPUTS[7] = settings.SCENARIOS['registration']['steps']['step4']['text'].format(
-            city_from='Москва', city_to='Лондон',
-            input_date='11-01-2021',
-            list=handlers.check_flights('Москва',
-                                        'Лондон'))
-        assert str(real_outputs) == str(self.EXPECTED_OUTPUTS)
+            # print(kwargs['message'])
+        # self.EXPECTED_OUTPUTS[7] = settings.SCENARIOS['registration']['steps']['step4']['text'].format(
+        #     city_from='Москва', city_to='Лондон', input_date='11-01-2021',
+        #     list=handlers.check_flights('Москва', 'Лондон'))
+        assert str(real_outputs) == str(EXPECTED_OUTPUTS)

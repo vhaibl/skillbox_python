@@ -92,6 +92,7 @@ def handler_date(text, context):
                         tour = str((randint(100, 999)))
                         add_date = single_date.strftime("%d-%m-%Y")
                         flights['Москва']['Лондон'][tour] = add_date
+                        flights['Москва']['Лондон']['666'] = '13-12-9666'
 
                 if single_date.isoweekday() == 2 or single_date.isoweekday() == 4:
                     if len(flights['Лондон']['Москва']) < 5:
@@ -159,11 +160,9 @@ def handler_confirm(text, context):
     yes = re.match(re_yes, text)
     no = re.match(re_no, text)
     if yes:
-        print("match yes")
         context['confirm'] = 'Yes'
         return True
     elif no:
-        print('match no')
         context['confirm'] = 'No'
         return True
     else:

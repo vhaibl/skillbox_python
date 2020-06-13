@@ -122,7 +122,7 @@ class Bot:
                 # switch to next step
             else:
                 log.info(
-                    'Билет из города {city_from} в город {city_to} на дату {date} оформлен, телефон {phone}'.format(
+                    'Билет из города {city_from} в город {city_to} на дату {flight_date} оформлен, телефон {phone}'.format(
                         **state.context))
                 self.user_states.pop(user_id)
                 # finish scenario

@@ -1,4 +1,4 @@
-
+import datetime
 import random
 from copy import deepcopy
 from pprint import pprint
@@ -9,6 +9,9 @@ from vk_api.bot_longpoll import VkBotMessageEvent, VkBotEvent
 
 import settings, handlers
 from bot import Bot
+
+contexts = ''
+
 
 class Test1(TestCase):
     RAW_EVENT = {
@@ -83,22 +86,10 @@ class Test1(TestCase):
         settings.SCENARIOS['registration']['steps']['step2']['failure_text'],
         settings.SCENARIOS['registration']['steps']['step3']['text'],
         settings.SCENARIOS['registration']['steps']['step3']['failure_text'],
-
         settings.SCENARIOS['registration']['steps']['step4']['text'].format(city_from='Москва', city_to='Лондон',
-                                                                            date='23-01-2021', list=contexts),
-        # Пытаюсь покрыть тестами, непонятно как передавать список рейсов в тест, потому что номера рейсов
-        # каждый раз генерируются разные  # А из state.context-а вытащить не пробовали?
-        # Либо из flights вытащить напрямую (возможно функция понадобится)
-        # Никак не могу понять, ак мне дотянуться до state.context...
-        # TODO Хм, отсюда и правда будет не очень удобно достучаться до contexta
-        # TODO Можно обратиться к классу bot, вернее к его атрибуту self.user_states[user_id]
-        # TODO Но лучше добавить функцию в handlers, которая вернёт нужный перечень данных
-        # TODO Что-то в этом роде
-        # def check_flights(start_city, end_city):
-        #     if start_city in flights:
-        #         if end_city in flights[start_city]:
-        #             return flights[start_city][end_city]
-        # TODO Только обработать данные так, чтобы они совпадали с тем, что должно отправляться пользователю
+                                                                            input_date='11-01-2021',
+                                                                            list=handlers.check_flights('Москва',
+                                                                                                        'Лондон')),
         # settings.SCENARIOS['registration']['steps']['step5']['failure_text'],
         # settings.SCENARIOS['registration']['steps']['step5']['failure_text'],
         # settings.SCENARIOS['registration']['steps']['step5']['text'],
@@ -112,7 +103,7 @@ class Test1(TestCase):
         # settings.SCENARIOS['registration']['steps']['step3']['text'].format(name='Вениамин', email='email@email.ru'),
     ]
 
-    def test_run_ok(self):
+    def test_run_ok(self, contexts=contexts):
         send_mock = Mock()
         api_mock = Mock()
         api_mock.messages.send = send_mock
@@ -137,9 +128,11 @@ class Test1(TestCase):
         for call in send_mock.call_args_list:
             args, kwargs = call
             real_outputs.append(kwargs['message'])
+            print(kwargs['message'])
+        print(settings.SCENARIOS['registration']['steps']['step4']['text'].format(city_from='Москва', city_to='Лондон',
+                                                                                  input_date='11-01-2021',
+                                                                                  list=handlers.
+                                                                                  check_flights('Москва', 'Лондон')))
+        # TODO Вроде бы вывод совпадает с ожидаемым, а тест все равно не проходит(
 
-        for i, v in handlers.flights['Москва']['Лондон'].items():
-            contexts += (f"Рейс {i} - Дата {v}\n")
-        pprint(handlers.flights)
-        pprint(Bot.context)
-        assert real_outputs == self.EXPECTED_OUTPUTS
+        assert str(real_outputs) == str(self.EXPECTED_OUTPUTS)

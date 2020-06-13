@@ -112,7 +112,7 @@ def handler_date(text, context):
                         add_date = single_date.strftime("%d-%m-%Y")
                         flights['Париж']['Лондон'][tour] = add_date
                         x += 1
-            context['date'] = text
+            context['input_date'] = str(text)
             context['list'] = ''
 
             for i, v in flights[context['city_from']][context['city_to']].items():
@@ -177,3 +177,12 @@ def handler_phone(text, context):
         return True
     else:
         return False
+
+
+def check_flights(start_city, end_city):
+    checklist = ''
+    if start_city in flights:
+        if end_city in flights[start_city]:
+            for i, v in flights[start_city][end_city].items():
+                checklist += f"Рейс {i} - Дата {v}\n"
+            return checklist

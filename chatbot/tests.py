@@ -89,7 +89,16 @@ class Test1(TestCase):
         # Пытаюсь покрыть тестами, непонятно как передавать список рейсов в тест, потому что номера рейсов
         # каждый раз генерируются разные  # А из state.context-а вытащить не пробовали?
         # Либо из flights вытащить напрямую (возможно функция понадобится)
-        # TODO Никак не могу понять, ак мне дотянуться до state.context...
+        # Никак не могу понять, ак мне дотянуться до state.context...
+        # TODO Хм, отсюда и правда будет не очень удобно достучаться до contexta
+        # TODO Можно обратиться к классу bot, вернее к его атрибуту self.user_states[user_id]
+        # TODO Но лучше добавить функцию в handlers, которая вернёт нужный перечень данных
+        # TODO Что-то в этом роде
+        # def check_flights(start_city, end_city):
+        #     if start_city in flights:
+        #         if end_city in flights[start_city]:
+        #             return flights[start_city][end_city]
+        # TODO Только обработать данные так, чтобы они совпадали с тем, что должно отправляться пользователю
         # settings.SCENARIOS['registration']['steps']['step5']['failure_text'],
         # settings.SCENARIOS['registration']['steps']['step5']['failure_text'],
         # settings.SCENARIOS['registration']['steps']['step5']['text'],

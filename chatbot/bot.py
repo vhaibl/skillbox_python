@@ -108,9 +108,6 @@ class Bot:
         step = steps[state.step_name]
         handler = getattr(handlers, step['handler'])
 
-
-
-
         if handler(text=text, context=state.context):
             # next step
             if state.context['confirm'] == 'No':
@@ -118,20 +115,15 @@ class Bot:
                 text_to_send = 'Отказ от оформления. Введите \\ticket чтобы начать заново.'
                 self.user_states.pop(user_id)
                 return text_to_send
-
-
             next_step = steps[step['next_step']]
-
             text_to_send = next_step['text'].format(**state.context)
-
             if next_step['next_step']:
                 state.step_name = step['next_step']
                 # switch to next step
-
-
             else:
-
-                log.info('Билет из города {city_from} в город {city_to} на дату {date} оформлен, телефон {phone}'.format(**state.context))
+                log.info(
+                    'Билет из города {city_from} в город {city_to} на дату {date} оформлен, телефон {phone}'.format(
+                        **state.context))
                 self.user_states.pop(user_id)
                 # finish scenario
             return text_to_send

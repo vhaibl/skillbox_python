@@ -1,4 +1,7 @@
 import re
+from datetime import timedelta, date, datetime
+from pprint import pprint
+from random import randint
 
 re_moscow = re.compile(r'[Мм][Оо][Сс][кк][Вв]')
 re_london = re.compile(r'[Лл][Оо][Нн][Дд][Оо][Нн]')
@@ -9,9 +12,6 @@ re_yes = re.compile(r'^[Дд][аА]$')
 re_no = re.compile(r'^[Нн][Ее][Тт]$')
 re_date = re.compile(r"[\d]{1,2}-[\d]{1,2}-[\d]{4}")
 re_phone = re.compile(r'^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$')
-from datetime import timedelta, date, datetime
-from pprint import pprint
-from random import randint
 
 
 def daterange(start_date, end_date):
@@ -69,7 +69,8 @@ def handler_to(text, context):
         return True
 
 
-matches = []
+matches = list()
+flights = dict()
 
 
 def handler_date(text, context):
@@ -115,7 +116,7 @@ def handler_date(text, context):
             context['list'] = ''
 
             for i, v in flights[context['city_from']][context['city_to']].items():
-                context['list'] += (f"Рейс {i} - Дата {v}\n")
+                context['list'] += f"Рейс {i} - Дата {v}\n"
             return True
         except Exception as esc:
             print(esc)
@@ -123,6 +124,7 @@ def handler_date(text, context):
 
     else:
         return False
+
 
 def handler_flight(text, context):
     match = re.match(re_flight, text)
@@ -146,11 +148,12 @@ def handler_quantity(text, context):
     else:
         return False
 
-def handler_comment(text, context):
 
+def handler_comment(text, context):
     context['comment'] = text
 
     return True
+
 
 def handler_confirm(text, context):
     yes = re.match(re_yes, text)
@@ -165,6 +168,7 @@ def handler_confirm(text, context):
         return True
     else:
         return False
+
 
 def handler_phone(text, context):
     match = re.match(re_phone, text)

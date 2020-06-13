@@ -90,6 +90,8 @@ class Test1(TestCase):
                                                                             input_date='11-01-2021',
                                                                             list=handlers.check_flights('Москва',
                                                                                                         'Лондон')),
+        # TODO Проблема в том, что в момент, когда создается этот список - данных в словаре нет
+        # TODO А появляются они после инициализирования бота
         # settings.SCENARIOS['registration']['steps']['step5']['failure_text'],
         # settings.SCENARIOS['registration']['steps']['step5']['failure_text'],
         # settings.SCENARIOS['registration']['steps']['step5']['text'],
@@ -129,10 +131,12 @@ class Test1(TestCase):
             args, kwargs = call
             real_outputs.append(kwargs['message'])
             print(kwargs['message'])
-        print(settings.SCENARIOS['registration']['steps']['step4']['text'].format(city_from='Москва', city_to='Лондон',
-                                                                                  input_date='11-01-2021',
-                                                                                  list=handlers.
-                                                                                  check_flights('Москва', 'Лондон')))
-        # TODO Вроде бы вывод совпадает с ожидаемым, а тест все равно не проходит(
-
+        # TODO Решить это можно например так.
+        # TODO Либо можно попробовать придумать что-нибудь с random.seed который убирает случайный характер
+        # TODO и заставляет генерировать один и те же числа каждый раз.
+        self.EXPECTED_OUTPUTS[7] = settings.SCENARIOS['registration']['steps']['step4']['text'].format(
+            city_from='Москва', city_to='Лондон',
+            input_date='11-01-2021',
+            list=handlers.check_flights('Москва',
+                                        'Лондон'))
         assert str(real_outputs) == str(self.EXPECTED_OUTPUTS)

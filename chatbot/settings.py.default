@@ -1,11 +1,18 @@
-TOKEN1= ""
+TOKEN1 = ""
 GROUP_ID = ""
+
+DB_CONFIG = dict(
+    provider='postgres',
+    user='postgres',
+    password='',
+    host='',
+    database='vk_chat_bot')
 
 INTENTS = [
 
     {
         'name': 'Начало работы',
-        'tokens': ('\\ticket', '\\help'),
+        'tokens': ('/ticket', '/help'),
         'scenario': 'registration',
         'answer': None
 
@@ -25,7 +32,7 @@ SCENARIOS = {
             },
             'step2': {
                 'text': 'Введите город назначения - Москва, Париж, Лондон',
-                'failure_text': ' Введите название города русскими буквами - Москва, Лондон ири Париж',
+                'failure_text': ' Введите название города русскими буквами - Москва, Лондон или Париж',
                 'failure_step': 'step2',
                 'handler': 'handler_to',
                 'next_step': 'step3'
@@ -40,7 +47,7 @@ SCENARIOS = {
             'step4': {
                 'text': 'Ближайшие рейсы из города {city_from} в город {city_to}, начиная с {input_date}:\n'
                         '{list}\n Введите трехначный номер рейса:',
-                'failure_text': 'Неправильно укааан номер рейса. Номер указываеся цифрами, например 000',
+                'failure_text': 'Неправильно указан номер рейса. Номер указывается цифрами, например 000',
                 'failure_step': None,
                 'handler': 'handler_flight',
                 'next_step': 'step5'
@@ -48,7 +55,8 @@ SCENARIOS = {
             },
 
             'step5': {
-                'text': 'Выбран рейс номер {flight} из города {city_from} в город {city_to}, дата отправления {flight_date}.\n'
+                'text': 'Выбран рейс номер {flight} из города {city_from} в город {city_to}, '
+                        'дата отправления {flight_date}.\n'
                         'Введите необходимое количество билетов, от 1 до 5',
                 'failure_text': 'Неправильно указано количество билетов. Укажите цифрой, например 3',
                 'failure_step': None,
@@ -59,7 +67,7 @@ SCENARIOS = {
 
             'step6': {
                 'text': 'Количество билетов: {quantity}. Оставьте пожелания к заказу.',
-                'failure_text': 'Что-то полшо не так',
+                'failure_text': 'Что-то пошло не так',
                 'failure_step': None,
                 'handler': 'handler_comment',
                 'next_step': 'step7'
@@ -68,7 +76,7 @@ SCENARIOS = {
             'step7': {
                 'text': 'Проверьте введенные данные. Отпрвление из города {city_from} в город {city_to}.\n'
                         'Рейс {flight}, дата вылета {flight_date}, количество билетов {quantity}\n'
-                        'Комментарий к заказу: {comment},\n Если все вверно, напишите Да. Для отмены напишите Нет',
+                        'Комментарий к заказу: {comment},\n Если все верно, напишите Да. Для отмены напишите Нет',
                 'failure_text': 'Напишите Да или Нет',
                 'failure_step': None,
                 'handler': 'handler_confirm',
@@ -84,8 +92,18 @@ SCENARIOS = {
 
             },
             'step9': {
-                'text': 'Спасибо за указанную информацию.\n Билет(ы) из города {city_from} в город {city_to} на {flight_date} '
-                        'в количестве {quantity} шт. забронированы.\n Мы свяжемся с вами по телефону {phone}.',
+                'text': 'Введите Имя',
+                'failure_text': 'Неправильно указано имя.',
+                'failure_step': None,
+                'handler': 'handler_name',
+                'next_step': 'step10'
+
+            },
+            'step10': {
+                'text': 'Спасибо за указанную информацию, {name}.\n Билет(ы) из города {city_from} в город {city_to} на'
+                        ' {flight_date} в количестве {quantity} шт. забронированы.\n '
+                        'Мы свяжемся с вами по телефону {phone}.',
+                'image': 'generate_ticket_handler',
                 'failure_text': None,
                 'failure_step': None,
                 'handler': None,
@@ -99,4 +117,4 @@ SCENARIOS = {
     }
 }
 
-DEFAULT_ANSWER = 'Введите \\ticket для заказа билетов или \\help для повтора этого сообщения'
+DEFAULT_ANSWER = 'Введите /ticket для заказа билетов или /help для повтора этого сообщения'

@@ -1,6 +1,9 @@
 import re
+
 re_name = re.compile(r'^[\w\-\s]{3,40}$')
 re_email = re.compile(r"(\b^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)\b")
+
+
 def handler_name(text, context):
     match = re.match(re_name, text)
     if match:
@@ -8,7 +11,10 @@ def handler_name(text, context):
         return True
     else:
         return False
+
+
 matches = []
+
 
 def handler_email(text, context):
     matches = re.findall(re_email, text)

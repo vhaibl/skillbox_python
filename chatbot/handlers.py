@@ -1,9 +1,10 @@
 import re
 from datetime import timedelta, date, datetime
-from pprint import pprint
 from random import randint
 
-re_moscow = re.compile(r'[Мм][Оо][Сс][кк][Вв]')
+from generate_ticket import generate_ticket
+
+re_moscow = re.compile(r'[Мм][Оо][Сс][Кк][Вв]')
 re_london = re.compile(r'[Лл][Оо][Нн][Дд][Оо][Нн]')
 re_paris = re.compile(r'[Пп][Аа][Рр][Ии][Жж]')
 re_flight = re.compile(r'^\d{3}$')
@@ -12,6 +13,7 @@ re_yes = re.compile(r'^[Дд][аА]$')
 re_no = re.compile(r'^[Нн][Ее][Тт]$')
 re_date = re.compile(r"[\d]{1,2}-[\d]{1,2}-[\d]{4}")
 re_phone = re.compile(r'^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$')
+re_name = re.compile(r'^[\w\-\s]{3,40}$')
 
 
 def daterange(start_date, end_date):
@@ -20,8 +22,6 @@ def daterange(start_date, end_date):
 
 
 def handler_from(text, context):
-    # match = re.match(re_name, text)
-    # if match:
     context['same'] = None
     context['confirm'] = 'Yes'
     paris = re.findall(re_paris, text)
@@ -176,6 +176,20 @@ def handler_phone(text, context):
         return True
     else:
         return False
+
+
+def handler_name(text, context):
+    match = re.match(re_name, text)
+    if match:
+        context['name'] = text
+        return True
+    else:
+        return False
+
+
+def generate_ticket_handler(text, context):
+    return generate_ticket(city_from=context['city_from'], city_to=context['city_to'], phone=context['phone'],
+                           flight_date=context['flight_date'], name=context['name'])
 
 
 def check_flights(start_city, end_city):

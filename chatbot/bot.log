@@ -4133,3 +4133,961 @@ TypeError: can't compare datetime.datetime to datetime.date
 13-06-2020 17:07 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
 13-06-2020 17:07 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
 13-06-2020 17:07 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 10:25 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 62, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 78, in on_event
+    state = UserState.get(user_id=user_id)
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 4001, in get
+    try: return entity._find_one_(kwargs)  # can throw MultipleObjectsFoundError
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 4089, in _find_one_
+    throw(ERDiagramError, 'Mapping is not generated for entity %r' % entity.__name__)
+  File "C:\Python37\lib\site-packages\pony\utils\utils.py", line 106, in throw
+    raise exc
+pony.orm.core.ERDiagramError: Mapping is not generated for entity 'UserState'
+19-06-2020 10:28 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 10:28 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 10:28 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 10:28 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 10:29 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 62, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 78, in on_event
+    state = UserState.get(user_id=user_id)
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 4001, in get
+    try: return entity._find_one_(kwargs)  # can throw MultipleObjectsFoundError
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 4095, in _find_one_
+    avdict[attr] = attr.validate(val, None, entity, from_db=False)
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 2534, in validate
+    val = Attribute.validate(attr, val, obj, entity, from_db)
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 2205, in validate
+    val = converter.validate(val, obj)
+  File "C:\Python37\lib\site-packages\pony\orm\dbapiprovider.py", line 464, in validate
+    'Value type for attribute %s must be %s. Got: %r' % (converter.attr, unicode.__name__, type(val)))
+  File "C:\Python37\lib\site-packages\pony\utils\utils.py", line 106, in throw
+    raise exc
+TypeError: Value type for attribute UserState.user_id must be str. Got: <class 'int'>
+19-06-2020 10:32 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 10:32 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+19-06-2020 10:32 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 10:32 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 10:32 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+19-06-2020 10:32 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 10:32 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 62, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 83, in on_event
+    text_to_send = self.continue_scenario(user_id, text, state)
+TypeError: continue_scenario() takes 3 positional arguments but 4 were given
+19-06-2020 10:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 10:37 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+19-06-2020 10:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 10:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 10:37 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+19-06-2020 10:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 10:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 10:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 10:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 10:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 10:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 10:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 10:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:12 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 62, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 83, in on_event
+    text_to_send = self.continue_scenario(user_id, text, state)
+TypeError: continue_scenario() takes 3 positional arguments but 4 were given
+19-06-2020 16:13 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 16:13 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 62, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 83, in on_event
+    text_to_send = self.continue_scenario(user_id, text, state)
+  File "C:/python_base/chatbot/bot.py", line 117, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 80, in handler_date
+    start_date = datetime.strptime(text, '%d-%m-%Y').date()
+  File "C:\Python37\lib\_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Python37\lib\_strptime.py", line 359, in _strptime
+    (data_string, format))
+ValueError: time data '/ticket' does not match format '%d-%m-%Y'
+19-06-2020 16:13 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 16:13 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 62, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 83, in on_event
+    text_to_send = self.continue_scenario(user_id, text, state)
+  File "C:/python_base/chatbot/bot.py", line 117, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 80, in handler_date
+    start_date = datetime.strptime(text, '%d-%m-%Y').date()
+  File "C:\Python37\lib\_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Python37\lib\_strptime.py", line 359, in _strptime
+    (data_string, format))
+ValueError: time data 'elkwej' does not match format '%d-%m-%Y'
+19-06-2020 16:14 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 16:14 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 62, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 83, in on_event
+    text_to_send = self.continue_scenario(user_id, text, state)
+  File "C:/python_base/chatbot/bot.py", line 117, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 80, in handler_date
+    start_date = datetime.strptime(text, '%d-%m-%Y').date()
+  File "C:\Python37\lib\_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Python37\lib\_strptime.py", line 359, in _strptime
+    (data_string, format))
+ValueError: time data 'wlwlw' does not match format '%d-%m-%Y'
+19-06-2020 16:14 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 16:14 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:14 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 16:14 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:14 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 16:14 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:14 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 16:14 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:14 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:14 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:14 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 16:14 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:14 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 16:14 INFO Билет из города Москва в город Лондон на дату 15-02-2021 оформлен, телефон 89128228282
+19-06-2020 16:14 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:15 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 16:15 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+19-06-2020 16:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:15 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+19-06-2020 16:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:15 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 16:15 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+19-06-2020 16:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:15 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 16:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:15 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 16:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:15 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 16:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:15 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 16:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 16:15 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 16:15 INFO Билет из города Москва в город Лондон на дату 27-01-2021 оформлен, телефон 89253263240
+19-06-2020 16:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:34 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:34 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+19-06-2020 17:34 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:34 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:34 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:34 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:34 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 62, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 83, in on_event
+    text_to_send = self.continue_scenario(text, state)
+  File "C:/python_base/chatbot/bot.py", line 149, in continue_scenario
+    state.context['same'] = None
+  File "C:\Python37\lib\site-packages\pony\orm\ormtypes.py", line 295, in new_func
+    self._changed_()
+  File "C:\Python37\lib\site-packages\pony\orm\ormtypes.py", line 282, in _changed_
+    obj._attr_changed_(self.attr)
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 4882, in _attr_changed_
+    if obj._status_ in del_statuses: throw_object_was_deleted(obj)
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 4590, in throw_object_was_deleted
+    % (safe_repr(obj), obj._status_.replace('_', ' ')))
+  File "C:\Python37\lib\site-packages\pony\utils\utils.py", line 106, in throw
+    raise exc
+pony.orm.core.OperationWithDeletedObjectError: UserState[3] was marked to delete
+19-06-2020 17:36 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:36 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:36 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:36 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:36 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:36 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 62, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 83, in on_event
+    text_to_send = self.continue_scenario(text, state)
+  File "C:/python_base/chatbot/bot.py", line 117, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 80, in handler_date
+    start_date = datetime.strptime(text, '%d-%m-%Y').date()
+  File "C:\Python37\lib\_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Python37\lib\_strptime.py", line 359, in _strptime
+    (data_string, format))
+ValueError: time data 'лондон' does not match format '%d-%m-%Y'
+19-06-2020 17:36 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:36 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:36 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:36 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:36 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:36 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:36 INFO Отказ от оформления
+19-06-2020 17:36 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:36 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:36 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+19-06-2020 17:36 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:36 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:37 INFO Ошибка! Нельзя улететь из города Лондон в город Лондон.
+19-06-2020 17:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:37 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+19-06-2020 17:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:37 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+19-06-2020 17:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:37 INFO Ошибка! Нет прямых рейсов между городом Москва и городом Париж
+19-06-2020 17:37 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 62, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 83, in on_event
+    text_to_send = self.continue_scenario(text, state)
+  File "C:/python_base/chatbot/bot.py", line 161, in continue_scenario
+    state.context['same'] = None
+  File "C:\Python37\lib\site-packages\pony\orm\ormtypes.py", line 295, in new_func
+    self._changed_()
+  File "C:\Python37\lib\site-packages\pony\orm\ormtypes.py", line 282, in _changed_
+    obj._attr_changed_(self.attr)
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 4882, in _attr_changed_
+    if obj._status_ in del_statuses: throw_object_was_deleted(obj)
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 4590, in throw_object_was_deleted
+    % (safe_repr(obj), obj._status_.replace('_', ' ')))
+  File "C:\Python37\lib\site-packages\pony\utils\utils.py", line 106, in throw
+    raise exc
+pony.orm.core.OperationWithDeletedObjectError: UserState[5] was marked to delete
+19-06-2020 17:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:37 INFO Ошибка! Нет прямых рейсов между городом Москва и городом Париж
+19-06-2020 17:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:37 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+19-06-2020 17:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:38 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:38 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:38 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:38 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:38 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:38 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:38 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:38 INFO Билет из города Париж в город Лондон на дату 21-12-9667 оформлен, телефон 8123191999
+19-06-2020 17:38 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:44 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:44 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+19-06-2020 17:44 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:44 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:44 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:44 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:44 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:44 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:44 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:44 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:44 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:44 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:44 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:44 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:44 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:44 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:44 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+19-06-2020 17:44 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+19-06-2020 17:44 INFO Билет из города Лондон в город Париж на дату 20-02-2023 оформлен, телефон 99999999999
+19-06-2020 17:44 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:37 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 06:37 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 06:37 INFO Ошибка! Нельзя улететь из города Москва в город Москва.
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:37 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:37 INFO Ошибка! Нет прямых рейсов между городом Москва и городом Париж
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 06:37 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 06:37 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:38 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:38 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 06:38 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:38 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:38 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 06:38 INFO Отказ от оформления
+20-06-2020 06:56 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 06:56 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 06:56 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:56 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 06:56 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:56 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 06:56 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:56 INFO Ошибка! Нельзя улететь из города Москва в город Москва.
+20-06-2020 06:56 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:56 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 06:56 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 06:56 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:56 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:56 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 06:56 INFO Ошибка! Нет прямых рейсов между городом Москва и городом Париж
+20-06-2020 06:56 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:57 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 06:57 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:57 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 06:57 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:57 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:57 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 06:57 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 06:57 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 06:57 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 62, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 83, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "C:/python_base/chatbot/bot.py", line 142, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "C:/python_base/chatbot/bot.py", line 110, in send_step
+    self.send_text(step['text'].format(context), user_id)
+KeyError: 'city_from'
+20-06-2020 07:00 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:00 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:00 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 62, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 83, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "C:/python_base/chatbot/bot.py", line 132, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 82, in handler_date
+    start_date = datetime.strptime(text, '%d-%m-%Y').date()
+  File "C:\Python37\lib\_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Python37\lib\_strptime.py", line 359, in _strptime
+    (data_string, format))
+ValueError: time data '\\ticket' does not match format '%d-%m-%Y'
+20-06-2020 07:00 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:00 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 62, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 83, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "C:/python_base/chatbot/bot.py", line 132, in continue_scenario
+    if handler(text=text, context=state.context):
+  File "C:\python_base\chatbot\handlers.py", line 82, in handler_date
+    start_date = datetime.strptime(text, '%d-%m-%Y').date()
+  File "C:\Python37\lib\_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Python37\lib\_strptime.py", line 359, in _strptime
+    (data_string, format))
+ValueError: time data '12-21-12' does not match format '%d-%m-%Y'
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:01 INFO Отказ от оформления
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:01 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:01 INFO Ошибка! Нельзя улететь из города Москва в город Москва.
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:01 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:01 INFO Ошибка! Нет прямых рейсов между городом Москва и городом Париж
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:01 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:01 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:02 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:02 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:02 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:02 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:02 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:02 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:02 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:02 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:02 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:02 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:02 INFO Билет из города Москва в город Лондон на дату 03-02-2021 оформлен, телефон 1234567890
+20-06-2020 07:02 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:59 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:59 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 07:59 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:59 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:59 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:59 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:59 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:59 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:59 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:59 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:59 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:59 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 07:59 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 07:59 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:00 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:00 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:00 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 64, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 85, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "C:/python_base/chatbot/bot.py", line 157, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "C:/python_base/chatbot/bot.py", line 129, in send_step
+    self.send_image(image, user_id)
+  File "C:/python_base/chatbot/bot.py", line 110, in send_image
+    image_data = self.api.saveMessagesPhoto(**upload_data)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 681, in __call__
+    return self._vk.method(self._method, kwargs)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 646, in method
+    raise error
+vk_api.exceptions.ApiError: [3] Unknown method passed
+20-06-2020 08:00 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:02 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:02 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:02 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:02 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 64, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 85, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "C:/python_base/chatbot/bot.py", line 157, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "C:/python_base/chatbot/bot.py", line 129, in send_step
+    self.send_image(image, user_id)
+  File "C:/python_base/chatbot/bot.py", line 110, in send_image
+    image_data = self.api.saveMessagesPhoto(**upload_data)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 681, in __call__
+    return self._vk.method(self._method, kwargs)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 646, in method
+    raise error
+vk_api.exceptions.ApiError: [3] Unknown method passed
+20-06-2020 08:02 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:03 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:03 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 64, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 85, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "C:/python_base/chatbot/bot.py", line 157, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "C:/python_base/chatbot/bot.py", line 129, in send_step
+    self.send_image(image, user_id)
+  File "C:/python_base/chatbot/bot.py", line 110, in send_image
+    image_data = self.api.saveMessagesPhoto(**upload_data)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 681, in __call__
+    return self._vk.method(self._method, kwargs)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 646, in method
+    raise error
+vk_api.exceptions.ApiError: [3] Unknown method passed
+20-06-2020 08:03 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:07 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:07 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 64, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 85, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "C:/python_base/chatbot/bot.py", line 157, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "C:/python_base/chatbot/bot.py", line 129, in send_step
+    self.send_image(image, user_id)
+  File "C:/python_base/chatbot/bot.py", line 110, in send_image
+    image_data = self.api.photoss.saveMessagesPhoto(**upload_data)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 681, in __call__
+    return self._vk.method(self._method, kwargs)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 646, in method
+    raise error
+vk_api.exceptions.ApiError: [3] Unknown method passed
+20-06-2020 08:07 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:08 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:08 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 64, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 85, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "C:/python_base/chatbot/bot.py", line 157, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "C:/python_base/chatbot/bot.py", line 129, in send_step
+    self.send_image(image, user_id)
+  File "C:/python_base/chatbot/bot.py", line 110, in send_image
+    image_data = self.api.photos.saveMessagesPhoto(**upload_data)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 681, in __call__
+    return self._vk.method(self._method, kwargs)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 646, in method
+    raise error
+vk_api.exceptions.ApiError: [100] One of the parameters specified was missing or invalid: photos_list is invalid
+20-06-2020 08:08 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:09 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:09 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 64, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 85, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "C:/python_base/chatbot/bot.py", line 157, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "C:/python_base/chatbot/bot.py", line 129, in send_step
+    self.send_image(image, user_id)
+  File "C:/python_base/chatbot/bot.py", line 110, in send_image
+    image_data = self.api.photos.saveMessagesPhoto(**upload_data)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 681, in __call__
+    return self._vk.method(self._method, kwargs)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 646, in method
+    raise error
+vk_api.exceptions.ApiError: [100] One of the parameters specified was missing or invalid: photos_list is invalid
+20-06-2020 08:09 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:09 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:10 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 64, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 85, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "C:/python_base/chatbot/bot.py", line 157, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "C:/python_base/chatbot/bot.py", line 129, in send_step
+    self.send_image(image, user_id)
+  File "C:/python_base/chatbot/bot.py", line 110, in send_image
+    image_data = self.api.photos.saveMessagesPhoto(**upload_data)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 681, in __call__
+    return self._vk.method(self._method, kwargs)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 646, in method
+    raise error
+vk_api.exceptions.ApiError: [100] One of the parameters specified was missing or invalid: photos_list is invalid
+20-06-2020 08:10 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:10 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:10 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 64, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 85, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "C:/python_base/chatbot/bot.py", line 157, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "C:/python_base/chatbot/bot.py", line 129, in send_step
+    self.send_image(image, user_id)
+  File "C:/python_base/chatbot/bot.py", line 109, in send_image
+    upload_data = requests.post(url=upload_url, photos_list={'photos': ('image.png',image, 'image/png')}).json()
+  File "C:\Python37\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "C:\Python37\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+TypeError: request() got an unexpected keyword argument 'photos_list'
+20-06-2020 08:10 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:11 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:11 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 64, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 85, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "C:/python_base/chatbot/bot.py", line 157, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "C:/python_base/chatbot/bot.py", line 129, in send_step
+    self.send_image(image, user_id)
+  File "C:/python_base/chatbot/bot.py", line 110, in send_image
+    image_data = self.api.photos.saveMessagesPhoto(**upload_data)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 681, in __call__
+    return self._vk.method(self._method, kwargs)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 646, in method
+    raise error
+vk_api.exceptions.ApiError: [100] One of the parameters specified was missing or invalid: photos_list is invalid
+20-06-2020 08:11 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:16 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:16 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 64, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 85, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "C:/python_base/chatbot/bot.py", line 158, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "C:/python_base/chatbot/bot.py", line 130, in send_step
+    self.send_image(image, user_id)
+  File "C:/python_base/chatbot/bot.py", line 111, in send_image
+    image_data = self.api.photos.saveMessagesPhoto(**upload_data)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 681, in __call__
+    return self._vk.method(self._method, kwargs)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 646, in method
+    raise error
+vk_api.exceptions.ApiError: [100] One of the parameters specified was missing or invalid: photos_list is invalid
+20-06-2020 08:16 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:17 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:17 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 64, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 85, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "C:/python_base/chatbot/bot.py", line 159, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "C:/python_base/chatbot/bot.py", line 131, in send_step
+    self.send_image(image, user_id)
+  File "C:/python_base/chatbot/bot.py", line 112, in send_image
+    image_data = self.api.photos.saveMessagesPhoto(**upload_data)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 681, in __call__
+    return self._vk.method(self._method, kwargs)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 646, in method
+    raise error
+vk_api.exceptions.ApiError: [100] One of the parameters specified was missing or invalid: photos_list is invalid
+20-06-2020 08:17 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:19 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:19 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 64, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 85, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "C:/python_base/chatbot/bot.py", line 159, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "C:/python_base/chatbot/bot.py", line 131, in send_step
+    self.send_image(image, user_id)
+  File "C:/python_base/chatbot/bot.py", line 112, in send_image
+    image_data = self.api.photos.saveMessagesPhoto(**upload_data)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 681, in __call__
+    return self._vk.method(self._method, kwargs)
+  File "C:\Python37\lib\site-packages\vk_api\vk_api.py", line 646, in method
+    raise error
+vk_api.exceptions.ApiError: [100] One of the parameters specified was missing or invalid: photos_list is invalid
+20-06-2020 08:19 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:20 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:20 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 64, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "C:/python_base/chatbot/bot.py", line 85, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "C:/python_base/chatbot/bot.py", line 159, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "C:/python_base/chatbot/bot.py", line 131, in send_step
+    self.send_image(image, user_id)
+  File "C:/python_base/chatbot/bot.py", line 109, in send_image
+    upload_data = requests.post(url=upload_url, files={'photo': ('image.png', image, 'image/png')}).json()
+  File "C:\Python37\lib\site-packages\requests\api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "C:\Python37\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Python37\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "C:\Python37\lib\site-packages\requests\sessions.py", line 459, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "C:\Python37\lib\site-packages\requests\models.py", line 317, in prepare
+    self.prepare_body(data, files, json)
+  File "C:\Python37\lib\site-packages\requests\models.py", line 505, in prepare_body
+    (body, content_type) = self._encode_files(files, data)
+  File "C:\Python37\lib\site-packages\requests\models.py", line 169, in _encode_files
+    body, content_type = encode_multipart_formdata(new_fields)
+  File "C:\Python37\lib\site-packages\urllib3\filepost.py", line 90, in encode_multipart_formdata
+    body.write(data)
+TypeError: a bytes-like object is required, not 'function'
+20-06-2020 08:20 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:22 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:22 INFO Билет из города Москва в город Лондон на дату 25-01-2021 оформлен, телефон +79778335683
+20-06-2020 08:22 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:22 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:24 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:24 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 08:24 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:24 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:24 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:24 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:24 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:24 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:24 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:24 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:24 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:24 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:24 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:24 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:24 INFO Билет из города Москва в город Лондон на дату 25-01-2021 оформлен, телефон 89778335683
+20-06-2020 08:24 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:24 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:47 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:47 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 08:47 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:47 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:47 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:47 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:47 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:47 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:47 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:47 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:48 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:48 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:48 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:48 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:48 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:48 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:48 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 08:48 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:48 INFO Билет из города Москва в город Лондон на дату 03-02-2021 оформлен, телефон 9778335683
+20-06-2020 08:48 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:48 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:59 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 08:59 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 08:59 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:00 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:00 INFO Билет из города Москва в город Лондон на дату 25-01-2021 оформлен, телефон +79778335683
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:00 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:23 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:23 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 09:23 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:23 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:23 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 09:23 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:23 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:23 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:23 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:23 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:23 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:24 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:24 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:24 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:24 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:24 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:24 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:24 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:24 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:24 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:24 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:24 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:24 INFO Билет из города Москва в город Лондон на дату 06-10-9000 оформлен, телефон 9878909878
+20-06-2020 09:24 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:24 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:43 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:43 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 09:43 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:43 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:43 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 09:43 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 09:43 INFO Ошибка! Нельзя улететь из города Москва в город Москва.
+20-06-2020 09:43 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:12 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 10:12 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 10:12 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 10:12 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 10:12 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:12 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:12 ERROR ошибка в обработке события
+Traceback (most recent call last):
+  File "C:/python_base/chatbot/bot.py", line 64, in run
+    :return: None
+  File "<string>", line 2, in on_event
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 547, in new_func
+    reraise(exc_type, exc, tb)
+  File "C:\Python37\lib\site-packages\pony\utils\utils.py", line 95, in reraise
+    try: raise exc.with_traceback(tb)
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 529, in new_func
+    commit()
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 381, in commit
+    rollback_and_reraise(sys.exc_info())
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 370, in rollback_and_reraise
+    reraise(*exc_info)
+  File "C:\Python37\lib\site-packages\pony\utils\utils.py", line 95, in reraise
+    try: raise exc.with_traceback(tb)
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 379, in commit
+    cache.flush()
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 1896, in flush
+    if obj is not None: obj._save_()
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 5420, in _save_
+    if status == 'created': obj._save_created_()
+  File "C:\Python37\lib\site-packages\pony\orm\core.py", line 5264, in _save_created_
+    % (obj, e.__class__.__name__, msg), e)
+  File "C:\Python37\lib\site-packages\pony\utils\utils.py", line 106, in throw
+    raise exc
+pony.orm.core.TransactionIntegrityError: Object UserState[new:6] cannot be stored in the database. IntegrityError: duplicate key value violates unique constraint "userstate_user_id_key"
+DETAIL:  Key (user_id)=(4863211) already exists.
+
+20-06-2020 10:12 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:12 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:12 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 10:12 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 10:12 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 10:12 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:12 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 10:12 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:12 INFO Ошибка! Нельзя улететь из города Москва в город Москва.
+20-06-2020 10:12 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:12 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 10:12 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 10:12 DEBUG User gets {'name': 'Начало работы', 'tokens': ('\\ticket', '\\help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 10:12 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:15 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 10:15 DEBUG User gets {'name': 'Начало работы', 'tokens': ('/ticket', '/help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 10:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:15 DEBUG User gets {'name': 'Начало работы', 'tokens': ('/ticket', '/help'), 'scenario': 'registration', 'answer': None}
+20-06-2020 10:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:15 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 10:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:15 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 10:15 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 10:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:15 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 10:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:15 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 10:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:15 INFO VkBotEventType.MESSAGE_TYPING_STATE не обрабатывается
+20-06-2020 10:15 INFO Билет из города Москва в город Лондон на дату 13-12-9666 оформлен, телефон 1234567890
+20-06-2020 10:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается
+20-06-2020 10:15 INFO VkBotEventType.MESSAGE_REPLY не обрабатывается

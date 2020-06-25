@@ -54,7 +54,6 @@ from playhouse.db_url import connect
 import DatabaseUpdater
 from Postcards import make_postcards
 from WeatherMaker import GetWeather
-from models import *
 
 db = connect('sqlite:///weather.db')
 db.create_tables([Weather])
@@ -65,7 +64,7 @@ monthsdict2 = {1: 'january', 2: 'february', 3: 'march', 4: 'april', 5: 'may', 6:
                9: 'september', 10: 'october', 11: 'november', 12: 'december'}
 
 
-def on_run2(period_start, period_end):
+def write_to_dict(period_start, period_end):
     months = []
     years = []
     period_start = datetime.datetime.strptime(period_start, '%Y-%m-%d').date()
@@ -116,6 +115,7 @@ def on_run():
             f"давление:{wb['давление']}, влажность:{wb['влажность']}")
         # print(f'Прогноз за {wb["дата"]} загружен')
         period_start += delta
+    print(weatherbase)
 
 
 def check_date(*start_date):
@@ -144,15 +144,38 @@ def check_date(*start_date):
             print('Неправильно указана дата. Введите в формате ДД-ММ-ГГГГ', end='')
 
 
+start_date = None
+end_datec = None
 on_run()
+while True:
+    print(f'\n1(1) для задания диапазона дат\n' \
+          f'(2) для загрузки данных из сети\n' \
+          f'(3) для записи дат за указанный диапазон в базу данных\n' \
+          f'(4) для чтения данных за указанный диапазон из базы данных\n' \
+          f'(5) для создания открыток с погодой за указанный диапазон\n' \
+          f'(6) для вывода прогнозов за указанный диапазон на экран\n' \
+          f'(7) для выхода\n')
 
+    user_choice = input('>>>')
+    if user_choice == '1':
+        print('Введите НАЧАЛО диапазона в формате ДД-ММ-ГГГГ', end='')
+        start_date = check_date()
+        print('Введите КОНЕЦ диапазона в формате ДД-ММ-ГГГГ', end='')
+        end_date = check_date(start_date)
+    elif user_choice == '2' and start_date:
+        write_to_dict(start_date, end_date)
+    elif user_choice == '3' and start_date:
+        write_to_dict(start_date, end_date)
+        DatabaseUpdater.update_db(weatherbase, start_date, end_date)
 
-print('Введите НАЧАЛО диапазона в формате ДД-ММ-ГГГГ', end='')
-start_date = check_date()
-print('Введите КОНЕЦ диапазона в формате ДД-ММ-ГГГГ', end='')
-end_date = check_date(start_date)
-on_run2(start_date, end_date)
-DatabaseUpdater.update_db(weatherbase, start_date, end_date)
-DatabaseUpdater.show(start_date, end_date)
-make_postcards(start_date, end_date)
+    elif user_choice == '4' and start_date:
+        weatherbase = DatabaseUpdater.read_db(start_date, end_date)
 
+    elif user_choice == '5' and start_date:
+        make_postcards(start_date, end_date)
+    elif user_choice == '6' and start_date:
+        DatabaseUpdater.show(start_date, end_date)
+    elif user_choice == '7':
+        break
+    elif start_date is None:
+        print('Не указан диапазон дат')

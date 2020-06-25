@@ -4,9 +4,9 @@ import re
 import requests
 from bs4 import BeautifulSoup
 
-
 monthsdict = {'january': '01', 'february': '02', 'march': '03', 'april': '04', 'may': '05', 'june': '06', 'july': '07',
               'august': '08', 'september': '09', 'october': '10', 'november': '11', 'december': '12'}
+
 
 class GetWeather():
     def __init__(self, weatherbase, years, months, period_start):
@@ -103,4 +103,3 @@ class GetWeather():
             else:
                 raise RuntimeError(response.status_code)
                 # break
-

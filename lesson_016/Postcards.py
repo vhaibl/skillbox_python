@@ -2,8 +2,8 @@ import datetime
 import sys
 
 import cv2
-from PIL import ImageDraw, ImageFont, Image
 import numpy as np
+from PIL import ImageDraw, ImageFont, Image
 
 from models import Weather
 
@@ -43,26 +43,25 @@ def draw_postcard(daterus, temperature, condition, wind, humidity, pressure, pic
 
 
 def make_postcards(period_start, period_end):
-    count=0
+    count = 0
     for query in Weather.select().where(Weather.day.between(period_start, period_end)):
         draw_postcard(query.daterus, query.temperature, query.condition, query.wind, query.humidity, query.pressure,
                       query.picture, query.day)
-        count +=1
+        count += 1
         print("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b", end="")
         print('Creating postcards: {0:3}'.format(count), end='')
         sys.stdout.flush()
 
 
 def postcards(period_start, period_end):
-    count=0
-    period_start=datetime.datetime.strptime(period_start,'%Y-%m-%d').date()
-    period_end=datetime.datetime.strptime(period_end,'%Y-%m-%d').date()
+    count = 0
+    period_start = datetime.datetime.strptime(period_start, '%Y-%m-%d').date()
+    period_end = datetime.datetime.strptime(period_end, '%Y-%m-%d').date()
     history = Weather.select().where(Weather.day.between(period_start, period_end))
     print("\n")
     for query in history:
         draw_postcard(query.daterus, query.temperature, query.condition, query.wind, query.humidity, query.pressure,
                       query.picture, query.day)
-
 
 
 def viewImage(image, name_of_window):

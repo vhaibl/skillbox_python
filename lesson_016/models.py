@@ -19,3 +19,7 @@ class Weather(Model):
 
 
 db_proxy.initialize(db)
+# TODO Инициализацию наддо вынести в класс БД
+# TODO Кроме того принимать она должна не db, а объект, созданный из db url
+# TODO db_url передается в метод connect - так создается объект типа SqliteDatabase
+# TODO И уже этот объект, созданный connect-ом надо инициализировать

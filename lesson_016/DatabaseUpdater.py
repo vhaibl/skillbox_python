@@ -2,7 +2,8 @@ from datetime import datetime, timedelta, date
 
 from models import Weather
 
-
+# TODO Тоже обернуть в класс всё, добавить инициализацию БД по db_url
+# TODO Вынести всё нужное в атрибуты классы
 def update_db(weatherbase, period_start, period_end):
     # gw = GetWeather(weatherbase, months=months, years=years)
     # gw.run()
@@ -11,7 +12,7 @@ def update_db(weatherbase, period_start, period_end):
 
     print("\nMODIFYING DB:", end='')
     delta = timedelta(days=1)
-
+    # TODO Для обновления попробуйте воспользоваться get_or_create методом
     while period_start <= period_end:
         value = weatherbase[period_start]
         if Weather.select().where(Weather.day == value['date']):
@@ -35,7 +36,7 @@ def show(period_start, period_end):
 def check_for_update():
     for zxc in Weather.select().where(Weather.daterus.contains('Сегодня')):
         if str(zxc.day) == str(date.today()):
-            print(('DB UPDATED'))
+            print(('DB UPDATED'))  # TODO лишние скобки
             pass
         else:
             print('UPDATING DB')

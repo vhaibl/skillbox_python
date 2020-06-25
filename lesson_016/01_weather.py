@@ -55,15 +55,15 @@ import DatabaseUpdater
 from Postcards import make_postcards
 from WeatherMaker import GetWeather
 
-db = connect('sqlite:///weather.db')
-db.create_tables([Weather])
+db = connect('sqlite:///weather.db')  # TODO Это вынести в класс БД
+db.create_tables([Weather])  # TODO Класс нужно импортировать, чтобы использовать тут
 
 weatherbase = {}
 
 monthsdict2 = {1: 'january', 2: 'february', 3: 'march', 4: 'april', 5: 'may', 6: 'june', 7: 'july', 8: 'august',
                9: 'september', 10: 'october', 11: 'november', 12: 'december'}
 
-
+# TODO Весь этот код стоит обернуть в класс-менеджер о котором я писал в другом модуле
 def write_to_dict(period_start, period_end):
     months = []
     years = []
@@ -126,7 +126,8 @@ def check_date(*start_date):
     while True:
         user_date = input('>>> ')
         match = re.findall(re_date, user_date)
-
+        # TODO Ступенчатая структура сравнений читается не очень удобно
+        # TODO Если сможете - упростите её
         if match:
             user_date = datetime.datetime.strptime(user_date, '%d-%m-%Y').date()
             if user_date > datetime.date.today() + datetime.timedelta(days=deltadays):
@@ -148,6 +149,9 @@ start_date = None
 end_datec = None
 on_run()
 while True:
+    # TODO тут можно использовать многострочные конструкции '''строки'''
+    # TODO Либо можно распечатать набор строк циклом, добавив их в какую-нибудь структуру
+    # TODO '\' лишние в любом случае
     print(f'\n1(1) для задания диапазона дат\n' \
           f'(2) для загрузки данных из сети\n' \
           f'(3) для записи дат за указанный диапазон в базу данных\n' \
@@ -157,6 +161,7 @@ while True:
           f'(7) для выхода\n')
 
     user_choice = input('>>>')
+    # TODO Хорошо бы сделать словарь действий, по ключу вытягивать нужный метод и запускать его
     if user_choice == '1':
         print('Введите НАЧАЛО диапазона в формате ДД-ММ-ГГГГ', end='')
         start_date = check_date()

@@ -4,13 +4,16 @@ import sys
 import cv2
 import numpy as np
 from PIL import ImageDraw, ImageFont, Image
-
+# TODO Попробуйте обойтись совсем без PIL
+# TODO для русских букв в openCV используйте шрифт cv2.FONT_HERSHEY_COMPLEX
 from models import Weather
 
 
+# TODO Сами эти функции надо тоже обернуть в класс
+# TODO Пути и словари вынести в атрибуты
 def draw_postcard(daterus, temperature, condition, wind, humidity, pressure, picture, day):
     image = cv2.imread('python_snippets\\external_data\\probe.jpg')
-
+    # TODO Градиент тоже хорошо бы отдельным методом сделать
     for y in range(255):
         weather_background = {'снег': (255, 255, y), 'ясно': (y, 255, 255), 'облачно': (y + 64, y + 64, y + 64),
                               'дождь': (255, y, y), 'дождь/гроза': (192, y - 64, y - 64)}
@@ -38,18 +41,26 @@ def draw_postcard(daterus, temperature, condition, wind, humidity, pressure, pic
     cv2_im_processed[y_offset:y_offset + s_img.shape[0], x_offset:x_offset + s_img.shape[1]] = s_img
     image_path = f'images/{day}.jpg'
     cv2.imwrite(image_path, cv2_im_processed, [int(cv2.IMWRITE_JPEG_QUALITY), 90])
-
+    # TODO хорошо бы проверить, есть ли папка images и создать её при необходимости
     return cv2_im_processed
 
 
 def make_postcards(period_start, period_end):
     count = 0
+    # TODO Всю работу с базой - реализовать в классе, который этим должен заниматься
+    # TODO Здесь оставить просто метод, который по указанному прогнозу делает карточку
+    # TODO Вообще всё управление надо собирать в одном классе-менеджере
+    # TODO Который будет принимать класс для работы с изображениями, класс для работы с базами данных
+    # TODO И получив ввод пользователя этот класс будет тащить информацию из базы при помощи методов
+    # TODO соответственного класса.
+    # TODO Далее менеджер передает данные в методы класса с картинками и делает открытки.
     for query in Weather.select().where(Weather.day.between(period_start, period_end)):
         draw_postcard(query.daterus, query.temperature, query.condition, query.wind, query.humidity, query.pressure,
                       query.picture, query.day)
         count += 1
         print("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b", end="")
         print('Creating postcards: {0:3}'.format(count), end='')
+        # TODO нужно указывать путь к созданным открыткам
         sys.stdout.flush()
 
 

@@ -3,14 +3,14 @@ import re
 
 import requests
 from bs4 import BeautifulSoup
-
+# TODO не хватает пробела weather_base (можно погуглить snake_style)
 monthsdict = {'january': '01', 'february': '02', 'march': '03', 'april': '04', 'may': '05', 'june': '06', 'july': '07',
               'august': '08', 'september': '09', 'october': '10', 'november': '11', 'december': '12'}
 
 
-class GetWeather():
+class GetWeather():  # TODO Лишние скобки
     def __init__(self, weatherbase, years, months, period_start):
-        self.weatherbase = weatherbase
+        self.weatherbase = weatherbase  # TODO не хватает пробела weather_base (можно погуглить snake_style)
         self.years = years
         self.months = months
         self.period_start = period_start
@@ -50,8 +50,8 @@ class GetWeather():
                 for dates, daytemp, desc, humid, wind, pressure in zip(list_of_dates, day_temps, descriptions,
                                                                        humids, winds, pressures):
                     today = dates.text[8:10]
-                    day = dates.text[:2]
-
+                    day = dates.text[:2]  # TODO Этот день не используется в коде?
+                    # TODO Нужно убрать дублирование из этих сравнений
                     if dates.text[:2] == 'Се':
                         form_today = datetime.date(year=int(yrs), month=int(monthsdict[mnth]), day=int(today))
 
@@ -63,6 +63,8 @@ class GetWeather():
                         self.weatherbase[form_today]['ветер'] = wind
                         self.weatherbase[form_today]['давление'] = pressure
                         self.weatherbase[form_today]['date'] = datetime.date.today()
+                        # TODO эти сравнения хорошо бы реализовать через словарь
+                        # TODO чтобы по ключу можно было получить нужный путь
                         if 'ясно' in self.weatherbase[form_today]['погода']:
                             self.weatherbase[form_today][
                                 'picture'] = 'python_snippets\\external_data\\weather_img\\sun.jpg'

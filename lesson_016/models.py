@@ -1,6 +1,6 @@
 from peewee import *
+from playhouse.db_url import connect
 
-db = SqliteDatabase('weather.db')
 db_proxy = DatabaseProxy()
 
 
@@ -13,12 +13,16 @@ class Weather(Model):
     humidity = CharField()
     pressure = CharField()
     picture = CharField()
+    # db = connect('sqlite:///weather.db')
+
 
     class Meta:
         database = db_proxy
 
+db=SqliteDatabase('weather.db')
 
-db_proxy.initialize(db)
+
+
 # TODO Инициализацию наддо вынести в класс БД
 # TODO Кроме того принимать она должна не db, а объект, созданный из db url
 # TODO db_url передается в метод connect - так создается объект типа SqliteDatabase

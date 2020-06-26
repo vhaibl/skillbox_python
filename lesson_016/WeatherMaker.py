@@ -3,14 +3,19 @@ import re
 
 import requests
 from bs4 import BeautifulSoup
-# TODO не хватает пробела weather_base (можно погуглить snake_style)
-monthsdict = {'january': '01', 'february': '02', 'march': '03', 'april': '04', 'may': '05', 'june': '06', 'july': '07',
-              'august': '08', 'september': '09', 'october': '10', 'november': '11', 'december': '12'}
+
+months_dict = {'january': '01', 'february': '02', 'march': '03', 'april': '04', 'may': '05', 'june': '06', 'july': '07',
+               'august': '08', 'september': '09', 'october': '10', 'november': '11', 'december': '12'}
+icon_paths = {'sun': 'python_snippets\\external_data\\weather_img\\sun.jpg',
+              'cloud': 'python_snippets\\external_data\\weather_img\\cloud.jpg',
+              'snow': 'python_snippets\\external_data\\weather_img\\snow.jpg',
+              'rain': 'python_snippets\\external_data\\weather_img\\rain.jpg'
+              }
 
 
-class GetWeather():  # TODO Лишние скобки
-    def __init__(self, weatherbase, years, months, period_start):
-        self.weatherbase = weatherbase  # TODO не хватает пробела weather_base (можно погуглить snake_style)
+class GetWeather:
+    def __init__(self, weather_base, years, months, period_start):
+        self.weather_base = weather_base
         self.years = years
         self.months = months
         self.period_start = period_start
@@ -47,61 +52,30 @@ class GetWeather():  # TODO Лишние скобки
                     day = '\nНочью '.join(day.text.split())
                     day_temps.append(f'Днем {day}')
 
-                for dates, daytemp, desc, humid, wind, pressure in zip(list_of_dates, day_temps, descriptions,
-                                                                       humids, winds, pressures):
-                    today = dates.text[8:10]
-                    day = dates.text[:2]  # TODO Этот день не используется в коде?
-                    # TODO Нужно убрать дублирование из этих сравнений
+                for dates, daytemp, desc, humid, wind, pressure in zip(list_of_dates, day_temps, descriptions, humids,
+                                                                       winds, pressures):
                     if dates.text[:2] == 'Се':
-                        form_today = datetime.date(year=int(yrs), month=int(monthsdict[mnth]), day=int(today))
-
-                        self.weatherbase[form_today] = {}
-                        self.weatherbase[form_today]['температура'] = daytemp
-                        self.weatherbase[form_today]['погода'] = desc
-                        self.weatherbase[form_today]['дата'] = ''.join(dates.text)
-                        self.weatherbase[form_today]['влажность'] = humid
-                        self.weatherbase[form_today]['ветер'] = wind
-                        self.weatherbase[form_today]['давление'] = pressure
-                        self.weatherbase[form_today]['date'] = datetime.date.today()
-                        # TODO эти сравнения хорошо бы реализовать через словарь
-                        # TODO чтобы по ключу можно было получить нужный путь
-                        if 'ясно' in self.weatherbase[form_today]['погода']:
-                            self.weatherbase[form_today][
-                                'picture'] = 'python_snippets\\external_data\\weather_img\\sun.jpg'
-                        elif 'облачно' in self.weatherbase[form_today]['погода']:
-                            self.weatherbase[form_today][
-                                'picture'] = 'python_snippets\\external_data\\weather_img\\cloud.jpg'
-                        elif 'снег' in self.weatherbase[form_today]['погода']:
-                            self.weatherbase[form_today][
-                                'picture'] = 'python_snippets\\external_data\\weather_img\\snow.jpg'
-                        else:
-                            self.weatherbase[form_today][
-                                'picture'] = 'python_snippets\\external_data\\weather_img\\rain.jpg'
+                        form_day = datetime.date(year=int(yrs), month=int(months_dict[mnth]), day=int(dates.text[8:10]))
                     else:
-                        form_day = datetime.date(year=int(yrs), month=int(monthsdict[mnth]),
-                                                 day=int(dates.text[:2]))
-                        dateconv = datetime.date(int(yrs), int(monthsdict[mnth]), int(dates.text[:2]))
-                        self.weatherbase[form_day] = {}
-                        self.weatherbase[form_day]['температура'] = daytemp
-                        self.weatherbase[form_day]['погода'] = desc
-                        self.weatherbase[form_day]['дата'] = dates.text
-                        self.weatherbase[form_day]['влажность'] = humid
-                        self.weatherbase[form_day]['ветер'] = wind
-                        self.weatherbase[form_day]['давление'] = pressure
-                        self.weatherbase[form_day]['date'] = str(dateconv)
-                        if 'ясно' in self.weatherbase[form_day]['погода']:
-                            self.weatherbase[form_day][
-                                'picture'] = 'python_snippets\\external_data\\weather_img\\sun.jpg'
-                        elif 'облачно' in self.weatherbase[form_day]['погода']:
-                            self.weatherbase[form_day][
-                                'picture'] = 'python_snippets\\external_data\\weather_img\\cloud.jpg'
-                        elif 'снег' in self.weatherbase[form_day]['погода']:
-                            self.weatherbase[form_day][
-                                'picture'] = 'python_snippets\\external_data\\weather_img\\snow.jpg'
-                        else:
-                            self.weatherbase[form_day][
-                                'picture'] = 'python_snippets\\external_data\\weather_img\\rain.jpg'
+                        form_day = datetime.date(year=int(yrs), month=int(months_dict[mnth]), day=int(dates.text[:2]))
+                    dateconv = datetime.date(int(yrs), int(months_dict[mnth]), int(form_day.day))
+                    self.weather_base[form_day] = {}
+                    self.weather_base[form_day]['температура'] = daytemp
+                    self.weather_base[form_day]['погода'] = desc
+                    self.weather_base[form_day]['дата'] = dates.text
+                    self.weather_base[form_day]['влажность'] = humid
+                    self.weather_base[form_day]['ветер'] = wind
+                    self.weather_base[form_day]['давление'] = pressure
+                    self.weather_base[form_day]['date'] = str(dateconv)
+                    if 'ясно' in self.weather_base[form_day]['погода']:
+                        self.weather_base[form_day]['picture'] = icon_paths['sun']
+                    elif 'облачно' in self.weather_base[form_day]['погода']:
+                        self.weather_base[form_day]['picture'] = icon_paths['cloud']
+                    elif 'снег' in self.weather_base[form_day]['погода']:
+                        self.weather_base[form_day]['picture'] = icon_paths['snow']
+                    else:
+                        self.weather_base[form_day]['picture'] = icon_paths['rain']
 
             else:
-                raise RuntimeError(response.status_code)
+                raise RuntimeError('error', response.status_code)
                 # break

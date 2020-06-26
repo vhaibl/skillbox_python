@@ -54,11 +54,11 @@ from playhouse.db_url import connect
 import DatabaseUpdater
 from Postcards import make_postcards
 from WeatherMaker import GetWeather
+# from models import Weather
 
-db = connect('sqlite:///weather.db')  # TODO Это вынести в класс БД
-db.create_tables([Weather])  # TODO Класс нужно импортировать, чтобы использовать тут
+# Weather = connect('sqlite:///weather.db')
 
-weatherbase = {}
+weather_base = {}
 
 monthsdict2 = {1: 'january', 2: 'february', 3: 'march', 4: 'april', 5: 'may', 6: 'june', 7: 'july', 8: 'august',
                9: 'september', 10: 'october', 11: 'november', 12: 'december'}
@@ -77,11 +77,11 @@ def write_to_dict(period_start, period_end):
             months.append((monthsdict2[period_start1.month], period_start1.year))
         period_start1 += deltam
 
-    gw = GetWeather(weatherbase, months=months, years=years, period_start=period_start)
+    gw = GetWeather(weather_base, months=months, years=years, period_start=period_start)
     gw.run()
     delta = datetime.timedelta(days=1)
     while period_start <= period_end:
-        wb = weatherbase[period_start]
+        wb = weather_base[period_start]
         # temp = wb['температура'].replace('\n', ' ')
         # print(
         #     f"{wb['дата']}:,температура: {temp}, осадки: {wb['погода']}, ветер: {wb['ветер']}, "
@@ -104,18 +104,18 @@ def on_run():
             months.append((monthsdict2[period_start1.month], period_start1.year))
         period_start1 += deltam
 
-    gw = GetWeather(weatherbase, months=months, years=years, period_start=period_start)
+    gw = GetWeather(weather_base, months=months, years=years, period_start=period_start)
     gw.run()
     delta = datetime.timedelta(days=1)
     while period_start <= period_end:
-        wb = weatherbase[period_start.date()]
+        wb = weather_base[period_start.date()]
         temp = wb['температура'].replace('\n', ' ')
         print(
             f"{wb['дата']}:,температура: {temp}, осадки: {wb['погода']}, ветер: {wb['ветер']}, "
             f"давление:{wb['давление']}, влажность:{wb['влажность']}")
         # print(f'Прогноз за {wb["дата"]} загружен')
         period_start += delta
-    print(weatherbase)
+    print(weather_base)
 
 
 def check_date(*start_date):
@@ -126,21 +126,18 @@ def check_date(*start_date):
     while True:
         user_date = input('>>> ')
         match = re.findall(re_date, user_date)
-        # TODO Ступенчатая структура сравнений читается не очень удобно
-        # TODO Если сможете - упростите её
+        # Ступенчатая структура сравнений читается не очень удобно
+        # Если сможете - упростите её
+        # TODO Чутка упростил, или можно как-то еще?
         if match:
             user_date = datetime.datetime.strptime(user_date, '%d-%m-%Y').date()
             if user_date > datetime.date.today() + datetime.timedelta(days=deltadays):
                 print(f'Прогноз может быть не более, чем на {deltadays} дней вперед', end='')
             else:
-                if not start_date:
-                    return str(user_date)
-                else:
-                    if user_date < datetime.datetime.strptime(start_date[0], '%Y-%m-%d').date():
+                if start_date and user_date < datetime.datetime.strptime(start_date[0], '%Y-%m-%d').date():
                         print(f'Конец диапазона не может быть раньше его начала', end='')
-                    else:
-                        return str(user_date)
-
+                else:
+                    return str(user_date)
         else:
             print('Неправильно указана дата. Введите в формате ДД-ММ-ГГГГ', end='')
 
@@ -149,16 +146,14 @@ start_date = None
 end_datec = None
 on_run()
 while True:
-    # TODO тут можно использовать многострочные конструкции '''строки'''
-    # TODO Либо можно распечатать набор строк циклом, добавив их в какую-нибудь структуру
-    # TODO '\' лишние в любом случае
-    print(f'\n1(1) для задания диапазона дат\n' \
-          f'(2) для загрузки данных из сети\n' \
-          f'(3) для записи дат за указанный диапазон в базу данных\n' \
-          f'(4) для чтения данных за указанный диапазон из базы данных\n' \
-          f'(5) для создания открыток с погодой за указанный диапазон\n' \
-          f'(6) для вывода прогнозов за указанный диапазон на экран\n' \
-          f'(7) для выхода\n')
+    print('''
+(1) для задания диапазона дат
+(2) для загрузки данных из сети
+(3) для записи дат за указанный диапазон в базу данных
+(4) для чтения данных за указанный диапазон из базы данных
+(5) для создания открыток с погодой за указанный диапазон
+(6) для вывода прогнозов за указанный диапазон на экран
+(7) для выхода''')
 
     user_choice = input('>>>')
     # TODO Хорошо бы сделать словарь действий, по ключу вытягивать нужный метод и запускать его
@@ -171,10 +166,10 @@ while True:
         write_to_dict(start_date, end_date)
     elif user_choice == '3' and start_date:
         write_to_dict(start_date, end_date)
-        DatabaseUpdater.update_db(weatherbase, start_date, end_date)
+        DatabaseUpdater.update_db(weather_base, start_date, end_date)
 
     elif user_choice == '4' and start_date:
-        weatherbase = DatabaseUpdater.read_db(start_date, end_date)
+        weather_base = DatabaseUpdater.read_db(start_date, end_date)
 
     elif user_choice == '5' and start_date:
         make_postcards(start_date, end_date)

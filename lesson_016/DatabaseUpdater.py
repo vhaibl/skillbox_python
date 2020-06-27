@@ -30,6 +30,12 @@ class DatabaseUpdater:
                                                        condition=value['погода'], wind=value['ветер'],
                                                        humidity=value['влажность'],
                                                        pressure=value['давление'], picture=value['picture'])
+            # TODO get_or_create либо создает новый элемент, либо возвращает старый
+            # TODO поэтому далее нужно обновить то, что вернулось и сохранить это
+            # TODO Можно ещё попробовать воспользоваться
+            # http://docs.peewee-orm.com/en/latest/peewee/querying.html#upsert
+            # TODO Это проще, но есть ограничения, связанные с типом базы, который используется
+            # TODO Но в нашем случае это не так важно, раз мы используем только SQLite
             print('O', end='')
             p_start += delta
         print(' Done')

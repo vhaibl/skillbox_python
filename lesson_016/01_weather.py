@@ -57,6 +57,7 @@ weather_base = {}
 monthsdict2 = {1: 'january', 2: 'february', 3: 'march', 4: 'april', 5: 'may', 6: 'june', 7: 'july', 8: 'august',
                9: 'september', 10: 'october', 11: 'november', 12: 'december'}
 
+
 class Start:
     def __init__(self):
         self.start_date = None
@@ -70,24 +71,22 @@ class Start:
         re_date = re.compile(
             r"^([1-9]|0[1-9]|1[0-9]|2[0-9]|3[0-1])(\.|-|/)"
             r"([1-9]|0[1-9]|1[0-2])(\.|-|/)([0-9][0-9]|19[0-9][0-9]|20[0-9][0-9])$")
-        deltadays = 14
+        deltadays = 14  # TODO Между словами нужен '_'
+        # TODO Заменить сразу везде поможет CTRL + R
         while True:
             user_date = input('>>> ')
             match = re.findall(re_date, user_date)
-            # Ступенчатая структура сравнений читается не очень удобно
-            # Если сможете - упростите её
-            # TODO Чутка упростил, или можно как-то еще?
-            if match:
-                user_date = datetime.datetime.strptime(user_date, '%d-%m-%Y').date()
-                if user_date > datetime.date.today() + datetime.timedelta(days=deltadays):
-                    print(f'Прогноз может быть не более, чем на {deltadays} дней вперед', end='')
-                else:
-                    if start_date and user_date < datetime.datetime.strptime(start_date[0], '%Y-%m-%d').date():
-                        print(f'Конец диапазона не может быть раньше его начала', end='')
-                    else:
-                        return str(user_date)
-            else:
+            # TODO Я имел ввиду что-то подобное
+            if not match:
                 print('Неправильно указана дата. Введите в формате ДД-ММ-ГГГГ', end='')
+                continue
+            user_date = datetime.datetime.strptime(user_date, '%d-%m-%Y').date()
+            if user_date > datetime.date.today() + datetime.timedelta(days=deltadays):
+                print(f'Прогноз может быть не более, чем на {deltadays} дней вперед', end='')
+            elif start_date and user_date < datetime.datetime.strptime(start_date[0], '%Y-%m-%d').date():
+                print(f'Конец диапазона не может быть раньше его начала', end='')
+            else:
+                return str(user_date)
 
     def define_dates(self):
         print('Введите НАЧАЛО диапазона в формате ДД-ММ-ГГГГ', end='')

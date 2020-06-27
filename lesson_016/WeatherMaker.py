@@ -11,10 +11,13 @@ icon_paths = {'sun': 'python_snippets\\external_data\\weather_img\\sun.jpg',
               'snow': 'python_snippets\\external_data\\weather_img\\snow.jpg',
               'rain': 'python_snippets\\external_data\\weather_img\\rain.jpg'
               }
+monthsdict2 = {1: 'january', 2: 'february', 3: 'march', 4: 'april', 5: 'may', 6: 'june', 7: 'july', 8: 'august',
+               9: 'september', 10: 'october', 11: 'november', 12: 'december'}
+weather_base = {}
 
 
 class GetWeather:
-    def __init__(self, weather_base, years, months, period_start):
+    def __init__(self, years, months, period_start):
         self.weather_base = weather_base
         self.years = years
         self.months = months
@@ -79,3 +82,53 @@ class GetWeather:
             else:
                 raise RuntimeError('error', response.status_code)
                 # break
+
+
+class MakeWeather:
+    def __init__(self):
+        self.months = []
+        self.years = []
+        self.delta_month = datetime.timedelta(weeks=4)
+        self.delta = datetime.timedelta(days=1)
+        self.delta_week = datetime.timedelta(days=7)
+
+    def on_run(self):
+        period_end = datetime.datetime.now()
+        period_start = period_end - self.delta_week
+        period_start1 = period_start
+
+        while period_start1 <= period_end + datetime.timedelta(days=30):
+            if monthsdict2[period_start1.month] not in self.months:
+                self.months.append((monthsdict2[period_start1.month], period_start1.year))
+            period_start1 += self.delta_month
+
+        gw = GetWeather(months=self.months, years=self.years, period_start=period_start)
+        gw.run()
+        while period_start <= period_end:
+            wb = weather_base[period_start.date()]
+            temp = wb['температура'].replace('\n', ' ')
+            print(
+                f"{wb['дата']}:,температура: {temp}, осадки: {wb['погода']}, ветер: {wb['ветер']}, "
+                f"давление:{wb['давление']}, влажность:{wb['влажность']}")
+            period_start += self.delta
+
+    def write_to_dict(self, period_start, period_end):
+        period_start = datetime.datetime.strptime(period_start, '%Y-%m-%d').date()
+        period_start1 = period_start
+        period_end = datetime.datetime.strptime(period_end, '%Y-%m-%d').date()
+
+        while period_start1 <= period_end + datetime.timedelta(days=30):
+            if monthsdict2[period_start1.month] not in self.months:
+                self.months.append((monthsdict2[period_start1.month], period_start1.year))
+            period_start1 += self.delta_month
+        period_start1 = period_start
+
+        gw = GetWeather(months=self.months, years=self.years, period_start=period_start)
+        gw.run()
+        p_start = period_start
+        while p_start <= period_end:
+            wb = weather_base[p_start]
+            print(f'Прогноз за {wb["дата"]} загружен')
+            p_start += self.delta
+        p_start = period_start
+        return weather_base

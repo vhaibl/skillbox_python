@@ -49,133 +49,92 @@
 import datetime
 import re
 
-from playhouse.db_url import connect
-
 import DatabaseUpdater
-from Postcards import make_postcards
-from WeatherMaker import GetWeather
-# from models import Weather
-
-# Weather = connect('sqlite:///weather.db')
+from WeatherMaker import MakeWeather
 
 weather_base = {}
 
 monthsdict2 = {1: 'january', 2: 'february', 3: 'march', 4: 'april', 5: 'may', 6: 'june', 7: 'july', 8: 'august',
                9: 'september', 10: 'october', 11: 'november', 12: 'december'}
 
-# TODO Весь этот код стоит обернуть в класс-менеджер о котором я писал в другом модуле
-def write_to_dict(period_start, period_end):
-    months = []
-    years = []
-    period_start = datetime.datetime.strptime(period_start, '%Y-%m-%d').date()
-    period_start1 = period_start
-    period_end = datetime.datetime.strptime(period_end, '%Y-%m-%d').date()
+class Start:
+    def __init__(self):
+        self.start_date = None
+        self.end_date = None
+        self.db_updater = None
 
-    deltam = datetime.timedelta(weeks=4)
-    while period_start1 <= period_end + datetime.timedelta(days=30):
-        if monthsdict2[period_start1.month] not in months:
-            months.append((monthsdict2[period_start1.month], period_start1.year))
-        period_start1 += deltam
+        self.actions = {'1': self.define_dates, '2': self.update_dict, '3': self.update, '4': self.read_db,
+                        '5': self.make_cards, '6': self.show}
 
-    gw = GetWeather(weather_base, months=months, years=years, period_start=period_start)
-    gw.run()
-    delta = datetime.timedelta(days=1)
-    while period_start <= period_end:
-        wb = weather_base[period_start]
-        # temp = wb['температура'].replace('\n', ' ')
-        # print(
-        #     f"{wb['дата']}:,температура: {temp}, осадки: {wb['погода']}, ветер: {wb['ветер']}, "
-        #     f"давление:{wb['давление']}, влажность:{wb['влажность']}")
-        print(f'Прогноз за {wb["дата"]} загружен')
-        period_start += delta
-
-
-def on_run():
-    months = []
-    years = []
-    period_end = datetime.datetime.now()
-    deltaa = datetime.timedelta(days=7)
-    period_start = period_end - deltaa
-    period_start1 = period_start
-
-    deltam = datetime.timedelta(weeks=4)
-    while period_start1 <= period_end + datetime.timedelta(days=30):
-        if monthsdict2[period_start1.month] not in months:
-            months.append((monthsdict2[period_start1.month], period_start1.year))
-        period_start1 += deltam
-
-    gw = GetWeather(weather_base, months=months, years=years, period_start=period_start)
-    gw.run()
-    delta = datetime.timedelta(days=1)
-    while period_start <= period_end:
-        wb = weather_base[period_start.date()]
-        temp = wb['температура'].replace('\n', ' ')
-        print(
-            f"{wb['дата']}:,температура: {temp}, осадки: {wb['погода']}, ветер: {wb['ветер']}, "
-            f"давление:{wb['давление']}, влажность:{wb['влажность']}")
-        # print(f'Прогноз за {wb["дата"]} загружен')
-        period_start += delta
-    print(weather_base)
-
-
-def check_date(*start_date):
-    re_date = re.compile(
-        r"^([1-9]|0[1-9]|1[0-9]|2[0-9]|3[0-1])(\.|-|/)"
-        r"([1-9]|0[1-9]|1[0-2])(\.|-|/)([0-9][0-9]|19[0-9][0-9]|20[0-9][0-9])$")
-    deltadays = 14
-    while True:
-        user_date = input('>>> ')
-        match = re.findall(re_date, user_date)
-        # Ступенчатая структура сравнений читается не очень удобно
-        # Если сможете - упростите её
-        # TODO Чутка упростил, или можно как-то еще?
-        if match:
-            user_date = datetime.datetime.strptime(user_date, '%d-%m-%Y').date()
-            if user_date > datetime.date.today() + datetime.timedelta(days=deltadays):
-                print(f'Прогноз может быть не более, чем на {deltadays} дней вперед', end='')
-            else:
-                if start_date and user_date < datetime.datetime.strptime(start_date[0], '%Y-%m-%d').date():
-                        print(f'Конец диапазона не может быть раньше его начала', end='')
+    def check_date(*start_date):
+        re_date = re.compile(
+            r"^([1-9]|0[1-9]|1[0-9]|2[0-9]|3[0-1])(\.|-|/)"
+            r"([1-9]|0[1-9]|1[0-2])(\.|-|/)([0-9][0-9]|19[0-9][0-9]|20[0-9][0-9])$")
+        deltadays = 14
+        while True:
+            user_date = input('>>> ')
+            match = re.findall(re_date, user_date)
+            # Ступенчатая структура сравнений читается не очень удобно
+            # Если сможете - упростите её
+            # TODO Чутка упростил, или можно как-то еще?
+            if match:
+                user_date = datetime.datetime.strptime(user_date, '%d-%m-%Y').date()
+                if user_date > datetime.date.today() + datetime.timedelta(days=deltadays):
+                    print(f'Прогноз может быть не более, чем на {deltadays} дней вперед', end='')
                 else:
-                    return str(user_date)
-        else:
-            print('Неправильно указана дата. Введите в формате ДД-ММ-ГГГГ', end='')
+                    if start_date and user_date < datetime.datetime.strptime(start_date[0], '%Y-%m-%d').date():
+                        print(f'Конец диапазона не может быть раньше его начала', end='')
+                    else:
+                        return str(user_date)
+            else:
+                print('Неправильно указана дата. Введите в формате ДД-ММ-ГГГГ', end='')
 
-
-start_date = None
-end_datec = None
-on_run()
-while True:
-    print('''
-(1) для задания диапазона дат
-(2) для загрузки данных из сети
-(3) для записи дат за указанный диапазон в базу данных
-(4) для чтения данных за указанный диапазон из базы данных
-(5) для создания открыток с погодой за указанный диапазон
-(6) для вывода прогнозов за указанный диапазон на экран
-(7) для выхода''')
-
-    user_choice = input('>>>')
-    # TODO Хорошо бы сделать словарь действий, по ключу вытягивать нужный метод и запускать его
-    if user_choice == '1':
+    def define_dates(self):
         print('Введите НАЧАЛО диапазона в формате ДД-ММ-ГГГГ', end='')
-        start_date = check_date()
+        self.start_date = Start.check_date()
         print('Введите КОНЕЦ диапазона в формате ДД-ММ-ГГГГ', end='')
-        end_date = check_date(start_date)
-    elif user_choice == '2' and start_date:
-        write_to_dict(start_date, end_date)
-    elif user_choice == '3' and start_date:
-        write_to_dict(start_date, end_date)
-        DatabaseUpdater.update_db(weather_base, start_date, end_date)
+        self.end_date = Start.check_date(self.start_date)
+        self.db_updater = DatabaseUpdater.DatabaseUpdater(self.start_date, self.end_date)
 
-    elif user_choice == '4' and start_date:
-        weather_base = DatabaseUpdater.read_db(start_date, end_date)
+    def update_dict(self):
+        MakeWeather().write_to_dict(self.start_date, self.end_date)
 
-    elif user_choice == '5' and start_date:
-        make_postcards(start_date, end_date)
-    elif user_choice == '6' and start_date:
-        DatabaseUpdater.show(start_date, end_date)
-    elif user_choice == '7':
-        break
-    elif start_date is None:
-        print('Не указан диапазон дат')
+    def update(self):
+        MakeWeather().write_to_dict(self.start_date, self.end_date)
+        self.db_updater.update_db()
+
+    def read_db(self):
+        self.weather_base = self.db_updater.read_db()
+
+    def make_cards(self):
+        self.db_updater.make_postcards()
+
+    def show(self):
+        self.db_updater.show()
+
+    def menu(self):
+
+        while True:
+            print('''
+        (1) для задания диапазона дат
+        (2) для загрузки данных из сети
+        (3) для записи дат за указанный диапазон в базу данных
+        (4) для чтения данных за указанный диапазон из базы данных
+        (5) для создания открыток с погодой за указанный диапазон
+        (6) для вывода прогнозов за указанный диапазон на экран
+        (7) для выхода''')
+
+            user_choice = input('>>>')
+            if '1' in user_choice:
+                self.define_dates()
+            elif user_choice in self.actions and self.start_date:
+                now = self.actions[user_choice]
+                now()
+            elif '7' in user_choice:
+                break
+            elif self.start_date is None:
+                print('Не указан диапазон дат')
+
+
+MakeWeather().on_run()
+Start().menu()

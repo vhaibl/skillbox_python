@@ -25,17 +25,55 @@ class DatabaseUpdater:
         p_start = self.period_start
         while p_start <= self.period_end:
             value = WeatherMaker.weather_base[p_start]
-            value['date'] = self.Weather.get_or_create(day=value['date'], daterus=value['дата'],
+            xz = value['date']
+            xz = self.Weather.get_or_create(day=value['date'], daterus=value['дата'],
                                                        temperature=value['температура'],
                                                        condition=value['погода'], wind=value['ветер'],
                                                        humidity=value['влажность'],
                                                        pressure=value['давление'], picture=value['picture'])
-            # TODO get_or_create либо создает новый элемент, либо возвращает старый
-            # TODO поэтому далее нужно обновить то, что вернулось и сохранить это
-            # TODO Можно ещё попробовать воспользоваться
+            #   get_or_create либо создает новый элемент, либо возвращает старый
+            #   поэтому далее нужно обновить то, что вернулось и сохранить это
+            #   Можно ещё попробовать воспользоваться
             # http://docs.peewee-orm.com/en/latest/peewee/querying.html#upsert
-            # TODO Это проще, но есть ограничения, связанные с типом базы, который используется
-            # TODO Но в нашем случае это не так важно, раз мы используем только SQLite
+            #   Это проще, но есть ограничения, связанные с типом базы, который используется
+            #   Но в нашем случае это не так важно, раз мы используем только SQLite
+            #TODO Что-то я не могу понять( get_or_create получает ключи для записи в базу, если один из ключей
+            #TODO отличается - он создает новую запись, вместо того чтобы срабатывал get, как же мне отредактировать
+            #TODO старую запись? weather.db приложил с измененным ключем влажности по дате 01-01-2020, для примера
+            if xz[1]:
+                print('create')
+            else:
+                print(value['date'])
+                print(xz)
+                print('get')
+                # value = WeatherMaker.weather_base[p_start]
+
+                # value['date'] = self.Weather.replace(day=value['date'], daterus=value['дата'],
+                #                                        temperature=value['температура'],
+                #                                        condition=value['погода'], wind=value['ветер'],
+                #                                        humidity=value['влажность'],
+                #                                        pressure=value['давление'], picture=value['picture']).execute()
+                # print(value['date'].day)
+
+
+            #
+            # value['date'] = self.Weather.insert(day=value['date'], daterus=value['дата'],
+            #                                     temperature=value['температура'],
+            #                                     condition=value['погода'], wind=value['ветер'],
+            #                                     humidity=value['влажность'],
+            #                                     pressure=value['давление'], picture=value['picture']).on_conflict(
+            #     update={self.Weather.daterus: self.Weather.daterus, self.Weather.temperature: self.Weather.temperature,
+            #             self.Weather.day: self.Weather.day,
+            #             self.Weather.condition: self.Weather.condition, self.Weather.humidity: self.Weather.humidity,
+            #             self.Weather.wind: self.Weather.wind,
+            #             self.Weather.picture: self.Weather.picture,
+            #             self.Weather.pressure: self.Weather.pressure}).execute()
+            #
+            # conflict_target=[self.Weather.day],  # Which constraint?
+            # preserve=[self.Weather.daterus],  # Use the value we would have inserted.
+            #
+
+
             print('O', end='')
             p_start += delta
         print(' Done')

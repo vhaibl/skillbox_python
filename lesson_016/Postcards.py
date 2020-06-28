@@ -1,4 +1,5 @@
 import os
+
 import cv2
 
 
@@ -32,10 +33,9 @@ class Postcards:
         y_offset = 10
         image[y_offset:y_offset + s_img.shape[0], x_offset:x_offset + s_img.shape[1]] = s_img
         image_path = f'images/{self.day}.jpg'
-        if os.path.exists("images"):  # TODO Почему бы не упростить (if not -> mkdir, а else убрать вообще)
-            pass
-        else:
+        if not os.path.exists("images"):
             os.mkdir('images')
+
         cv2.imwrite(image_path, image, [int(cv2.IMWRITE_JPEG_QUALITY), 90])
         return image
 
@@ -51,17 +51,3 @@ class Postcards:
             else:
                 weather_state = (y + 64, y + 64, y + 64)
             cv2.line(image, (0, y), (512, y), color=weather_state)
-
-# TODO Лишний код надо убрать
-# def viewImage(image, name_of_window):
-#     cv2.namedWindow(name_of_window, cv2.WINDOW_AUTOSIZE)
-#     cv2.imshow(name_of_window, image)
-#     cv2.waitKey(0)
-#     cv2.destroyAllWindows()
-
-#
-# #
-# draw = Postcards(daterus='Сегодня 26 Июня 2020', temperature=f'Днем +26° \n Ночью +15°', condition='ясно', wind='2 м/с',
-#                  humidity='88%', pressure='746 мм', picture='python_snippets\\external_data\\weather_img\\cloud.jpg',
-#                  day=datetime.date(2020, 6, 2))
-# draw.draw_postcard()

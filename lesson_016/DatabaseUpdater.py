@@ -85,8 +85,7 @@ class DatabaseUpdater:
                                            query.pressure, query.picture, query.day)
             postcard.draw_postcard()
             count += 1
-            # TODO попробуйте использовать '\b'*20
-            print("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b", end="")
+            print('\b' * 23, end="")
             print('Creating postcards: {0:3}'.format(count), end='')
             sys.stdout.flush()
         print('\nPostcards created at \\images folder')

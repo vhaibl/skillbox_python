@@ -52,31 +52,35 @@ import re
 import DatabaseUpdater
 from WeatherMaker import MakeWeather
 
-weather_base = {}
-# TODO Если эти переменные являются константами - то их надо писать с заглавной буквы
-# TODO Если же они используются только в одном классе - то их надо внести в атрибуты этого класса
-monthsdict2 = {1: 'january', 2: 'february', 3: 'march', 4: 'april', 5: 'may', 6: 'june', 7: 'july', 8: 'august',
-               9: 'september', 10: 'october', 11: 'november', 12: 'december'}
-
 
 class Start:
     def __init__(self):
         self.start_date = None
         self.end_date = None
         self.db_updater = None
-
+        self.MONTHS_DICT2 = {1: 'january', 2: 'february', 3: 'march', 4: 'april', 5: 'may', 6: 'june', 7: 'july',
+                             8: 'august', 9: 'september', 10: 'october', 11: 'november', 12: 'december'}
+        self.weather_base = None
         self.actions = {'1': self.define_dates, '2': self.update_dict, '3': self.update, '4': self.read_db,
                         '5': self.make_cards, '6': self.show}
-
-    def check_date(*start_date):
-        re_date = re.compile(
+        self.re_date = re.compile(
             r"^([1-9]|0[1-9]|1[0-9]|2[0-9]|3[0-1])(\.|-|/)"
             r"([1-9]|0[1-9]|1[0-2])(\.|-|/)([0-9][0-9]|19[0-9][0-9]|20[0-9][0-9])$")
-        # TODO Обычно правила для регулярок тоже выносят в атрибуты, а в методах используют переменные с ними
+
+        self.print_menu = '''
+        (1) для задания диапазона дат
+        (2) для загрузки данных из сети
+        (3) для записи дат за указанный диапазон в базу данных
+        (4) для чтения данных за указанный диапазон из базы данных
+        (5) для создания открыток с погодой за указанный диапазон
+        (6) для вывода прогнозов за указанный диапазон на экран
+        (7) для выхода'''
+
+    def check_date(self, *start_date):
         delta_days = 14
         while True:
             user_date = input('>>> ')
-            match = re.findall(re_date, user_date)
+            match = re.findall(self.re_date, user_date)
             if not match:
                 print('Неправильно указана дата. Введите в формате ДД-ММ-ГГГГ', end='')
                 continue
@@ -90,9 +94,9 @@ class Start:
 
     def define_dates(self):
         print('Введите НАЧАЛО диапазона в формате ДД-ММ-ГГГГ', end='')
-        self.start_date = Start.check_date()
+        self.start_date = Start().check_date()
         print('Введите КОНЕЦ диапазона в формате ДД-ММ-ГГГГ', end='')
-        self.end_date = Start.check_date(self.start_date)
+        self.end_date = Start().check_date(self.start_date)
         self.db_updater = DatabaseUpdater.DatabaseUpdater(self.start_date, self.end_date)
 
     def update_dict(self):
@@ -103,7 +107,6 @@ class Start:
         self.db_updater.update_db()
 
     def read_db(self):
-        # TODO сперва атрибут надо объявлять в Init
         self.weather_base = self.db_updater.read_db()
 
     def make_cards(self):
@@ -115,16 +118,7 @@ class Start:
     def menu(self):
 
         while True:
-            # TODO По-хорошему и такие многострочные текста надо бы вынести в атрибут класса
-            # TODO Идея в том, чтобы собрать всё "настраиваемое" в одном месте класса
-            print('''
-        (1) для задания диапазона дат
-        (2) для загрузки данных из сети
-        (3) для записи дат за указанный диапазон в базу данных
-        (4) для чтения данных за указанный диапазон из базы данных
-        (5) для создания открыток с погодой за указанный диапазон
-        (6) для вывода прогнозов за указанный диапазон на экран
-        (7) для выхода''')
+            print(self.print_menu)
 
             user_choice = input('>>>')
             if '1' in user_choice:

@@ -3,18 +3,10 @@ import re
 
 import requests
 from bs4 import BeautifulSoup
-# TODO Если эти переменные являются константами - то их надо писать с заглавной буквы
-# TODO Если же они используются только в одном классе - то их надо внести в атрибуты этого класса
-months_dict = {'january': '01', 'february': '02', 'march': '03', 'april': '04', 'may': '05', 'june': '06', 'july': '07',
-               'august': '08', 'september': '09', 'october': '10', 'november': '11', 'december': '12'}
-icon_paths = {'sun': 'python_snippets\\external_data\\weather_img\\sun.jpg',
-              'cloud': 'python_snippets\\external_data\\weather_img\\cloud.jpg',
-              'snow': 'python_snippets\\external_data\\weather_img\\snow.jpg',
-              'rain': 'python_snippets\\external_data\\weather_img\\rain.jpg'
-              }
-monthsdict2 = {1: 'january', 2: 'february', 3: 'march', 4: 'april', 5: 'may', 6: 'june', 7: 'july', 8: 'august',
-               9: 'september', 10: 'october', 11: 'november', 12: 'december'}
+
 weather_base = {}
+MONTHS_DICT2 = {1: 'january', 2: 'february', 3: 'march', 4: 'april', 5: 'may', 6: 'june', 7: 'july',
+                8: 'august', 9: 'september', 10: 'october', 11: 'november', 12: 'december'}
 
 
 class GetWeather:
@@ -23,6 +15,15 @@ class GetWeather:
         self.years = years
         self.months = months
         self.period_start = period_start
+
+        self.ICON_PATHS = {'sun': 'python_snippets\\external_data\\weather_img\\sun.jpg',
+                           'cloud': 'python_snippets\\external_data\\weather_img\\cloud.jpg',
+                           'snow': 'python_snippets\\external_data\\weather_img\\snow.jpg',
+                           'rain': 'python_snippets\\external_data\\weather_img\\rain.jpg'}
+
+        self.MONTHS_DICT = {'january': '01', 'february': '02', 'march': '03', 'april': '04', 'may': '05', 'june': '06',
+                            'july': '07',
+                            'august': '08', 'september': '09', 'october': '10', 'november': '11', 'december': '12'}
 
     def run(self):
         try:
@@ -59,10 +60,12 @@ class GetWeather:
                 for dates, daytemp, desc, humid, wind, pressure in zip(list_of_dates, day_temps, descriptions, humids,
                                                                        winds, pressures):
                     if dates.text[:2] == 'Се':
-                        form_day = datetime.date(year=int(yrs), month=int(months_dict[mnth]), day=int(dates.text[8:10]))
+                        form_day = datetime.date(year=int(yrs), month=int(self.MONTHS_DICT[mnth]),
+                                                 day=int(dates.text[8:10]))
                     else:
-                        form_day = datetime.date(year=int(yrs), month=int(months_dict[mnth]), day=int(dates.text[:2]))
-                    dateconv = datetime.date(int(yrs), int(months_dict[mnth]), int(form_day.day))
+                        form_day = datetime.date(year=int(yrs), month=int(self.MONTHS_DICT[mnth]),
+                                                 day=int(dates.text[:2]))
+                    dateconv = datetime.date(int(yrs), int(self.MONTHS_DICT[mnth]), int(form_day.day))
                     self.weather_base[form_day] = {}
                     self.weather_base[form_day]['температура'] = daytemp
                     self.weather_base[form_day]['погода'] = desc
@@ -72,18 +75,16 @@ class GetWeather:
                     self.weather_base[form_day]['давление'] = pressure
                     self.weather_base[form_day]['date'] = str(dateconv)
                     if 'ясно' in self.weather_base[form_day]['погода']:
-                        self.weather_base[form_day]['picture'] = icon_paths['sun']
+                        self.weather_base[form_day]['picture'] = self.ICON_PATHS['sun']
                     elif 'облачно' in self.weather_base[form_day]['погода']:
-                        self.weather_base[form_day]['picture'] = icon_paths['cloud']
+                        self.weather_base[form_day]['picture'] = self.ICON_PATHS['cloud']
                     elif 'снег' in self.weather_base[form_day]['погода']:
-                        self.weather_base[form_day]['picture'] = icon_paths['snow']
+                        self.weather_base[form_day]['picture'] = self.ICON_PATHS['snow']
                     else:
-                        self.weather_base[form_day]['picture'] = icon_paths['rain']
+                        self.weather_base[form_day]['picture'] = self.ICON_PATHS['rain']
 
             else:
                 raise RuntimeError('error', response.status_code)
-                # break
-                # TODO Лишняя строка?
 
 
 class MakeWeather:
@@ -100,8 +101,8 @@ class MakeWeather:
         period_start1 = period_start
 
         while period_start1 <= period_end + datetime.timedelta(days=30):
-            if monthsdict2[period_start1.month] not in self.months:
-                self.months.append((monthsdict2[period_start1.month], period_start1.year))
+            if MONTHS_DICT2[period_start1.month] not in self.months:
+                self.months.append((MONTHS_DICT2[period_start1.month], period_start1.year))
             period_start1 += self.delta_month
 
         gw = GetWeather(months=self.months, years=self.years, period_start=period_start)
@@ -120,11 +121,9 @@ class MakeWeather:
         period_end = datetime.datetime.strptime(period_end, '%Y-%m-%d').date()
 
         while period_start1 <= period_end + datetime.timedelta(days=30):
-            if monthsdict2[period_start1.month] not in self.months:
-                self.months.append((monthsdict2[period_start1.month], period_start1.year))
+            if MONTHS_DICT2[period_start1.month] not in self.months:
+                self.months.append((MONTHS_DICT2[period_start1.month], period_start1.year))
             period_start1 += self.delta_month
-        period_start1 = period_start  # TODO Тут и ниже 2 переменные, которые не используются?
-        # TODO Нужно убрать
         gw = GetWeather(months=self.months, years=self.years, period_start=period_start)
         gw.run()
         p_start = period_start
@@ -132,5 +131,4 @@ class MakeWeather:
             wb = weather_base[p_start]
             print(f'Прогноз за {wb["дата"]} загружен')
             p_start += self.delta
-        p_start = period_start
         return weather_base

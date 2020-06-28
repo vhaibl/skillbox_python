@@ -1,5 +1,4 @@
 from peewee import *
-from playhouse.db_url import connect
 
 db = DatabaseProxy()
 
@@ -13,8 +12,6 @@ class Weather(Model):
     humidity = CharField()
     pressure = CharField()
     picture = CharField()
-
-    #
 
     class Meta:
         database = db

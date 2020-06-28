@@ -1,5 +1,4 @@
 import os
-
 import cv2
 
 
@@ -33,7 +32,7 @@ class Postcards:
         y_offset = 10
         image[y_offset:y_offset + s_img.shape[0], x_offset:x_offset + s_img.shape[1]] = s_img
         image_path = f'images/{self.day}.jpg'
-        if os.path.exists("images"):
+        if os.path.exists("images"):  # TODO Почему бы не упростить (if not -> mkdir, а else убрать вообще)
             pass
         else:
             os.mkdir('images')
@@ -42,19 +41,18 @@ class Postcards:
 
     def gradient(self, image):
         for y in range(255):
-            weather_background = {'снег': (255, 255, y), 'ясно': (y, 255, 255), 'облачно': (y + 64, y + 64, y + 64),
-                                  'дождь': (255, y, y), 'дождь/гроза': (192, y - 64, y - 64)}
-
-            # Не понятно, как вынести словарь в атрибуты, так как y переопределяется в цикле
-            # Можно оставить и так, я думал над вариантом, когда до цикла мы вытаскиваем одно значение
-            # например (255, 255, 0) и к нему прибавляем +1 с условием <=255
+            weather_background = {'снег': (255, 255, y),
+                                  'ясно': (y, 255, 255),
+                                  'облачно': (y + 64, y + 64, y + 64),
+                                  'дождь': (255, y, y),
+                                  'дождь/гроза': (192, y - 64, y - 64)}
             if self.condition in weather_background:
                 weather_state = weather_background[self.condition]
             else:
                 weather_state = (y + 64, y + 64, y + 64)
             cv2.line(image, (0, y), (512, y), color=weather_state)
 
-#
+# TODO Лишний код надо убрать
 # def viewImage(image, name_of_window):
 #     cv2.namedWindow(name_of_window, cv2.WINDOW_AUTOSIZE)
 #     cv2.imshow(name_of_window, image)

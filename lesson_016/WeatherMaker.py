@@ -3,7 +3,8 @@ import re
 
 import requests
 from bs4 import BeautifulSoup
-
+# TODO Если эти переменные являются константами - то их надо писать с заглавной буквы
+# TODO Если же они используются только в одном классе - то их надо внести в атрибуты этого класса
 months_dict = {'january': '01', 'february': '02', 'march': '03', 'april': '04', 'may': '05', 'june': '06', 'july': '07',
                'august': '08', 'september': '09', 'october': '10', 'november': '11', 'december': '12'}
 icon_paths = {'sun': 'python_snippets\\external_data\\weather_img\\sun.jpg',
@@ -82,6 +83,7 @@ class GetWeather:
             else:
                 raise RuntimeError('error', response.status_code)
                 # break
+                # TODO Лишняя строка?
 
 
 class MakeWeather:
@@ -121,8 +123,8 @@ class MakeWeather:
             if monthsdict2[period_start1.month] not in self.months:
                 self.months.append((monthsdict2[period_start1.month], period_start1.year))
             period_start1 += self.delta_month
-        period_start1 = period_start
-
+        period_start1 = period_start  # TODO Тут и ниже 2 переменные, которые не используются?
+        # TODO Нужно убрать
         gw = GetWeather(months=self.months, years=self.years, period_start=period_start)
         gw.run()
         p_start = period_start

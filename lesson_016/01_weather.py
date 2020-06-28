@@ -53,7 +53,8 @@ import DatabaseUpdater
 from WeatherMaker import MakeWeather
 
 weather_base = {}
-
+# TODO Если эти переменные являются константами - то их надо писать с заглавной буквы
+# TODO Если же они используются только в одном классе - то их надо внести в атрибуты этого класса
 monthsdict2 = {1: 'january', 2: 'february', 3: 'march', 4: 'april', 5: 'may', 6: 'june', 7: 'july', 8: 'august',
                9: 'september', 10: 'october', 11: 'november', 12: 'december'}
 
@@ -71,6 +72,7 @@ class Start:
         re_date = re.compile(
             r"^([1-9]|0[1-9]|1[0-9]|2[0-9]|3[0-1])(\.|-|/)"
             r"([1-9]|0[1-9]|1[0-2])(\.|-|/)([0-9][0-9]|19[0-9][0-9]|20[0-9][0-9])$")
+        # TODO Обычно правила для регулярок тоже выносят в атрибуты, а в методах используют переменные с ними
         delta_days = 14
         while True:
             user_date = input('>>> ')
@@ -101,6 +103,7 @@ class Start:
         self.db_updater.update_db()
 
     def read_db(self):
+        # TODO сперва атрибут надо объявлять в Init
         self.weather_base = self.db_updater.read_db()
 
     def make_cards(self):
@@ -112,6 +115,8 @@ class Start:
     def menu(self):
 
         while True:
+            # TODO По-хорошему и такие многострочные текста надо бы вынести в атрибут класса
+            # TODO Идея в том, чтобы собрать всё "настраиваемое" в одном месте класса
             print('''
         (1) для задания диапазона дат
         (2) для загрузки данных из сети

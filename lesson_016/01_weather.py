@@ -132,5 +132,8 @@ class Start:
                 print('Не указан диапазон дат')
 
 
-MakeWeather().on_run()
-Start().menu()
+if __name__ == '__main__':
+    MakeWeather().on_run()
+    Start().menu()
+
+#зачёт!

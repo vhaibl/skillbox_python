@@ -4,8 +4,8 @@
 # Заполнить все поля в билете на самолет.
 # Создать функцию, принимающую параметры: ФИО, откуда, куда, дата вылета,
 # и заполняющую ими шаблон билета Skillbox Airline.
-# Шаблон взять в файле lesson_013/images/ticket_template.png
-# Пример заполнения lesson_013/images/ticket_sample.png
+# Шаблон взять в файле 13_Ticket/images/ticket_template.png
+# Пример заполнения 13_Ticket/images/ticket_sample.png
 # Подходящий шрифт искать на сайте ofont.ru
 import argparse
 import os

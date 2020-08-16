@@ -16,10 +16,10 @@
 
 # Добавить класс ImageMaker.
 # Снабдить его методом рисования открытки
-# (использовать OpenCV, в качестве заготовки брать lesson_016/python_snippets/external_data/probe.jpg):
+# (использовать OpenCV, в качестве заготовки брать 16-WeatherMaker/python_snippets/external_data/probe.jpg):
 #   С текстом, состоящим из полученных данных (пригодится cv2.putText)
 #   С изображением, соответствующим типу погоды
-# (хранятся в lesson_016/python_snippets/external_data/weather_img ,но можно нарисовать/добавить свои)
+# (хранятся в 16-WeatherMaker/python_snippets/external_data/weather_img ,но можно нарисовать/добавить свои)
 #   В качестве фона добавить градиент цвета, отражающего тип погоды
 # Солнечно - от желтого к белому
 # Дождь - от синего к белому

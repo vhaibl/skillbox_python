@@ -1,19 +1,37 @@
-базовые проекты, выполненные во время обучения на курсе Разработчик Python от Skillbox\n
-Для подробной информации см. README.md в каждой папке\n
-17 VK ChatBot (PIL, APIs, unittest, PonyORM)\n
-16 WeatherMaker (opencv, DB, parsing)\n
-15 RPGame (JSON)\n
-14 Bowling (unittest)\n
-13 Ticket (PIL)\n
-12 Threads and Processes\n
-11 Generators Iterators Decorators\n
-10 Functional Programming\n
-09 Exceptions\n
-08 Class Inheritance\n
-07 Classes and Objects\n
-06 Namespaces and Scopes\n
-05 Modules and Packages\n
-04 Functions Detailed\n
-03 General Operators\n
-02 Basic Data Structures\n
+базовые проекты, выполненные во время обучения на курсе Разработчик Python от Skillbox
+
+Для подробной информации см. README.md в каждой папке
+
+17 VK ChatBot (PIL, APIs, unittest, PonyORM)
+
+16 WeatherMaker (opencv, DB, parsing)
+
+15 RPGame (JSON)
+
+14 Bowling (unittest)
+
+13 Ticket (PIL)
+
+12 Threads and Processes
+
+11 Generators Iterators Decorators
+
+10 Functional Programming
+
+09 Exceptions
+
+08 Class Inheritance
+
+07 Classes and Objects
+
+06 Namespaces and Scopes
+
+05 Modules and Packages
+
+04 Functions Detailed
+
+03 General Operators
+
+02 Basic Data Structures
+
 01 Environment setup
